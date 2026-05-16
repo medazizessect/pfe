@@ -1,20 +1,101 @@
 \chapter{Étude préliminaire}
 
 \section{Introduction}
-Ce premier chapitre présente les fondements du projet \textbf{CIRCULI}. Il aborde le contexte général de la gestion urbaine intelligente...
+Ce premier chapitre présente les fondements du projet \textbf{CIRCULI}. Il aborde le contexte général de la gestion urbaine intelligente, l'origine de l'idée du projet ainsi que la problématique liée à l'exploitation limitée et fragmentée des données urbaines par les méthodes traditionnelles. L'importance de la transformation numérique, de l'analyse des données et des outils d'aide à la décision dans l'amélioration de la mobilité urbaine et de la gouvernance locale y est également mise en évidence.
+
+La solution proposée à travers la plateforme CIRCULI est ensuite détaillée, en mettant l'accent sur son architecture, ses fonctionnalités principales et sa valeur ajoutée pour les acteurs publics. Enfin, ce chapitre intègre une analyse issue d'échanges avec des professionnels du domaine, notamment des responsables de la mobilité urbaine et des acteurs institutionnels, afin d'apporter une vision métier et de confronter la solution proposée aux besoins réels du terrain.
 
 \section{Origine de l'idée}
-« \textit{On ne peut améliorer que ce que l'on mesure et comprend.} » --- \textbf{Peter Drucker}\\
-L'idée du projet CIRCULI est née d'un constat concret lié aux difficultés rencontrées par les collectivités locales dans la gestion quotidienne de la mobilité urbaine...
+\begin{quote}
+« \textit{On ne peut améliorer que ce que l'on mesure et comprend.} »\\
+--- \textbf{Peter Drucker} ---
+\end{quote}
+
+L'idée du projet \textbf{CIRCULI} est née d'un constat concret lié aux difficultés rencontrées par les collectivités locales dans la gestion quotidienne de la mobilité urbaine et des flux de circulation. Malgré la disponibilité croissante de données issues de différentes sources urbaines — telles que les systèmes d'information géographique, les capteurs, les caméras urbaines et les services municipaux — ces informations restent souvent sous-exploitées ou analysées de manière isolée.
+
+Au fil des observations et des échanges avec des acteurs du secteur public, il est apparu que les méthodes traditionnelles de suivi et de planification de la mobilité reposent principalement sur des rapports statiques, des données non centralisées et des analyses ponctuelles. Cette approche limite la capacité des décideurs à anticiper les problèmes, à évaluer l'impact des actions mises en place et à prendre des décisions éclairées en temps réel.
+
+Ce manque de visibilité globale et d'outils d'aide à la décision adaptés a mis en évidence la nécessité d'une solution innovante capable de centraliser, analyser et valoriser les données urbaines de manière intelligente. C'est dans ce contexte que le concept de CIRCULI a émergé, avec l'objectif de proposer une plateforme intégrée facilitant l'analyse des données de mobilité, la visualisation d'indicateurs clés et la formulation de recommandations utiles aux acteurs publics.
+
+Ainsi, CIRCULI s'inscrit comme une réponse aux enjeux actuels des villes intelligentes, en mettant la donnée au cœur du processus décisionnel afin d'améliorer la fluidité de la circulation, de réduire l'impact environnemental et d'optimiser la gestion des services urbains.
 
 \section{Problématique}
-Le projet CIRCULI s'inscrit dans un contexte urbain où se déplacer devient de plus en plus difficile...
+Le projet CIRCULI s'inscrit dans un contexte urbain où se déplacer devient de plus en plus difficile. Dans de nombreuses villes, les routes sont souvent encombrées, surtout à certaines heures de la journée, et les outils utilisés pour gérer la circulation restent limités. Cette situation complique les déplacements quotidiens, augmente les temps de trajet et génère un sentiment d'insatisfaction chez les citoyens.
 
-\section{Outils innovants pour un apprentissage ludique / gestion intelligente}
-Face aux difficultés liées à la circulation urbaine, il devient essentiel de s'appuyer sur des outils innovants pour mieux comprendre, analyser et améliorer les déplacements...
+L'analyse des données disponibles montre que ces difficultés ne sont pas dues à une seule cause, mais à une combinaison de facteurs : une forte utilisation de la voiture, une concentration des déplacements vers le centre-ville et un manque de solutions modernes pour analyser et organiser les flux de circulation.
+
+\subsection{Routes saturées et méthodes de gestion limitées}
+Les données analysées montrent que la majorité des déplacements en ville se fait encore en voiture individuelle. La voiture est le moyen de transport le plus utilisé, notamment dans les zones situées autour du centre urbain.
+
+Cette forte utilisation de la voiture entraîne une concentration importante du trafic vers le centre-ville. De nombreux déplacements convergent vers les mêmes axes, ce qui provoque des embouteillages fréquents. De plus, certains grands axes du centre sont particulièrement encombrés, surtout aux heures de pointe.
+
+Même si les routes existent et sont nombreuses, la circulation n'est pas toujours bien répartie. Les véhicules passent souvent par les mêmes rues, ce qui surcharge certaines zones pendant que d'autres restent moins utilisées. Ces constats montrent que les méthodes actuelles de gestion du trafic, basées principalement sur des observations occasionnelles ou des décisions ponctuelles, ne suffisent plus. Sans outils capables de suivre la circulation en continu et d'analyser les données automatiquement, il est difficile d'agir efficacement.
+
+\subsection{Résultats instables et manque d'anticipation}
+Les performances du système de circulation varient fortement dans le temps. Dans des conditions normales, de nombreux trajets en voiture peuvent être réalisés en moins de 30 minutes. Cependant, cette situation change rapidement dès que la circulation devient plus dense.
+
+Certaines zones deviennent difficiles d'accès lorsque le trafic augmente. Les temps de trajet s'allongent, ce qui complique les déplacements quotidiens, notamment pour le travail ou les services.
+
+Par ailleurs, le stationnement non organisé joue également un rôle important. Lorsque des véhicules sont mal garés ou occupent trop d'espace, la circulation devient plus lente et moins fluide, en particulier dans les zones centrales.
+
+Ces variations montrent que la gestion actuelle de la circulation réagit souvent après l'apparition des problèmes, plutôt que de les prévenir. Les améliorations observées sont généralement temporaires et ne permettent pas d'assurer une amélioration durable de la situation.
+
+\subsection{Pourquoi une solution comme CIRCULI est nécessaire}
+Les analyses précédentes montrent que les difficultés de circulation ne peuvent plus être résolues uniquement par des solutions classiques, comme l'élargissement des routes ou des mesures temporaires. Il devient nécessaire de mieux comprendre ce qui se passe en temps réel sur le réseau routier.
+
+Le projet CIRCULI vise à répondre à ce besoin en proposant un système capable de :
+\begin{itemize}
+    \item Rassembler les données de circulation provenant de différentes sources.
+    \item Analyser ces données de manière automatique.
+    \item Aider les décideurs à mieux comprendre les problèmes.
+    \item Proposer des actions adaptées pour améliorer la circulation.
+\end{itemize}
+
+Ainsi, CIRCULI se présente comme une solution qui permet de passer d'une gestion approximative de la circulation à une gestion plus intelligente, plus simple à comprendre et plus efficace pour les citoyens.
+
+\sectionsection{Outils innovants pour une gestion intelligente de la mobilité}
+Face aux difficultés liées à la circulation urbaine, il devient essentiel de s'appuyer sur des outils innovants pour mieux comprendre, analyser et améliorer les déplacements en ville. La question centrale est donc la suivante : quels outils technologiques peuvent être intégrés pour rendre la gestion de la mobilité plus efficace, plus compréhensible et plus utile pour les décideurs et les citoyens ?
+
+Le projet CIRCULI repose sur l'utilisation de solutions numériques modernes permettant de transformer des données complexes en informations claires et exploitables.
+
+\subsection{Applications et plateformes numériques}
+Les applications et plateformes numériques jouent un rôle fondamental dans la modernisation de la gestion urbaine. Elles permettent de collecter, traiter et visualiser les données de circulation de manière simple et intuitive. Dans le cadre de \textbf{CIRCULI}, une plateforme centrale permet de :
+\begin{itemize}
+    \item regrouper les données provenant de différentes sources urbaines,
+    \item visualiser les flux de circulation sur des cartes claires,
+    \item suivre l'évolution du trafic selon les zones et les périodes,
+    \item aider à la prise de décision à travers des tableaux de bord simples.
+\end{itemize}
+
+\subsection{Cartographie interactive et visualisation des données}
+La cartographie interactive constitue un outil clé pour comprendre la mobilité urbaine. Contrairement aux cartes statiques traditionnelles, les cartes interactives permettent d'afficher dynamiquement les flux de circulation, les zones congestionnées et les axes les plus sollicités.
+
+\subsection{Contenus visuels simplifiés et communication numérique}
+La complexité des données de mobilité peut rendre leur compréhension difficile pour le grand public. C'est pourquoi l'utilisation de contenus visuels simples et attractifs est essentielle. \textbf{CIRCULI} s'appuie sur des supports visuels et des formats courts pour expliquer les phénomènes de congestion, les causes des ralentissements et les solutions possibles. Cette approche facilite la communication avec les citoyens et favorise leur implication.
 
 \section{Solution proposée}
-Pour répondre aux difficultés identifiées, le projet propose le développement d'une plateforme numérique intelligente...
+Pour répondre aux difficultés identifiées dans la gestion de la mobilité urbaine, le projet \textbf{CIRCULI} propose le développement d'une \textbf{plateforme numérique intelligente}, accessible via un \textbf{site web} et, à terme, via des \textbf{applications mobiles}. Cette plateforme a pour objectif principal d'aider les collectivités locales et les acteurs urbains à mieux comprendre, analyser et gérer les flux de circulation à partir des données disponibles.
+
+L'idée centrale de CIRCULI est de \textbf{transformer des données complexes en informations simples et compréhensibles}, afin de faciliter la prise de décision et d'améliorer la fluidité des déplacements urbains.
+
+\subsection{Principe général de la solution CIRCULI}
+La plateforme CIRCULI permet de collecter et de centraliser des données issues de différentes sources (données de circulation, capteurs urbains, historiques de trafic, etc.). Ces données sont ensuite traitées et présentées sous forme de \textbf{cartes interactives}, de \textbf{graphiques clairs} et d'\textbf{indicateurs faciles à interpréter}.
+
+\subsection{Organisation et navigation des contenus}
+Le contenu de la plateforme est organisé de façon structurée afin de faciliter l'exploration des données. Les utilisateurs peuvent accéder aux informations selon :
+\begin{itemize}
+    \item les zones géographiques,
+    \item les axes routiers,
+    \item les périodes temporelles (heures de pointe, heures creuses),
+    \item ou les types d'indicateurs (congestion, temps de parcours, accessibilité).
+\end{itemize}
+
+\subsection{Espaces utilisateurs de la plateforme}
+La plateforme CIRCULI est organisée autour de deux espaces principaux :
+\begin{itemize}
+    \item \textbf{Un espace décideur / gestionnaire}, destiné aux responsables municipaux et aux acteurs de la mobilité, leur permettant de suivre l'état du trafic, d'identifier les zones problématiques et d'évaluer l'impact des actions mises en place.
+    \item \textbf{Un espace analytique}, destiné à l'exploration approfondie des données, offrant des outils de comparaison, de suivi temporel et d'aide à la décision.
+\end{itemize}
 
 \section{Conclusion}
-En résumé, la solution proposée vise à moderniser la gestion en s'appuyant sur une plateforme numérique intelligente...
+En résumé, la solution proposée par \textbf{CIRCULI} vise à moderniser la gestion de la mobilité urbaine en s'appuyant sur une plateforme numérique intelligente, simple d'utilisation et centrée sur l'analyse des données. En rendant l'information plus claire et plus accessible, CIRCULI contribue à une meilleure compréhension des flux urbains et à une prise de décision plus efficace. Cette section pose ainsi les bases de la mise en œuvre technique et fonctionnelle de la solution, qui sera détaillée dans les chapitres suivants.
