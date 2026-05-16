@@ -1,0 +1,35 @@
+{
+  "video": "/home/aziz/Test Video.mp4",
+  "output": "pfe_output",
+  "device": "cpu",
+  "score_thr": 0.35,
+  "roi": [
+    379,
+    398,
+    635,
+    423
+  ],
+  "line_y": 410,
+  "gt_in": 15,
+  "gt_out": 15,
+  "models": [
+    "YOLOv8n",
+    "YOLOv8s",
+    "Faster R-CNN",
+    "Mask R-CNN",
+    "SSD",
+    "RetinaNet",
+    "MobileNet-SSD",
+    "SVM",
+    "KNN",
+    "Decision Tree",
+    "Naive Bayes",
+    "ANN (MLP)",
+    "AdaBoost",
+    "Gradient Boosting",
+    "Random Forest"
+  ],
+  "max_frames": null,
+  "ml_skip": 4,
+  "timeout_s": 3600
+}
