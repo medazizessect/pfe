@@ -1,0 +1,91 @@
+\documentclass[12pt, a4paper]{report}
+
+% ==========================================
+% PACKAGES ESSENTIELS
+% ==========================================
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel} 
+\usepackage{graphicx} 
+\usepackage{geometry}
+\geometry{a4paper, margin=2.5cm}
+\usepackage{hyperref} 
+\usepackage{algorithm2e} 
+\usepackage{float}
+\usepackage{booktabs} 
+\usepackage{amsmath, amsfonts, amssymb} 
+\usepackage{ulem} 
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    filecolor=magenta,      
+    urlcolor=blue,
+}
+
+\begin{document}
+
+% ==========================================
+% PAGE DE GARDE
+% ==========================================
+\begin{titlepage}
+    \centering
+    Ministère de l'enseignement supérieur et de la recherche scientifique\\[0.5cm]
+    \textbf{Université de Tunis}\\[1cm]
+    
+    \textbf{\Large PROJET DE FIN D'ÉTUDES}\\[0.5cm]
+    Pour obtenir le diplôme de master professionnel Co-construit:\\[0.5cm]
+    \textbf{\Large Digitalisation Des Services}\\[1cm]
+
+    \uline{Élaboré par}\\[0.3cm]
+    \textbf{Mohamed Aziz Trabelsi}\\[1cm]
+
+    \uline{Sous la direction de}\\[0.3cm]
+    \textbf{Mr Bacem ben Soui}\\[1cm]
+
+    Année universitaire : 2025 - 2026\\[1cm]
+    \vfill
+\end{titlepage}
+
+% ==========================================
+% DEDICACES & REMERCIEMENTS
+% ==========================================
+\chapter*{Dédicaces}
+\addcontentsline{toc}{chapter}{Dédicaces}
+Je souhaite avant tout dédier ces mots à l'Éternel... (Insérez la suite des dédicaces de votre Word)
+
+\chapter*{Remerciements}
+\addcontentsline{toc}{chapter}{Remerciements}
+C'est avec un profond honneur et un immense plaisir que je tiens à adresser ces quelques mots de remerciement...
+
+% ==========================================
+% TABLES ET LISTES
+% ==========================================
+\tableofcontents
+\listoffigures
+\listoftables
+
+% ==========================================
+% INTRODUCTION GENERALE
+% ==========================================
+\chapter*{Introduction Générale}
+\addcontentsline{toc}{chapter}{Introduction Générale}
+Les villes font aujourd'hui face à des défis majeurs liés à la croissance urbaine, à la mobilité, à la gestion des ressources et à la qualité de vie des citoyens...
+C'est dans cette optique que s'inscrit le projet \textbf{CIRCULI}...
+
+% ==========================================
+% INCLUSION DES CHAPITRES
+% ==========================================
+\include{chapitre1}
+\include{chapitre2}
+\include{chapitre3}
+\include{chapitre4}
+
+% ==========================================
+% CONCLUSION GENERALE
+% ==========================================
+\chapter*{Conclusion Générale}
+\addcontentsline{toc}{chapter}{Conclusion Générale}
+% Insérez ici votre conclusion générale et les perspectives du projet.
+
+\end{document}
