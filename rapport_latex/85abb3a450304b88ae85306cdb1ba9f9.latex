@@ -1,0 +1,3603 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\usepackage{longtable,booktabs,array}
+\usepackage{multirow}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\usepackage[normalem]{ulem}
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\ifPDFTeX
+  \TeXXeTstate=1
+  \newcommand{\RL}[1]{\beginR #1\endR}
+  \newcommand{\LR}[1]{\beginL #1\endL}
+  \newenvironment{RTL}{\beginR}{\endR}
+  \newenvironment{LTR}{\beginL}{\endL}
+\fi
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same} % disable monospaced font for URLs
+\hypersetup{
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+
+\author{}
+\date{}
+
+\begin{document}
+
+Ministère de l\textquotesingle enseignement supérieur et de la recherche
+scientifique
+
+\hypertarget{universituxe9-de-tunis}{%
+\subparagraph{Université de Tunis}\label{universituxe9-de-tunis}}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.6629}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.3371}}@{}}
+\toprule()
+\begin{minipage}[b]{\linewidth}\raggedright
+\begin{quote}
+\includegraphics[width=2.3485in,height=1.02708in]{vertopal_85abb3a450304b88ae85306cdb1ba9f9/media/image1.png}
+\end{quote}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\begin{quote}
+\includegraphics[width=1.00088in,height=1.08396in]{vertopal_85abb3a450304b88ae85306cdb1ba9f9/media/image2.jpeg}
+\end{quote}
+\end{minipage} \\
+\midrule()
+\endhead
+\bottomrule()
+\end{longtable}
+
+\begin{quote}
+\textbf{PROJET DE FIN D\textquotesingle ÉTUDES}
+\end{quote}
+
+\hypertarget{pour-obtenir-le-dipluxf4me-de-master-professionnel-co-construit}{%
+\subsubsection{Pour obtenir le diplôme de master professionnel
+Co-construit:}\label{pour-obtenir-le-dipluxf4me-de-master-professionnel-co-construit}}
+
+\begin{quote}
+\textbf{Digitalisation Des Services}
+\end{quote}
+
+\includegraphics[width=6.10625in,height=2.6625in]{vertopal_85abb3a450304b88ae85306cdb1ba9f9/media/image3.png}
+
+\uline{Élaboré par}
+
+\hypertarget{mohamed-aziz-trabelsi}{%
+\subparagraph{Mohamed Aziz Trabelsi}\label{mohamed-aziz-trabelsi}}
+
+\uline{Sous la direction de}
+
+\hypertarget{mr-bacem-ben-soui}{%
+\subparagraph{Mr Bacem ben Soui}\label{mr-bacem-ben-soui}}
+
+Année universitaire : 2025 - 2026
+
+\hypertarget{mention-luxe9gale}{%
+\subparagraph{Mention légale}\label{mention-luxe9gale}}
+
+\begin{quote}
+L'ESSECT n'entend donner aucune approbation ni improbation aux opinions
+émises dans ce rapport de stage. Ces opinions doivent être considérées
+comme propres à leurs auteurs
+\end{quote}
+
+\hypertarget{duxe9dicaces}{%
+\subparagraph{Dédicaces}\label{duxe9dicaces}}
+
+Je souhaite avant tout dédier ces mots à l'Éternel, Dieu Tout-Puissant,
+et Lui exprimer ma profonde gratitude pour Son amour infini, Sa
+bienveillance et toutes les grâces dont Il m'a comblé. Seigneur, je Vous
+remercie du fond du cœur pour chaque bénédiction qui a éclairé mon
+chemin.
+
+À ma chère mère \textbf{Zohra} et à mon cher père \textbf{Lotfi}, je
+dédie ce travail avec une immense reconnaissance. Vos sacrifices, votre
+patience, vos prières sincères et votre soutien indéfectible ont été la
+force qui m'a permis d'avancer et d'atteindre ce stade de ma vie. À ma
+sœur \textbf{Zeineb}, pour son affection, son encouragement constant et
+sa présence précieuse à mes côtés.
+
+Je tiens également à rendre un hommage particulier à la mémoire de mon
+cousin \textbf{Haroun}, qui nous a quittés trop tôt. Son souvenir
+restera à jamais gravé dans mon cœur et dans celui de toute notre
+famille. Que Dieu l'accueille dans Son vaste paradis et lui accorde Sa
+miséricorde.
+
+Que Dieu nous guide tous vers la réussite, le bonheur et
+l'épanouissement, et qu'Il nous couvre de Sa protection et de Ses
+bénédictions.
+
+\hypertarget{remerciements}{%
+\subparagraph{Remerciements}\label{remerciements}}
+
+C'est avec un profond honneur et un immense plaisir que je tiens à
+adresser ces quelques mots de remerciement à toutes les personnes qui
+ont contribué, de près ou de loin, à la réalisation de ce projet dans
+les meilleures conditions.
+
+Je souhaite exprimer toute ma gratitude à \textbf{M. Bacem Ben Soui}
+pour la confiance qu'il m'a témoignée en acceptant de m'encadrer, ainsi
+que pour son accompagnement, ses précieux conseils et l'attention
+constante qu'il a accordée à mon travail.
+
+Je profite également de cette occasion pour adresser mes sincères
+remerciements aux membres du jury qui m'ont fait l'honneur d'évaluer ce
+travail.
+
+Par ailleurs, je tiens à remercier l'ensemble des enseignants de l'École
+Supérieure des Sciences Économiques et Commerciales de Tunis pour la
+qualité de leur enseignement et pour les connaissances qu'ils m'ont
+transmises tout au long de mon parcours universitaire.
+
+Enfin, mes remerciements les plus chaleureux s'adressent à mes proches,
+pour leur soutien indéfectible, leur encouragement constant et le temps
+précieux qu'ils ont généreusement consacré pour m'aider à mener à bien
+ce travail.
+
+\begin{quote}
+\textbf{Sommaire}
+\end{quote}
+
+\protect\hyperlink{introduction-guxe9nuxe9rale}{INTRODUCTION GÉNÉRALE 1}
+
+\protect\hyperlink{chapitre-1-uxe9tude-pruxe9liminaire}{Chapitre 1:
+Étude préliminaire 2}
+
+\protect\hyperlink{introduction}{Introduction 3}
+
+\protect\hyperlink{section-1-origine-de-liduxe9e}{Section 1: Origine de
+l'idée 3}
+
+\protect\hyperlink{_bookmark4}{Section 2: Problématique 4}
+
+\protect\hyperlink{_bookmark5}{Section 3: Outils innovants pour un
+apprentissage ludique 11}
+
+\protect\hyperlink{_bookmark6}{Section 5: Solution proposée 18}
+
+\protect\hyperlink{_bookmark7}{Conclusion 19}
+
+\protect\hyperlink{_bookmark8}{Chapitre 2: Exploration du Cadre
+Stratégique 20}
+
+\protect\hyperlink{introduction-1}{Introduction 21}
+
+\protect\hyperlink{section-1-contexte-du-projet}{Section 1: Contexte du
+projet 21}
+
+\protect\hyperlink{section-2-benchmarking}{Section 2: Benchmarking 25}
+
+\protect\hyperlink{section-3-discussion-avec-un-inspecteur-de-luxe9ducation}{Section
+3: Discussion avec un inspecteur de l\textquotesingle éducation 30}
+
+\protect\hyperlink{section-4-business-model-canvas}{Section 4: Business
+model canvas 30}
+
+\protect\hyperlink{conclusion}{Conclusion 34}
+
+\protect\hyperlink{chapitre-3-pruxe9paration-et-planification}{Chapitre
+3: Préparation et planification 35}
+
+\protect\hyperlink{introduction-2}{Introduction 36}
+
+\protect\hyperlink{section-1-pruxe9paration-initiale}{Section 1:
+Préparation Initiale 36}
+
+\protect\hyperlink{section-2-planification-de-la-ruxe9alisation}{Section
+2: Planification de la réalisation 42}
+
+\protect\hyperlink{conclusion-1}{Conclusion 48}
+
+\protect\hyperlink{chapitre-4-impluxe9mentation-dun-prototype}{Chapitre
+4: Implémentation d'un prototype 49}
+
+\protect\hyperlink{introduction-3}{Introduction 50}
+
+\protect\hyperlink{_bookmark22}{Section 1: Technologie et Outils 50}
+
+\protect\hyperlink{section-2-sprint-1}{Section 2: Sprint 1 52}
+
+\protect\hyperlink{section-3-sprint-2}{Section 3: Sprint 2 61}
+
+\protect\hyperlink{conclusion-2}{Conclusion 78}
+
+\protect\hyperlink{conclusion-guxe9nuxe9rale}{Conclusion Générale 79}
+
+\begin{quote}
+\textbf{Listes des tables}
+\end{quote}
+
+Table 1: Étude comparative 28
+
+Table 2: La structure d'un nom de domaine 38
+
+Table 3: Planification des sprints 47
+
+Table 4: Planification des sprints 48
+
+Table 5: comparatif: Développement natif vs Développement
+cross-plateforme 51
+
+Table 6: Les niveaux et les filières de l'enseignement de primaire et
+secondaire 58
+
+Table 7: Les risques et leur valeur RPN 64
+
+Table 8: Les règles à respecter par les créateurs de mèmes 66
+
+\begin{quote}
+\textbf{Listes des figures}
+\end{quote}
+
+Figure 1: Captures d\textquotesingle écran de session de jeu sur Discord
+3
+
+Figure 2: Utilisation des réseaux sociaux par tranche
+d\textquotesingle âge 4
+
+Figure 3: Temps passé sur les plateformes sociales 5
+
+Figure 4: Évolution des taux de flux des élèves : enseignement
+préparatoire général 7
+
+Figure 5: Évolution des taux de flux des élèves: enseignement secondaire
+9
+
+Figure 6: Évolution des données globales : enseignement préparatoire et
+enseignement secondaire 10
+
+Figure 7: l'application mobile Astro Kids 11
+
+Figure 8: Naro: Applications de réalité augmentée 12
+
+Figure 9: Exemple de mème 13
+
+Figure 10: Compte Tiktok d'Asus France 13
+
+Figure 11: Mème: Le monde est un chat jouant avec
+l\textquotesingle Australie 14
+
+Figure 12: Mème sur l\textquotesingle éclipse solaire 15
+
+Figure 13: Mème d\textquotesingle un groupe de passionnés de
+l\textquotesingle histoire de Carthage 15
+
+Figure 14: Les principales plateformes de vidéos courtes 16
+
+Figure 15: L'interface de l'application CapCut 17
+
+Figure 16: Chanson populaire sur TikTok avec 185K publications 18
+
+Figure 17: Le site web de TakiAcademy 26
+
+Figure 18: Le site web d'Atome 26
+
+Figure 19: Logo de TakiAcademy 27
+
+Figure 20: Logo d'Atome 27
+
+Figure 21: Business Model Canvas d' EduMemes 32
+
+Figure 22: Vérification de la disponibilité d\textquotesingle un nom de
+domaine sur le site OVH Cloud 39
+
+Figure 23: Recherche de nom de domaine sur Zenhosting 40
+
+Figure 24: La palette de couleurs principales du projet EduMemes 40
+
+Figure 25: Logo d'EduMemes 41
+
+Figure 26: Icône d'EduMemes 42
+
+Figure 27: Hiérarchie des rôles 44
+
+Figure 28: Diagramme de cas d'utilisation global 45
+
+Figure 29: Diagramme de classes 46
+
+Figure 30: Création d\textquotesingle une image de matière Histoire avec
+Photoshop 50
+
+Figure 31: Diagramme de cas d'utilisation du Sprint 1 53
+
+Figure 32: Les interfaces d\textquotesingle authentification 54
+
+Figure 33: Les interfaces de gestion des privilèges d\textquotesingle un
+enseignant 55
+
+Figure 34: Les interfaces de gestion de la liste des éditeurs de contenu
+de matières d\textquotesingle un niveau scolaire donné 56
+
+Figure 35: La structure des tables de bases 57
+
+Figure 36: Les interfaces d'ajout et de modification d'une matière 59
+
+Figure 37: Structures des chapitres 59
+
+Figure 38: L'interface d'ajout d'une leçon 60
+
+Figure 39: Les interfaces d'ajout et de modification d'un chapitre 60
+
+Figure 40: Diagramme de cas d'utilisation du Sprint 2 61
+
+Figure 41: Les interfaces d\textquotesingle édition d\textquotesingle un
+Edu Mème 62
+
+Figure 42: L'interface d\textquotesingle édition de la description d'un
+chapitre 63
+
+Figure 43: Ajout d'un lien vers le source d'une information 65
+
+Figure 44: Exemple de commentaire d'un enseignant sur la plateforme
+EduMemes 65
+
+Figure 45: Recommandations des enseignants pour Camtasia 68
+
+Figure 46: Suite de calculatrice dans GeoGebra 68
+
+Figure 47: Exemple d\textquotesingle équation et sa représentation
+graphique sur GeoGebra 69
+
+Figure 48: l'interface de Canva 69
+
+Figure 49: L'interface de Pexels 70
+
+Figure 50: Types de contenu interactif sur la plateforme H5P 71
+
+Figure 51: Les interfaces de consultation des matières 72
+
+Figure 52: Les interfaces de consultation des chapitres d'une matière 73
+
+Figure 53: L'interface de consultation du contenu associé à un chapitre
+74
+
+Figure 54: L'interface de consultation des mèmes et des informations 75
+
+Figure 55: Les interactions d'un mème dans l'application Edu Mème 76
+
+Figure 56: Les interfaces de suivi de progression d'un apprenant 77
+
+Figure 57: Les interfaces de suivi des feedbacks d'un mème 78
+
+\begin{quote}
+\textbf{Liste des abréviations}
+\end{quote}
+
+dt : dinar tunisien
+
+OTDAV: L'Organisme Tunisien des Droits d'Auteur et des Droits Voisins
+SLD : Second-Level Domain
+
+RPN : Risk Priority Number IA : Intelligence Artificielle
+
+QCM : Questionnaire à Choix Multiples
+
+\hypertarget{introduction-guxe9nuxe9rale}{%
+\section{INTRODUCTION GÉNÉRALE}\label{introduction-guxe9nuxe9rale}}
+
+Les villes font aujourd'hui face à des défis majeurs liés à la
+croissance urbaine, à la mobilité, à la gestion des ressources et à la
+qualité de vie des citoyens. L'augmentation du trafic, la pollution, la
+consommation excessive des ressources et le manque de données
+exploitables rendent la prise de décision de plus en plus complexe pour
+les collectivités locales. Dans ce contexte, la transformation numérique
+apparaît comme un levier essentiel pour améliorer la gestion urbaine et
+favoriser un développement durable et intelligent.
+
+Par ailleurs, les collectivités territoriales disposent d'un volume
+croissant de données issues de différentes sources telles que les
+systèmes d'information géographique, les capteurs urbains, les caméras,
+les services municipaux et les plateformes numériques. Toutefois, ces
+données sont souvent dispersées, peu exploitées ou difficiles à analyser
+de manière globale, ce qui limite leur impact sur la planification
+urbaine et la prise de décision stratégique.
+
+Face à ces enjeux, une question centrale se pose : \textbf{comment
+exploiter efficacement les données urbaines afin d'améliorer la
+mobilité, optimiser les ressources et soutenir une gouvernance urbaine
+durable ?} Quels outils numériques peuvent aider les décideurs à mieux
+comprendre les dynamiques de la ville et à adopter des stratégies
+adaptées aux besoins réels des citoyens ?
+
+C'est dans cette optique que s'inscrit le projet \textbf{CIRCULI}, une
+plateforme intelligente dédiée à l'analyse, à la visualisation et à
+l'exploitation des données urbaines. CIRCULI vise à centraliser
+différentes sources de données liées à la mobilité urbaine et à
+l'environnement, à les analyser à l'aide d'outils décisionnels et de
+systèmes de recommandation, et à fournir des indicateurs pertinents pour
+soutenir les décisions des acteurs publics. Le projet s'inscrit dans une
+démarche de ville intelligente et durable, favorisant une meilleure
+circulation, une réduction de l'impact environnemental et une
+optimisation des services urbains.
+
+Ce rapport présente les différentes étapes de conception et de
+réalisation du projet CIRCULI. Il commence par une étude préliminaire et
+une analyse du contexte général, suivies par la définition du cadre
+stratégique et fonctionnel du système. Ensuite, les phases de
+conception, de planification et d'implémentation du prototype sont
+détaillées, mettant en évidence les choix techniques et méthodologiques
+adoptés ainsi que la valeur ajoutée du projet pour la gestion urbaine
+intelligente.
+
+\hypertarget{chapitre-1-uxe9tude-pruxe9liminaire}{%
+\section{Chapitre 1: Étude
+préliminaire}\label{chapitre-1-uxe9tude-pruxe9liminaire}}
+
+\hypertarget{section-1}{%
+\section{}\label{section-1}}
+
+\hypertarget{introduction}{%
+\subsection{Introduction}\label{introduction}}
+
+Ce premier chapitre présente les fondements du projet \textbf{CIRCULI}.
+Il aborde le contexte général de la gestion urbaine intelligente,
+l'origine de l'idée du projet ainsi que la problématique liée à
+l'exploitation limitée et fragmentée des données urbaines par les
+méthodes traditionnelles. L'importance de la transformation numérique,
+de l'analyse des données et des outils d'aide à la décision dans
+l'amélioration de la mobilité urbaine et de la gouvernance locale y est
+également mise en évidence.
+
+La solution proposée à travers la plateforme CIRCULI est ensuite
+détaillée, en mettant l'accent sur son architecture, ses fonctionnalités
+principales et sa valeur ajoutée pour les acteurs publics. Enfin, ce
+chapitre intègre une analyse issue d'échanges avec des professionnels du
+domaine, notamment des responsables de la mobilité urbaine et des
+acteurs institutionnels, afin d'apporter une vision métier et de
+confronter la solution proposée aux besoins réels du terrain.
+
+\hypertarget{section-1-origine-de-liduxe9e}{%
+\subsection{Section 1: Origine de
+l'idée}\label{section-1-origine-de-liduxe9e}}
+
+« \emph{On ne peut améliorer que ce que l'on mesure et comprend.} »\\
+--- \emph{Peter Drucker} ---
+
+L'idée du projet \textbf{CIRCULI} est née d'un constat concret lié aux
+difficultés rencontrées par les collectivités locales dans la gestion
+quotidienne de la mobilité urbaine et des flux de circulation. Malgré la
+disponibilité croissante de données issues de différentes sources
+urbaines --- telles que les systèmes d'information géographique, les
+capteurs, les caméras urbaines et les services municipaux --- ces
+informations restent souvent sous-exploitées ou analysées de manière
+isolée.
+
+Au fil des observations et des échanges avec des acteurs du secteur
+public, il est apparu que les méthodes traditionnelles de suivi et de
+planification de la mobilité reposent principalement sur des rapports
+statiques, des données non centralisées et des analyses ponctuelles.
+Cette approche limite la capacité des décideurs à anticiper les
+problèmes, à évaluer l'impact des actions mises en place et à prendre
+des décisions éclairées en temps réel.
+
+Ce manque de visibilité globale et d'outils d'aide à la décision adaptés
+a mis en évidence la nécessité d'une solution innovante capable de
+centraliser, analyser et valoriser les données urbaines de manière
+intelligente. C'est dans ce contexte que le concept de CIRCULI a émergé,
+avec l'objectif de proposer une plateforme intégrée facilitant l'analyse
+des données de mobilité, la visualisation d'indicateurs clés et la
+formulation de recommandations utiles aux acteurs publics.
+
+Ainsi, CIRCULI s'inscrit comme une réponse aux enjeux actuels des villes
+intelligentes, en mettant la donnée au cœur du processus décisionnel
+afin d'améliorer la fluidité de la circulation, de réduire l'impact
+environnemental et d'optimiser la gestion des services urbains.
+
+\includegraphics[width=2.53539in,height=3.14955in]{vertopal_85abb3a450304b88ae85306cdb1ba9f9/media/image4.png}\includegraphics[width=3.24506in,height=3.09271in]{vertopal_85abb3a450304b88ae85306cdb1ba9f9/media/image5.png}
+
+\includegraphics[width=5.35606in,height=3.87112in]{vertopal_85abb3a450304b88ae85306cdb1ba9f9/media/image6.emf}
+
+\begin{quote}
+\textbf{Figure 1: \emph{Extraits du plan des débits journaliers moyens
+de la circulation motorisée des véhicules à}}
+
+\emph{\textbf{deux essieux ou plus, source recensement général de la
+circulation de 2017}}
+\end{quote}
+
+\hypertarget{section-2-probluxe9matique}{%
+\subsection{Section 2 :
+Problématique}\label{section-2-probluxe9matique}}
+
+Le projet CIRCULI s'inscrit dans un contexte urbain où se déplacer
+devient de plus en plus difficile. Dans de nombreuses villes, les routes
+sont souvent encombrées, surtout à certaines heures de la journée, et
+les outils utilisés pour gérer la circulation restent limités. Cette
+situation complique les déplacements quotidiens, augmente les temps de
+trajet et génère un sentiment d'insatisfaction chez les citoyens.
+
+L'analyse des données disponibles montre que ces difficultés ne sont pas
+dues à une seule cause, mais à une combinaison de facteurs : une forte
+utilisation de la voiture, une concentration des déplacements vers le
+centre-ville et un manque de solutions modernes pour analyser et
+organiser les flux de circulation.
+
+\textbf{2.1 Routes saturées et méthodes de gestion limitées}
+
+\includegraphics[width=5.36307in,height=3.26in]{vertopal_85abb3a450304b88ae85306cdb1ba9f9/media/image7.jpeg}
+
+\begin{quote}
+\textbf{Figure 1 : Répartition modale par délégation et volumes de
+déplacements associés}
+\end{quote}
+
+Les données analysées montrent que la majorité des déplacements en ville
+se fait encore en voiture individuelle. La figure 1 indique que la
+voiture est le moyen de transport le plus utilisé, notamment dans les
+zones situées autour du centre urbain.
+
+\includegraphics[width=6.12778in,height=4.2in]{vertopal_85abb3a450304b88ae85306cdb1ba9f9/media/image8.jpeg}
+
+\begin{quote}
+\textbf{Figure 2 : Flux d\textquotesingle échanges et internes réalisés
+en VP à l\textquotesingle échelle des macro-zones de l'EMD}
+\end{quote}
+
+Cette forte utilisation de la voiture entraîne une concentration
+importante du trafic vers le centre-ville. La \textbf{figure 2} illustre
+clairement que de nombreux déplacements convergent vers les mêmes axes,
+ce qui provoque des embouteillages fréquents. De plus, la \textbf{figure
+3} montre que certains grands axes du centre sont particulièrement
+encombrés, surtout aux heures de pointe.
+
+\includegraphics[width=2.03125in,height=2.26042in]{vertopal_85abb3a450304b88ae85306cdb1ba9f9/media/image9.emf}
+\includegraphics[width=2.57292in,height=1.90625in]{vertopal_85abb3a450304b88ae85306cdb1ba9f9/media/image10.emf}
+
+\begin{quote}
+\textbf{Figure 3 : Etat des circulations sur les boulevards centraux,
+situation août 2020}
+\end{quote}
+
+Les \textbf{figures 4 et 5} présentent l'organisation du réseau routier.
+Elles montrent que, même si les routes existent et sont nombreuses, la
+circulation n'est pas toujours bien répartie. Les véhicules passent
+souvent par les mêmes rues, ce qui surcharge certaines zones pendant que
+d'autres restent moins utilisées.
+
+Ces constats montrent que les méthodes actuelles de gestion du trafic,
+basées principalement sur des observations occasionnelles ou des
+décisions ponctuelles, ne suffisent plus. Sans outils capables de suivre
+la circulation en continu et d'analyser les données automatiquement, il
+est difficile d'agir efficacement.
+
+\includegraphics[width=6.1577in,height=5.575in]{vertopal_85abb3a450304b88ae85306cdb1ba9f9/media/image11.jpeg}
+
+\begin{quote}
+\textbf{Figure 4 : Hiérarchie viaire du cœur urbain}
+\end{quote}
+
+\includegraphics[width=6.19167in,height=4.38681in]{vertopal_85abb3a450304b88ae85306cdb1ba9f9/media/image12.jpeg}
+
+\begin{quote}
+\textbf{Figure 5 : Hiérarchie viaire, écrans d\textquotesingle analyse
+et capacités théoriques entrantes}
+\end{quote}
+
+\textbf{2.2 Résultats instables et manque d'anticipation}
+
+Les performances du système de circulation varient fortement dans le
+temps. La figure 6 montre que, dans des conditions normales, de nombreux
+trajets en voiture peuvent être réalisés en moins de 30 minutes.
+Cependant, cette situation change rapidement dès que la circulation
+devient plus dense.
+
+\begin{quote}
+\includegraphics[width=6.5in,height=3.09167in]{vertopal_85abb3a450304b88ae85306cdb1ba9f9/media/image13.png}
+
+\textbf{Figure 6~:Répartition des déplacements en VP en fonction de la
+durée du déplacement}
+\end{quote}
+
+La \textbf{figure 7} met en évidence que certaines zones deviennent
+difficiles d'accès lorsque le trafic augmente. Les temps de trajet
+s'allongent, ce qui complique les déplacements quotidiens, notamment
+pour le travail ou les services.
+
+\includegraphics[width=4.53741in,height=6.2in]{vertopal_85abb3a450304b88ae85306cdb1ba9f9/media/image14.jpeg}
+
+\begin{quote}
+\textbf{Figure 7 : Isochrones VP 20 et 25 minutes depuis la Place Farhat
+Hached, en situation fluide, source des données de base « Here ».}
+\end{quote}
+
+Par ailleurs, la \textbf{figure 8} montre que le stationnement non
+organisé joue également un rôle important. Lorsque des véhicules sont
+mal garés ou occupent trop d'espace, la circulation devient plus lente
+et moins fluide, en particulier dans les zones centrales.
+
+\includegraphics[width=2.23958in,height=1.64583in]{vertopal_85abb3a450304b88ae85306cdb1ba9f9/media/image15.emf}\includegraphics[width=1.98958in,height=1.6875in]{vertopal_85abb3a450304b88ae85306cdb1ba9f9/media/image16.emf}
+
+\begin{quote}
+\textbf{Figure 8 : Véhicules stationnés malgré l'interdiction, amputant
+une voie de circulation ou bien sur un passage piéton, Avenue H. Ayachi,
+Sousse}
+\end{quote}
+
+Ces variations montrent que la gestion actuelle de la circulation réagit
+souvent après l'apparition des problèmes, plutôt que de les prévenir.
+Les améliorations observées sont généralement temporaires et ne
+permettent pas d'assurer une amélioration durable de la situation.
+
+\textbf{2.3 Pourquoi une solution comme CIRCULI est nécessaire}
+
+Les analyses précédentes montrent que les difficultés de circulation ne
+peuvent plus être résolues uniquement par des solutions classiques,
+comme l'élargissement des routes ou des mesures temporaires. Il devient
+nécessaire de mieux comprendre ce qui se passe en temps réel sur le
+réseau routier.
+
+Le projet CIRCULI vise à répondre à ce besoin en proposant un système
+capable de :
+
+\begin{itemize}
+\item
+  Rassembler les données de circulation provenant de différentes
+  sources,
+\item
+  Analyser ces données de manière automatique,
+\item
+  Aider les décideurs à mieux comprendre les problèmes,
+\item
+  Proposer des actions adaptées pour améliorer la circulation.
+\end{itemize}
+
+Ainsi, CIRCULI se présente comme une solution qui permet de passer d'une
+gestion approximative de la circulation à une gestion plus intelligente,
+plus simple à comprendre et plus efficace pour les citoyens.
+
+\hypertarget{section-3-outils-innovants-pour-une-gestion-intelligente-de-la-mobilituxe9}{%
+\subsection{Section 3 : Outils innovants pour une gestion intelligente
+de la
+mobilité}\label{section-3-outils-innovants-pour-une-gestion-intelligente-de-la-mobilituxe9}}
+
+Face aux difficultés liées à la circulation urbaine, il devient
+essentiel de s'appuyer sur des outils innovants pour mieux comprendre,
+analyser et améliorer les déplacements en ville.
+
+La question centrale est donc la suivante :\\
+quels outils technologiques peuvent être intégrés pour rendre la gestion
+de la mobilité plus efficace, plus compréhensible et plus utile pour les
+décideurs et les citoyens ?
+
+Le projet CIRCULI repose sur l'utilisation de solutions numériques
+modernes permettant de transformer des données complexes en informations
+claires et exploitables.
+
+\textbf{3.1 Applications et plateformes numériques}
+
+Les applications et plateformes numériques jouent un rôle fondamental
+dans la modernisation de la gestion urbaine. Elles permettent de
+collecter, traiter et visualiser les données de circulation de manière
+simple et intuitive. Grâce à ces outils, les informations ne restent
+plus sous forme de tableaux ou de rapports complexes, mais deviennent
+accessibles sous forme de graphiques, de cartes interactives et
+d'indicateurs faciles à interpréter.
+
+Les plateformes numériques offrent également une grande flexibilité,
+puisqu'elles peuvent être consultées à tout moment et depuis différents
+supports (ordinateur, tablette ou smartphone). Cela facilite le suivi de
+la situation de circulation en temps réel et améliore la réactivité des
+acteurs responsables.
+
+Dans le cadre de \textbf{CIRCULI}, une plateforme centrale permet de :
+
+\begin{itemize}
+\item
+  regrouper les données provenant de différentes sources urbaines,
+\item
+  visualiser les flux de circulation sur des cartes claires,
+\item
+  suivre l'évolution du trafic selon les zones et les périodes,
+\item
+  et aider à la prise de décision à travers des tableaux de bord
+  simples.
+\end{itemize}
+
+Les ressources visuelles proposées par ces plateformes (cartes,
+graphiques, indicateurs) s'adaptent à différents profils d'utilisateurs,
+même ceux qui ne possèdent pas de connaissances techniques approfondies.
+
+\textbf{3.2 Cartographie interactive et visualisation des données}
+
+La cartographie interactive constitue un outil clé pour comprendre la
+mobilité urbaine. Contrairement aux cartes statiques traditionnelles,
+les cartes interactives permettent d'afficher dynamiquement les flux de
+circulation, les zones congestionnées et les axes les plus sollicités.
+
+Grâce à ces outils, les utilisateurs peuvent :
+
+\begin{itemize}
+\item
+  identifier rapidement les zones problématiques,
+\item
+  comparer différentes périodes (heures de pointe, heures creuses),
+\item
+  visualiser l'impact de certains événements ou aménagements urbains.
+\end{itemize}
+
+Dans \textbf{CIRCULI}, la cartographie interactive transforme des
+données brutes en représentations visuelles claires, facilitant ainsi
+l'analyse et la communication entre les différents acteurs (techniciens,
+décideurs, responsables municipaux).
+
+\textbf{3.3 Contenus visuels simplifiés et communication numérique}
+
+La complexité des données de mobilité peut rendre leur compréhension
+difficile pour le grand public. C'est pourquoi l'utilisation de contenus
+visuels simples et attractifs est essentielle. Des graphiques clairs,
+des schémas explicatifs ou des illustrations permettent de transmettre
+des informations importantes sans recourir à un langage technique
+complexe.
+
+Dans cette logique, \textbf{CIRCULI} s'appuie sur des supports visuels
+et des formats courts pour expliquer les phénomènes de congestion, les
+causes des ralentissements et les solutions possibles. Cette approche
+facilite la communication avec les citoyens et favorise leur implication
+dans les questions de mobilité.
+
+\textbf{3.4 Vers une approche plus engageante et compréhensible}
+
+L'utilisation d'outils innovants ne vise pas uniquement à améliorer les
+performances techniques du système de mobilité, mais aussi à rendre
+l'information plus accessible et plus engageante. En combinant
+applications numériques, cartographie interactive et visualisation
+simplifiée des données, \textbf{CIRCULI} permet de passer d'une gestion
+complexe et opaque à une approche plus claire, plus pédagogique et plus
+efficace.
+
+Ainsi, ces outils constituent un levier essentiel pour une mobilité
+urbaine mieux comprise, mieux pilotée et mieux acceptée par l'ensemble
+des acteurs et des citoyens.
+
+\hypertarget{section-4-solution-proposuxe9e}{%
+\subsection{Section 4 : Solution
+proposée}\label{section-4-solution-proposuxe9e}}
+
+Pour répondre aux difficultés identifiées dans la gestion de la mobilité
+urbaine, le projet \textbf{CIRCULI} propose le développement d'une
+\textbf{plateforme numérique intelligente}, accessible via un
+\textbf{site web} et, à terme, via des \textbf{applications mobiles}.
+Cette plateforme a pour objectif principal d'aider les collectivités
+locales et les acteurs urbains à mieux comprendre, analyser et gérer les
+flux de circulation à partir des données disponibles.
+
+L'idée centrale de CIRCULI est de \textbf{transformer des données
+complexes en informations simples et compréhensibles}, afin de faciliter
+la prise de décision et d'améliorer la fluidité des déplacements
+urbains.
+
+\textbf{4.1 Principe général de la solution CIRCULI}
+
+La plateforme CIRCULI permet de collecter et de centraliser des données
+issues de différentes sources (données de circulation, capteurs urbains,
+historiques de trafic, etc.). Ces données sont ensuite traitées et
+présentées sous forme de \textbf{cartes interactives}, de
+\textbf{graphiques clairs} et d'\textbf{indicateurs faciles à
+interpréter}.
+
+L'utilisateur peut naviguer à travers les informations de manière
+intuitive, sans avoir besoin de connaissances techniques avancées.
+L'objectif est de donner l'impression de consulter un tableau de bord
+simple et visuel, plutôt que d'analyser des rapports complexes ou des
+tableaux de chiffres.
+
+\textbf{4.2 Organisation et navigation des contenus}
+
+Le contenu de la plateforme est organisé de façon structurée afin de
+faciliter l'exploration des données. Les utilisateurs peuvent accéder
+aux informations selon :
+
+\begin{itemize}
+\item
+  les zones géographiques,
+\item
+  les axes routiers,
+\item
+  les périodes temporelles (heures de pointe, heures creuses),
+\item
+  ou les types d'indicateurs (congestion, temps de parcours,
+  accessibilité).
+\end{itemize}
+
+Chaque visualisation est accompagnée d'une \textbf{explication simple},
+permettant de comprendre rapidement ce que représente l'information
+affichée et pourquoi elle est importante. Cette approche vise à rendre
+l'analyse des flux urbains accessible même aux utilisateurs non
+spécialistes.
+
+\textbf{4.3 Espaces utilisateurs de la plateforme}
+
+La plateforme CIRCULI est organisée autour de deux espaces principaux :
+
+\begin{itemize}
+\item
+  \textbf{Un espace décideur / gestionnaire}, destiné aux responsables
+  municipaux et aux acteurs de la mobilité, leur permettant de suivre
+  l'état du trafic, d'identifier les zones problématiques et d'évaluer
+  l'impact des actions mises en place.
+\item
+  \textbf{Un espace analytique}, destiné à l'exploration approfondie des
+  données, offrant des outils de comparaison, de suivi temporel et
+  d'aide à la décision.
+\end{itemize}
+
+Cette séparation permet d'adapter les fonctionnalités aux besoins de
+chaque type d'utilisateur, tout en conservant une interface cohérente et
+intuitive.
+
+\textbf{4.4 Interface et expérience utilisateur}
+
+L'interface de CIRCULI est conçue pour être \textbf{simple, moderne et
+intuitive}, inspirée des plateformes numériques actuelles. La navigation
+se fait de manière fluide, avec des interactions visuelles claires
+permettant de passer rapidement d'une vue à une autre.
+
+Les fonctionnalités de visualisation dynamique, telles que le zoom sur
+les cartes, le filtrage des données ou la comparaison de périodes,
+améliorent la compréhension globale de la situation de circulation et
+facilitent l'analyse.
+
+\textbf{Conclusion}
+
+En résumé, la solution proposée par \textbf{CIRCULI} vise à moderniser
+la gestion de la mobilité urbaine en s'appuyant sur une plateforme
+numérique intelligente, simple d'utilisation et centrée sur l'analyse
+des données. En rendant l'information plus claire et plus accessible,
+CIRCULI contribue à une meilleure compréhension des flux urbains et à
+une prise de décision plus efficace.
+
+Cette section pose ainsi les bases de la mise en œuvre technique et
+fonctionnelle de la solution, qui sera détaillée dans les chapitres
+suivants.
+
+\protect\hypertarget{_bookmark5}{}{}
+
+\hypertarget{chapitre-2-exploration-du-cadre-stratuxe9gique}{%
+\section{Chapitre 2: Exploration du Cadre
+Stratégique}\label{chapitre-2-exploration-du-cadre-stratuxe9gique}}
+
+\hypertarget{section-3}{%
+\section{}\label{section-3}}
+
+\hypertarget{introduction-1}{%
+\subsection{Introduction}\label{introduction-1}}
+
+Dans ce deuxième chapitre, nous approfondissons le cadre stratégique de
+notre projet EduMemes. Nous commençons par explorer le contexte du
+projet, avant de présenter notre Business Model Canvas (BMC) détaillé.
+Enfin, nous effectuons un benchmarking pour situer notre solution par
+rapport aux initiatives existantes et identifier les meilleures
+pratiques à adopter.
+
+\hypertarget{section-1-contexte-du-projet}{%
+\subsection{Section 1: Contexte du
+projet}\label{section-1-contexte-du-projet}}
+
+Notre projet EduMemes se situe dans le contexte des Objectifs de
+Développement Durable (ODD). Face au défi d\textquotesingle engager les
+apprenants, notre motivation est d\textquotesingle explorer des
+approches novatrices pour améliorer l\textquotesingle enseignement.
+
+\hypertarget{objectifs-de-duxe9veloppement-durable-odd}{%
+\paragraph{Objectifs de Développement Durable
+(ODD)}\label{objectifs-de-duxe9veloppement-durable-odd}}
+
+Notre projet EduMemes contribue directement à plusieurs Objectifs de
+Développement Durable des Nations Unies, en mettant
+l\textquotesingle accent sur l\textquotesingle amélioration de
+l\textquotesingle éducation et de l\textquotesingle engagement des
+jeunes. Voici comment le projet s\textquotesingle aligne sur certains
+ODD spécifiques :
+
+\hypertarget{odd-4-uxe9ducation-de-qualituxe9}{%
+\subparagraph{ODD 4: Éducation de
+Qualité}\label{odd-4-uxe9ducation-de-qualituxe9}}
+
+Le projet vise à améliorer la qualité de l\textquotesingle éducation en
+rendant le processus d\textquotesingle apprentissage plus attrayant et
+engageant pour les élèves.
+
+\hypertarget{odd-9-industrie-innovation-et-infrastructure}{%
+\subparagraph{ODD 9: Industrie, Innovation et
+Infrastructure}\label{odd-9-industrie-innovation-et-infrastructure}}
+
+L\textquotesingle utilisation créative de mèmes dans
+l\textquotesingle éducation représente une innovation dans le domaine de
+l\textquotesingle enseignement et favorise l\textquotesingle usage
+créatif des technologies de l\textquotesingle information.
+
+\hypertarget{odd-10-ruxe9duction-des-inuxe9galituxe9s}{%
+\subparagraph{ODD 10: Réduction des
+Inégalités}\label{odd-10-ruxe9duction-des-inuxe9galituxe9s}}
+
+En offrant un accès éducatif ludique, le projet vise à réduire les
+inégalités en facilitant l\textquotesingle apprentissage pour tous,
+indépendamment des différences socio-économiques.
+
+\hypertarget{odd-17-partenariats-pour-la-ruxe9alisation-des-objectifs}{%
+\subparagraph{ODD 17: Partenariats pour la Réalisation des
+Objectifs}\label{odd-17-partenariats-pour-la-ruxe9alisation-des-objectifs}}
+
+Les partenariats avec des enseignants, des éducateurs, des
+établissements éducatifs, et éventuellement d\textquotesingle autres
+acteurs du secteur de l\textquotesingle éducation, illustrent
+l\textquotesingle importance de la collaboration pour atteindre des
+objectifs communs.
+
+\hypertarget{odd-3-bonne-santuxe9-et-bien-uxeatre}{%
+\subparagraph{ODD 3: Bonne Santé et
+Bien-être}\label{odd-3-bonne-santuxe9-et-bien-uxeatre}}
+
+En offrant une alternative éducative amusante, le projet peut
+potentiellement réduire le stress lié aux études et contribuer au
+bien-être émotionnel des élèves.
+
+\hypertarget{odd-8-travail-duxe9cent-et-croissance-uxe9conomique}{%
+\subparagraph{ODD 8: Travail Décent et Croissance
+Économique}\label{odd-8-travail-duxe9cent-et-croissance-uxe9conomique}}
+
+La création d\textquotesingle une plateforme éducative innovante peut
+contribuer à la croissance économique en formant les étudiants pour les
+emplois futurs et en favorisant le développement des compétences.
+
+\hypertarget{odd-5-uxe9galituxe9-entre-les-sexes}{%
+\subparagraph{ODD 5: Égalité entre les
+Sexes}\label{odd-5-uxe9galituxe9-entre-les-sexes}}
+
+En fournissant un accès égal à des méthodes éducatives innovantes, le
+projet contribue à favoriser l\textquotesingle égalité entre les sexes
+dans l\textquotesingle éducation.
+
+\hypertarget{odd-16-paix-justice-et-institutions-efficaces}{%
+\subparagraph{ODD 16: Paix, Justice et Institutions
+Efficaces}\label{odd-16-paix-justice-et-institutions-efficaces}}
+
+Une éducation de qualité est un pilier essentiel pour la construction de
+sociétés justes et pacifiques et le projet vise à contribuer à cet
+objectif.
+
+En alignant le projet sur ces Objectifs de Développement Durable,
+EduMemes aspire à jouer un rôle significatif dans la promotion
+d\textquotesingle une éducation de qualité, équitable et innovante.
+
+\hypertarget{parties-prenantes}{%
+\paragraph{Parties prenantes}\label{parties-prenantes}}
+
+Voici les parties prenantes potentielles pour notre projet EduMemes :
+
+Apprenants:
+
+\begin{itemize}
+\item
+  Principaux utilisateurs de la plateforme.
+\item
+  Intéressés par un moyen d\textquotesingle apprentissage plus
+  interactif et divertissant.
+\end{itemize}
+
+Enseignants et Éducateurs:
+
+\begin{itemize}
+\item
+  Contributeurs potentiels au contenu éducatif.
+\item
+  Intéressés par des outils innovants pour captiver
+  l\textquotesingle attention des élèves.
+\end{itemize}
+
+Parents:
+
+\begin{itemize}
+\item
+  Préoccupés par la performance académique de leurs enfants.
+\item
+  Intéressés par des méthodes d\textquotesingle apprentissage qui
+  rendent l\textquotesingle éducation plus attractive.
+\end{itemize}
+
+Établissements Éducatifs:
+
+\begin{itemize}
+\item
+  Écoles et lycées pourraient intégrer la plateforme dans leurs
+  programmes.
+\item
+  Administrateurs scolaires intéressés par des solutions pédagogiques
+  novatrices.
+\end{itemize}
+
+Experts en Éducation:
+
+\begin{itemize}
+\item
+  Collaborateurs potentiels pour la création de contenu éducatif de
+  qualité.
+\item
+  Peuvent offrir des conseils sur la manière d\textquotesingle adapter
+  le contenu aux besoins des élèves.
+\end{itemize}
+
+Partenaires Publicitaires:
+
+\begin{itemize}
+\item
+  Marques éducatives intéressées par la publicité sur la plateforme.
+\item
+  Peuvent soutenir financièrement le projet en échange
+  d\textquotesingle une visibilité.
+\end{itemize}
+
+Développeurs et Équipe Technique:
+
+\begin{itemize}
+\item
+  Responsables du développement, de la maintenance et de
+  l\textquotesingle amélioration de la plateforme.
+\item
+  Ont un intérêt direct dans le succès technique du projet.
+\end{itemize}
+
+Gouvernement et Organismes Éducatifs:
+
+\begin{itemize}
+\item
+  Peuvent être intéressés par des initiatives innovantes dans le domaine
+  de l\textquotesingle éducation.
+\item
+  Pourraient soutenir le projet par des subventions ou des partenariats.
+\end{itemize}
+
+Groupes de mèmes en lignes:
+
+\begin{itemize}
+\item
+  Des groupes Facebook de partage de mèmes
+\item
+  Potentiellement engagés dans la création et le partage de contenu
+  éducatif sous forme de mèmes.
+\end{itemize}
+
+Communauté en Ligne:
+
+\begin{itemize}
+\item
+  Utilisateurs actifs des réseaux sociaux et des forums en ligne.
+\item
+  Peuvent contribuer au bouche-à-oreille et à la diffusion du projet.
+\end{itemize}
+
+Investisseurs Potentiels:
+
+\begin{itemize}
+\item
+  Personnes ou entreprises intéressées par le financement du projet.
+\item
+  Peuvent fournir des ressources financières pour la croissance et le
+  développement.
+\end{itemize}
+
+\hypertarget{motivation}{%
+\paragraph{Motivation}\label{motivation}}
+
+La motivation derrière notre projet EduMemes réside dans la volonté de
+répondre aux défis actuels de l\textquotesingle éducation en exploitant
+de manière innovante la popularité des médias sociaux, en particulier
+des mèmes. Voici les points clés de la motivation du projet :
+
+\hypertarget{adaptation-aux-pruxe9fuxe9rences-des-uxe9luxe8ves}{%
+\subparagraph{Adaptation aux Préférences des
+élèves}\label{adaptation-aux-pruxe9fuxe9rences-des-uxe9luxe8ves}}
+
+Reconnaître et s\textquotesingle adapter aux préférences des nouvelles
+générations d\textquotesingle apprenants, qui sont fortement influencées
+par les médias sociaux et la culture des mèmes. L\textquotesingle idée
+est de transformer cette influence en une opportunité éducative.
+
+\hypertarget{engagement-ludique-dans-lapprentissage}{%
+\subparagraph{Engagement Ludique dans
+l\textquotesingle Apprentissage}\label{engagement-ludique-dans-lapprentissage}}
+
+Introduire une approche d\textquotesingle apprentissage qui combine
+éducation et divertissement. En utilisant des mèmes, le projet vise à
+rendre l\textquotesingle apprentissage plus ludique, créatif et
+stimulant.
+
+\hypertarget{ruxe9ponse-uxe0-la-duxe9pendance-aux-muxe9dias-sociaux}{%
+\subparagraph{Réponse à la Dépendance aux Médias
+Sociaux}\label{ruxe9ponse-uxe0-la-duxe9pendance-aux-muxe9dias-sociaux}}
+
+Plutôt que de lutter contre la dépendance aux médias sociaux, le projet
+cherche à canaliser cette dépendance de manière positive en offrant un
+contenu éducatif attractif sur une plateforme familière.
+
+\hypertarget{innovation-dans-les-muxe9thodes-denseignement}{%
+\subparagraph{Innovation dans les Méthodes
+d\textquotesingle Enseignement}\label{innovation-dans-les-muxe9thodes-denseignement}}
+
+Introduire une approche novatrice dans l\textquotesingle éducation
+formelle en intégrant des éléments des médias sociaux dans les méthodes
+d\textquotesingle enseignement. Cela peut contribuer à revitaliser
+l\textquotesingle intérêt des apprenants pour les sujets académiques.
+
+\hypertarget{amuxe9lioration-des-performances-scolaires}{%
+\subparagraph{Amélioration des Performances
+Scolaires}\label{amuxe9lioration-des-performances-scolaires}}
+
+L\textquotesingle objectif est d\textquotesingle améliorer les
+performances scolaires en créant un environnement
+d\textquotesingle apprentissage qui encourage la participation active,
+la rétention de l\textquotesingle information et le plaisir
+d\textquotesingle apprendre.
+
+\hypertarget{collaboration-entre-uxe9ducateurs-et-apprenants}{%
+\subparagraph{Collaboration entre Éducateurs et
+Apprenants}\label{collaboration-entre-uxe9ducateurs-et-apprenants}}
+
+Encourager la collaboration entre enseignants et apprenants dans la
+création de contenu éducatif, favorisant ainsi un environnement éducatif
+dynamique et interactif.
+
+\hypertarget{soutien-uxe0-luxe9volution-technologique}{%
+\subparagraph{Soutien à l\textquotesingle Évolution
+Technologique}\label{soutien-uxe0-luxe9volution-technologique}}
+
+Contribuer à combler le fossé entre l\textquotesingle évolution rapide
+de la technologie et les méthodes d\textquotesingle enseignement en
+offrant une plateforme qui intègre les médias sociaux de manière
+constructive.
+
+La motivation fondamentale est de transformer les défis actuels de
+l\textquotesingle éducation en opportunités, en créant une expérience
+d\textquotesingle apprentissage positive et en inspirant les apprenants
+à s\textquotesingle engager activement dans leur éducation.
+
+\hypertarget{section-2-benchmarking}{%
+\subsection{Section 2: Benchmarking}\label{section-2-benchmarking}}
+
+L\textquotesingle objectif de ce benchmark est de fournir une analyse
+qui aidera à identifier les caractéristiques distinctives de chaque
+plateforme:TakiAcademy et Académie Atome.
+
+TakiAcademy et Académie Atome sont deux plateformes éducatives en ligne
+populaires en Tunisie qui offrent aux élèves un moyen
+d\textquotesingle apprendre à leur rythme et de manière interactive.
+
+\hypertarget{pruxe9sentation-des-plateformes-uxe9ducatives-takiacademy-et-acaduxe9mie-atome}{%
+\paragraph{Présentation des plateformes éducatives TakiAcademy et
+Académie
+Atome}\label{pruxe9sentation-des-plateformes-uxe9ducatives-takiacademy-et-acaduxe9mie-atome}}
+
+\hypertarget{a-takiacademy}{%
+\subparagraph{a) TakiAcademy}\label{a-takiacademy}}
+
+TakiAcademy est une plateforme éducative complète qui convient aux
+élèves de tout âge, du primaire au lycée. Elle propose une variété de
+contenus, notamment des cours vidéo, des sessions interactives en direct
+et des exercices.
+
+\begin{quote}
+\includegraphics[width=6.26736in,height=3.05542in]{vertopal_85abb3a450304b88ae85306cdb1ba9f9/media/image17.jpeg}
+
+\textbf{Figure 17: Le site web de TakiAcademy}
+\end{quote}
+
+\hypertarget{a-acaduxe9mie-atome}{%
+\subparagraph{a) Académie Atome}\label{a-acaduxe9mie-atome}}
+
+Académie Atome est une plateforme éducative spécialisée dans
+l\textquotesingle enseignement primaire. Elle propose une variété de
+cours, d\textquotesingle exercices, de tests et de résumés dans un
+format interactif et attrayant.
+
+\begin{quote}
+\includegraphics[width=6.26736in,height=2.61807in]{vertopal_85abb3a450304b88ae85306cdb1ba9f9/media/image19.jpeg}
+\end{quote}
+
+\textbf{Figure 18: Le site web d'Atome}
+
+\hypertarget{uxe9tude-comparative}{%
+\paragraph{Étude comparative}\label{uxe9tude-comparative}}
+
+Table 1 présente une comparaison entre TakiAcademy et Atome Académie.
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3332}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3332}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3336}}@{}}
+\toprule()
+\begin{minipage}[b]{\linewidth}\raggedright
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+TakiAcademy
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Académie Atome
+\end{minipage} \\
+\midrule()
+\endhead
+Type de plateforme & Site web, Application mobile & Site web \\
+Pays & Tunisie & Tunisie \\
+Logo & \begin{minipage}[t]{\linewidth}\raggedright
+\begin{quote}
+\includegraphics[width=1.23903in,height=1.02in]{vertopal_85abb3a450304b88ae85306cdb1ba9f9/media/image21.png}
+
+\textbf{Figure 19: Logo de TakiAcademy}
+\end{quote}
+\end{minipage} & \begin{minipage}[t]{\linewidth}\raggedright
+\begin{quote}
+\includegraphics[width=1.48962in,height=0.42625in]{vertopal_85abb3a450304b88ae85306cdb1ba9f9/media/image22.png}
+\end{quote}
+
+\textbf{Figure 20: Logo d'Atome}
+\end{minipage} \\
+Lien de site web &
+\href{https://www.takiacademy.com/}{\uline{https://www.takiacademy.c}}
+\href{https://www.takiacademy.com/}{\uline{om/}} &
+\href{https://www.atome.tn/}{\uline{https://www.atome.tn/}} \\
+Description & Première plateforme d\textquotesingle enseignement en
+ligne en Tunisie. Fondée en 2013. & plateforme éducative numérique,
+dédiée aux élèves de l'enseignement de base, offrant des leçons dans le
+cadre d'un voyage éducatif et interactif stimulant et agréable. \\
+Application mobile IOS & Non & Non \\
+Application mobile Android & Oui & Non \\
+Évaluations d\textquotesingle applications Android & 4.4 en moyenne (174
+évaluations) & - \\
+Niveaux & 5ème année primaire jusqu\textquotesingle au Bac (toutes les
+sections) & 5ème année et 6ème année primaire \\
+\bottomrule()
+\end{longtable}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3332}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3332}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3336}}@{}}
+\toprule()
+\begin{minipage}[b]{\linewidth}\raggedright
+Type de contenu
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Vidéos enregistrées, sessions interactives en direct, documents PDF et
+des exercices.
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Vidéos enregistrées et exercices interactifs.
+\end{minipage} \\
+\midrule()
+\endhead
+Points forts & La qualité de contenu & la gamification,
+l\textquotesingle utilisation des dessins animés et les personnages en
+3D. \\
+modèle de revenu & abonnement & abonnement \\
+Prix & À partir de 20 dt le mois & À partir de 59 dt le mois \\
+Nombre total de visites pour le mois d'Avril 2024{[}15{]} & 949.65K &
+20.1K \\
+Nombre total de visites pour le mois de Mars 2024{[}15{]} & 449.64K &
+405 \\
+Rang de trafic du site (classement mondial de décembre 2023) & 66,378 &
+- \\
+\bottomrule()
+\end{longtable}
+
+\begin{quote}
+\textbf{Table 1: Étude comparative}
+\end{quote}
+
+\hypertarget{leuxe7ons-cluxe9s-tiruxe9es-de-la-comparaison-des-plateformes-uxe9ducatives-takiacademy-et-acaduxe9mie-atome}{%
+\paragraph{Leçons Clés Tirées de la Comparaison des Plateformes
+Éducatives : TakiAcademy et Académie
+Atome}\label{leuxe7ons-cluxe9s-tiruxe9es-de-la-comparaison-des-plateformes-uxe9ducatives-takiacademy-et-acaduxe9mie-atome}}
+
+En examinant les plateformes éducatives TakiAcademy et Académie Atome,
+on observe des distinctions claires qui les caractérisent et les rendent
+adaptées à des publics et des besoins d\textquotesingle apprentissage
+spécifiques.
+
+TakiAcademy se démarque par sa qualité de contenu élevée, sa réputation
+d\textquotesingle une équipe pédagogique expérimentée et sa large cible
+d\textquotesingle utilisateurs allant du primaire au lycée. La
+disponibilité d\textquotesingle une application Android renforce son
+accessibilité et sa commodité.
+
+En revanche, Académie Atome excelle dans son approche hautement
+interactive et engageante de l\textquotesingle apprentissage,
+spécifiquement conçue pour répondre aux besoins des élèves du primaire.
+Le contenu est soigneusement adapté à leur niveau de compréhension. Ce
+benchmark comparatif nous a permis de tirer des leçons précieuses sur
+les éléments clés qui contribuent au succès d\textquotesingle une
+plateforme éducative. La qualité du contenu, l\textquotesingle expertise
+des enseignants, la largeur de la cible, l\textquotesingle accessibilité
+et l\textquotesingle adaptabilité aux besoins spécifiques des apprenants
+sont tous des facteurs essentiels à prendre en compte. En combinant ces
+éléments de manière efficace, notre plateforme éducative peut offrir une
+expérience d\textquotesingle apprentissage enrichissante et stimulante
+pour les élèves de tous âges et de tous horizons.
+
+\hypertarget{amuxe9liorations-potentielles}{%
+\paragraph{Améliorations
+potentielles}\label{amuxe9liorations-potentielles}}
+
+Si TakiAcademy et Académie Atome proposent toutes deux des solutions
+éducatives intéressantes, il existe également des aspects à améliorer
+pour répondre pleinement aux besoins d\textquotesingle apprentissage de
+la génération Z.
+
+Un manque d\textquotesingle accent sur les applications mobiles: Bien
+que TakiAcademy dispose d\textquotesingle une application Android,
+aucune application IOS n\textquotesingle est disponible pour le moment.
+Or, la génération Z est hyper connectée et passe une grande partie de
+son temps sur les Smartphones et tablettes. Proposer des applications
+mobiles natives IOS et Android est crucial pour une meilleure
+accessibilité et une expérience d\textquotesingle apprentissage plus
+fluide.
+
+Besoin d\textquotesingle intégration des réseaux sociaux et des mèmes:
+La génération Z est habituée à interagir et à consommer de
+l\textquotesingle information via les réseaux sociaux et les mèmes.
+L\textquotesingle intégration de ces éléments dans les plateformes
+éducatives pourrait être un moyen innovant pour capter leur attention et
+rendre l\textquotesingle apprentissage ludique et engageant. Des
+contenus inspirés des mèmes, reprenant des concepts clés des cours sous
+une forme humoristique et visuelle, pourraient également améliorer la
+mémorisation et la compréhension.
+
+En tenant compte de ces lacunes et en intégrant des éléments appréciés
+par la génération Z, notre plateforme éducative peut créer une
+expérience d\textquotesingle apprentissage plus stimulante et plus
+connectée pour les élèves d\textquotesingle aujourd\textquotesingle hui.
+
+\hypertarget{section-3-discussion-avec-un-inspecteur-de-luxe9ducation}{%
+\subsection{Section 3: Discussion avec un inspecteur de
+l\textquotesingle éducation}\label{section-3-discussion-avec-un-inspecteur-de-luxe9ducation}}
+
+Lors de mon échange avec M. Belgacem, inspecteur de
+l\textquotesingle éducation, j\textquotesingle ai eu
+l\textquotesingle occasion de lui exposer mon idée. Il a manifesté un
+grand intérêt pour le projet et m\textquotesingle a fortement encouragé
+à le réaliser.
+
+Il m\textquotesingle a cité cette phrase inspirante de Benjamin Franklin
+: «Dis-moi et j\textquotesingle oublierai, montre- moi et je me
+souviendrai, implique-moi et j\textquotesingle apprendrai. » Selon M.
+Belgacem, il existe trois niveaux d\textquotesingle apprentissage :
+auditif, visuel et kinesthésique. Mon idée exploite les aspects visuels
+et auditifs, qui sont d\textquotesingle une importance capitale.
+
+M. Belgacem m\textquotesingle a également conseillé de déterminer avant
+tout le niveau scolaire sur lequel concentrer mes efforts, que ce soit
+le primaire ou le secondaire, car les approches pédagogiques diffèrent
+significativement entre ces deux niveaux. En primaire, nous établissons
+les bases logiques de l\textquotesingle apprentissage chez
+l\textquotesingle enfant, ce qui est plus complexe. Par exemple, il est
+nécessaire d\textquotesingle enseigner ce qu\textquotesingle est la
+multiplication et pourquoi l\textquotesingle on utilise 7*3 au lieu de
+7+7+7. En revanche, au niveau secondaire, les concepts enseignés sont
+plus avancés et construisent sur les bases établies en primaire. Il est
+donc crucial de définir clairement le niveau
+d\textquotesingle intervention afin d\textquotesingle adapter les
+méthodes pédagogiques de manière appropriée.
+
+Nous avons décidé de concentrer notre projet sur les niveaux
+secondaires. Cette approche est particulièrement pertinente pour les
+intérêts des élèves de cette tranche d\textquotesingle âge, notamment
+les générations de TikTok (génération Z et génération Alpha), ce qui en
+fait une cible idéale. Comme l\textquotesingle a recommandé M. Belgacem,
+il est en effet plus avantageux de travailler sur les niveaux
+secondaires. Pour développer un prototype efficace, il est essentiel de
+sélectionner un niveau scolaire et une matière spécifiques. Suite à une
+discussion avec mon encadrante, Madame Lamia, nous avons choisi de nous
+focaliser sur les élèves de 9ème année et sur la matière des Sciences de
+la Vie et de la Terre (SVT).
+
+\hypertarget{section-4-business-model-canvas}{%
+\subsection{Section 4: Business model
+canvas}\label{section-4-business-model-canvas}}
+
+Le Business Model Canvas (BMC) est un outil stratégique de gestion conçu
+pour explorer de nouvelles idées de projet ou pour documenter des
+modèles économiques existants. Ce modèle décrit comment une organisation
+crée, délivre et capture la valeur. En fournissant aux porteurs de
+projets une vue d\textquotesingle ensemble de leur activité, le BMC met
+en lumière les compromis et défis potentiels, facilitant ainsi la
+compréhension et l\textquotesingle innovation stratégique.
+
+Il y existe 9 éléments essentiels qui composent un Business Model Canvas
+(BMC), énoncés comme suit :
+
+\begin{itemize}
+\item
+  Activités clés : les actions les plus importantes pour que le modèle
+  fonctionne.
+\item
+  Partenariats clés : réseau de partenaires et de fournisseurs pour que
+  le modèle fonctionne.
+\item
+  Segments de clients : Les différents groupes de clients visés par
+  l\textquotesingle entreprise.
+\item
+  Proposition de valeur : Les produits ou services offerts par
+  l\textquotesingle entreprise qui répondent aux besoins des clients.
+\item
+  Canaux de distribution: la manière dont l'entreprise communique et
+  entre en contact avec ses clients.
+\item
+  Relations avec la clientèle : Les interactions entre
+  l\textquotesingle entreprise et ses clients pour assurer leur
+  satisfaction et fidélité.
+\item
+  Flux de revenus : Les différentes sources de revenus générés par
+  l\textquotesingle entreprise à partir de ses activités.
+\item
+  Ressources clés : Les actifs et ressources essentiels nécessaires à la
+  réalisation du modèle économique.
+\item
+  Structure des coûts : tous les coûts liés au modèle.
+\end{itemize}
+
+La figure 21 présente le Business Model Canvas (BMC) de notre
+plateforme.
+
+\begin{quote}
+\includegraphics[width=8.64343in,height=5.27625in]{vertopal_85abb3a450304b88ae85306cdb1ba9f9/media/image23.jpeg}
+
+\textbf{Figure 21: Business Model Canvas d' EduMemes}
+\end{quote}
+
+EduMemes présente une proposition de valeur axée sur
+l\textquotesingle offre d\textquotesingle une plateforme éducative
+innovante et divertissante utilisant des mèmes. Cette approche vise à
+rendre l\textquotesingle apprentissage agréable et mémorable tout en
+améliorant les performances académiques des élèves.
+
+Les activités clés de la plateforme incluent le développement et la
+maintenance de la plateforme, la création et la mise à jour régulière du
+contenu éducatif, ainsi que la promotion et le marketing sur les réseaux
+sociaux. Pour réaliser ces activités, les ressources essentielles
+comprennent notre équipe de développement informatique, les experts en
+éducation pour créer un contenu pédagogique pertinent, et des
+partenariats avec les enseignants et les établissements éducatifs.
+
+Les partenaires clés sont les enseignants et éducateurs pour contribuer
+au contenu éducatif, les écoles et les établissements éducatifs pour
+intégrer la plateforme dans le programme, et les marques éducatives pour
+des partenariats publicitaires.
+
+Les segments de clients cibles sont les élèves du primaire et du
+secondaire, les parents soucieux de l\textquotesingle éducation de leurs
+enfants, et les professeurs ou formateurs souhaitant enrichir leurs
+cours privés avec des mèmes et du contenu multimédia.
+
+Les relations avec les clients sont maintenues via un support en ligne,
+des retours d\textquotesingle expérience des enseignants et des élèves,
+des fonctionnalités de commentaires et d\textquotesingle interactions
+sur la plateforme, et des groupes de mèmes sur Facebook.
+
+Les canaux de distribution incluent le site web (edu.memes.tn) et
+l\textquotesingle application mobile, des partenariats avec les
+établissements éducatifs, et les réseaux sociaux.
+
+La structure de coûts se concentre sur le développement et la
+maintenance de la plateforme, la rémunération des experts en éducation,
+et les frais de marketing et de promotion. Les sources de revenus
+proviennent d\textquotesingle un modèle freemium avec une version de
+base gratuite et des contenus et des fonctionnalités premium payantes,
+ainsi que des commissions sur les paiements pour les cours privés ou le
+contenu éducatif vendu via la plateforme.
+
+\hypertarget{conclusion}{%
+\subsection{Conclusion}\label{conclusion}}
+
+Ce chapitre a offert une vue d\textquotesingle ensemble stratégique de
+notre projet EduMemes. Nous avons clarifié les objectifs de
+développement durable (ODD) pertinents et identifié les parties
+prenantes clés. les motivations du projet ont été explorés pour mieux
+comprendre les forces motrices derrière notre initiative. La
+présentation du Business Model Canvas (BMC) a détaillé les aspects
+structurels et économiques de notre solution. Enfin, le benchmarking a
+permis de situer EduMemes dans le paysage actuel et
+d\textquotesingle identifier des pratiques exemplaires pour guider notre
+développement futur.
+
+\hypertarget{chapitre-3-pruxe9paration-et-planification}{%
+\section{Chapitre 3: Préparation et
+planification}\label{chapitre-3-pruxe9paration-et-planification}}
+
+\hypertarget{section-4}{%
+\section{}\label{section-4}}
+
+\hypertarget{introduction-2}{%
+\subsection{Introduction}\label{introduction-2}}
+
+Dans ce troisième chapitre, nous détaillons les préparations initiales
+essentielles pour le lancement du projet "EduMemes". Nous abordons
+l\textquotesingle enregistrement de l\textquotesingle idée pour la
+protéger, l\textquotesingle enregistrement du nom de domaine, ainsi que
+la création de la charte graphique. La deuxième partie du chapitre se
+concentre sur la conception et la planification du backlog du produit
+ainsi que des sprints.
+
+\hypertarget{section-1-pruxe9paration-initiale}{%
+\subsection{Section 1: Préparation
+Initiale}\label{section-1-pruxe9paration-initiale}}
+
+\hypertarget{enregistrement-de-concept}{%
+\paragraph{Enregistrement de concept}\label{enregistrement-de-concept}}
+
+L\textquotesingle enregistrement de notre idée auprès de
+l\textquotesingle OTDAV est essentiel pour assurer la protection légale
+de notre propriété intellectuelle.
+
+\hypertarget{lotdav}{%
+\subparagraph{L'OTDAV}\label{lotdav}}
+
+L'Organisme Tunisien des Droits d'Auteur et des Droits Voisins (OTDAV)
+est un établissement public placé sous la tutelle du Ministère de la
+Culture.
+
+L'OTDAV est un organisme multidisciplinaire de gestion collective des
+droits d'auteur et des droits voisins. {[}16{]}
+
+\begin{quote}
+\textbf{Localisation:}7 Avenue Mohamed Melki, 1005 El Omrane Tunis
+Tunisia
+
+\textbf{Site web:}\uline{http://www.otdav.tn}
+\end{quote}
+
+\hypertarget{le-droit-dauteur}{%
+\subparagraph{Le Droit
+d\textquotesingle Auteur}\label{le-droit-dauteur}}
+
+Le Droit d\textquotesingle Auteur englobe les droits moraux et
+patrimoniaux accordés aux créateurs d\textquotesingle œuvres
+littéraires, artistiques ou scientifiques.
+
+C\textquotesingle est le droit exclusif qui est accordé au titulaire
+d\textquotesingle une œuvre originale d\textquotesingle exploiter ou
+d\textquotesingle autoriser à autrui d\textquotesingle exploiter son
+œuvre.
+
+Il est strictement interdit à toute personne de communiquer, publier ou
+produire une œuvre appartenant à autrui d\textquotesingle une manière ou
+dans des conditions qui violent les droits patrimoniaux et moraux de
+l\textquotesingle auteur.
+
+L\textquotesingle auteur a le droit de recevoir une rémunération pour
+l\textquotesingle utilisation de son œuvre. {[}17{]}
+
+\hypertarget{les-ux153uvres-protuxe9guxe9es}{%
+\subparagraph{Les Œuvres
+Protégées}\label{les-ux153uvres-protuxe9guxe9es}}
+
+Une œuvre fait référence à une création artistique, littéraire,
+musicale, cinématographique, ou toute autre forme
+d\textquotesingle expression intellectuelle originale. Cela peut inclure
+des livres, des peintures, des sculptures, des compositions musicales,
+des films, des logiciels, des photographies, des œuvres architecturales,
+etc. {[}18{]}
+
+\hypertarget{duxe9puxf4t-des-ux153uvres}{%
+\subparagraph{Dépôt des œuvres}\label{duxe9puxf4t-des-ux153uvres}}
+
+Les créateurs ont accès à un service de dépôt des œuvres fourni par
+l'OTDAV. En cas de litige, ce dépôt offre la possibilité de présenter
+aux juges un élément de preuve initial démontrant
+l\textquotesingle antériorité du document et l\textquotesingle identité
+de son auteur.
+
+En cas de litige, la détermination de la paternité et de
+l\textquotesingle originalité de l\textquotesingle œuvre relève
+exclusivement des tribunaux et l'OTDAV, n'est que le dépositaire de
+l'œuvre. {[}19{]}
+
+\hypertarget{enregistrement-du-nom-de-domaine}{%
+\paragraph{Enregistrement du nom de
+domaine}\label{enregistrement-du-nom-de-domaine}}
+
+L\textquotesingle enregistrement du nom de domaine est essentiel pour
+établir une présence en ligne. C'est une étape fondamentale dans la
+création de notre plateforme.
+
+\hypertarget{duxe9finition-dun-nom-de-domaine}{%
+\subparagraph{Définition d'un nom de
+domaine}\label{duxe9finition-dun-nom-de-domaine}}
+
+Un nom de domaine est l\textquotesingle adresse que les utilisateurs
+saisissent dans la barre de recherche d\textquotesingle un navigateur
+afin d\textquotesingle accéder directement à un site web.
+
+Les sites web sont identifiés par des adresses IP, une série de numéros
+unique. Les noms de domaine ont été créés car les adresses IP sont trop
+compliquées à mémoriser. Cependant, pour faciliter
+l\textquotesingle accès aux sites, les noms de domaine ont été créés. Au
+lieu de se souvenir des adresses IP complexes, les utilisateurs peuvent
+simplement saisir un nom facilement reconnaissable pour accéder à un
+site web.
+
+Un nom de domaine est unique et ne peut être partagé entre différents
+sites. {[}20{]}
+
+\hypertarget{la-structure-dun-nom-de-domaine}{%
+\subparagraph{La structure d'un nom de
+domaine}\label{la-structure-dun-nom-de-domaine}}
+
+Le nom de domaine est composé de plusieurs parties, séparées par des
+points:
+
+\begin{itemize}
+\item
+  Le domaine ou SLD (Second-Level Domain) ou domaine de deuxième niveau:
+  c\textquotesingle est le nom du site. Il représente généralement le
+  nom de l\textquotesingle entreprise, de
+  l\textquotesingle organisation, du produit ou du service associé au
+  site web. Le SLD peut contenir des lettres, des chiffres et des tirets
+  (-), à l\textquotesingle exception du premier ou du dernier caractère.
+\item
+  Le suffixe: correspond au domaine de premier niveau, aussi appelé
+  extension de nom de domaine, il peut être générique (comme .com, .org,
+  .net) ou spécifique à un pays (comme .tn, .fr, .us)
+\item
+  Le sub-domaine (Third-Level Domain) ou domaine de troisième niveau:
+  représente une partie spécifique ou une section particulière du
+  domaine principal. {[}21{]}
+\end{itemize}
+
+Exemples: ``essect.rnu.tn'' , ``isetch.rnu.tn'' et ``edu.mèmes.tn''
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3335}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3333}}@{}}
+\toprule()
+\begin{minipage}[b]{\linewidth}\raggedright
+essect
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+rnu
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+tn
+\end{minipage} \\
+\midrule()
+\endhead
+edu & mèmes & tn \\
+Sub-domaine & Domaine (SLD) & Suffixe ou extension \\
+\bottomrule()
+\end{longtable}
+
+\begin{quote}
+\textbf{Table 2: La structure d'un nom de domaine}
+\end{quote}
+
+\hypertarget{choix-de-nom-de-domaine}{%
+\subparagraph{Choix de nom de domaine}\label{choix-de-nom-de-domaine}}
+
+\begin{itemize}
+\item ~
+  \hypertarget{choisir-un-nom-de-domaine-simple}{%
+  \subparagraph{Choisir un nom de domaine
+  simple}\label{choisir-un-nom-de-domaine-simple}}
+\end{itemize}
+
+\begin{quote}
+Il est préférable de choisir un nom de domaine court ou composé de deux
+mots au maximum, avec des tirets pour les séparer si nécessaire. Cela
+présente plusieurs avantages :
+\end{quote}
+
+\begin{itemize}
+\item
+  \begin{quote}
+  Faciliter la mémorisation
+  \end{quote}
+\item
+  \begin{quote}
+  Simplification de la saisie (minimiser les erreurs de saisie)
+  \end{quote}
+\item
+  Faciliter le partage (facile à transmettre et à communiquer aux
+  autres)
+\end{itemize}
+
+\begin{itemize}
+\item ~
+  \hypertarget{choix-de-domaine-ou-sld}{%
+  \subparagraph{Choix de domaine ou SLD}\label{choix-de-domaine-ou-sld}}
+\end{itemize}
+
+\begin{quote}
+Il est conseillé d\textquotesingle intégrer le nom de la marque dans le
+nom de domaine. Cette pratique renforce l\textquotesingle identité de la
+marque et facilite sa reconnaissance en ligne. Cependant, ce
+n\textquotesingle est pas une obligation. Nous avons également la
+possibilité de prendre en considération des mots-clés pertinents liés à
+notre activité pour créer un nom de domaine unique et évocateur.
+L\textquotesingle objectif est de choisir un nom de domaine mémorable et
+en accord avec l\textquotesingle image de notre projet.
+\end{quote}
+
+\begin{itemize}
+\item ~
+  \hypertarget{choix-de-lextension}{%
+  \subparagraph{Choix de l'extension}\label{choix-de-lextension}}
+\end{itemize}
+
+\begin{quote}
+Le choix de l\textquotesingle extension de nom de domaine dépend de
+plusieurs facteurs, tels que le type d\textquotesingle activité, la
+cible géographique et les objectifs du site web.
+
+Voici quelques considérations à prendre en compte lors du choix
+d\textquotesingle une extension de nom de domaine :
+\end{quote}
+
+\begin{itemize}
+\item
+  Géographie : Si le site web est destiné à un public spécifique dans un
+  pays ou une région particulière, il peut être judicieux
+  d\textquotesingle opter pour une extension de domaine géographique
+  spécifique à ce pays. Par exemple, .tn pour la Tunisie et .fr pour la
+  France.
+\item
+  Type d\textquotesingle activité : Certains domaines sont
+  spécifiquement conçus pour des industries ou des types
+  d\textquotesingle activités particuliers. Par exemple, .edu est
+  utilisé par les établissements d\textquotesingle enseignement, .gov
+  pour les entités gouvernementales, .org pour les organisations à but
+  non lucratif et .com pour les entreprises commerciales.
+\end{itemize}
+
+\begin{quote}
+``.com'' est l\textquotesingle extension la plus populaire.
+\end{quote}
+
+\begin{itemize}
+\item ~
+  \hypertarget{la-disponibilituxe9-de-nom-de-domaine}{%
+  \subparagraph{La disponibilité de nom de
+  domaine}\label{la-disponibilituxe9-de-nom-de-domaine}}
+\end{itemize}
+
+\begin{quote}
+Il est nécessaire de vérifier la disponibilité du nom de domaine que
+vous souhaitez enregistrer. Utilisez des outils de recherche de noms de
+domaine en ligne pour vérifier la disponibilité et obtenir des
+suggestions d\textquotesingle alternatives si nécessaire.
+
+La figure suivante illustre un exemple.
+\end{quote}
+
+\includegraphics[width=4.98847in,height=2.25486in]{vertopal_85abb3a450304b88ae85306cdb1ba9f9/media/image24.jpeg}
+
+\begin{quote}
+\textbf{Figure 22: Vérification de la disponibilité d\textquotesingle un
+nom de domaine sur le site OVH Cloud}
+\end{quote}
+
+\hypertarget{ruxe9servation-de-notre-nom-de-domaine}{%
+\subparagraph{Réservation de notre nom de
+domaine}\label{ruxe9servation-de-notre-nom-de-domaine}}
+
+Pour réserver notre nom de domaine, nous avons tout
+d\textquotesingle abord choisi un fournisseur de services
+d\textquotesingle enregistrement de noms de domaine. Parmi les nombreux
+fournisseurs populaires tels que Zenhosting, GoDaddy, OVH cloud, etc.,
+nous avons opté pour Zenhosting, étant donné que nous sommes des anciens
+clients chez eux.
+
+Afin de réserver un nom de domaine chez Zenhosting, nous avons visité
+l\textquotesingle URL
+"\href{https://www.zenhosting.tn/noms-de-domaines/}{\uline{https://www.zenhosting.tn/noms-de-domaines/}}".
+
+\begin{quote}
+\includegraphics[width=6.27082in,height=1.52292in]{vertopal_85abb3a450304b88ae85306cdb1ba9f9/media/image26.png}
+
+\textbf{Figure 23: Recherche de nom de domaine sur Zenhosting}
+\end{quote}
+
+Tout d\textquotesingle abord, nous avons effectué une recherche pour
+trouver le nom de domaine que nous souhaitons enregistrer. Nous avons
+opté pour "mèmes.tn" puisqu\textquotesingle il était disponible à
+l\textquotesingle enregistrement. De plus, nous utiliserons le
+sous-domaine "edu" dans notre projet, ce qui fait que le nom de domaine
+de notre projet est "edu.mèmes.tn".
+
+\hypertarget{la-charte-graphique}{%
+\paragraph{La charte graphique}\label{la-charte-graphique}}
+
+La charte graphique est un document qui définit les règles pour utiliser
+les éléments visuels d\textquotesingle une entreprise (couleurs,
+typographies, logo, etc.). Elle assure la cohérence de
+l\textquotesingle identité visuelle sur tous les supports de
+communication.{[}22{]}
+
+\hypertarget{les-principaux-composants-dune-charte-graphique}{%
+\subparagraph{Les principaux composants d\textquotesingle une charte
+graphique}\label{les-principaux-composants-dune-charte-graphique}}
+
+-La palette de couleurs
+
+-Le logo
+
+-Les icones
+
+-La typographie
+
+\hypertarget{la-palette-de-couleurs}{%
+\subparagraph{La palette de couleurs}\label{la-palette-de-couleurs}}
+
+\includegraphics[width=5.31719in,height=1.42104in]{vertopal_85abb3a450304b88ae85306cdb1ba9f9/media/image27.png}
+
+\begin{quote}
+\textbf{Figure 24: La palette de couleurs principales du projet
+EduMemes}
+\end{quote}
+
+Nous avons choisi les couleurs bleu et blanc pour notre palette de
+couleurs dans notre charte graphique, basé sur une étude publiée dans
+l\textquotesingle''American Research Journal of
+
+Humanities and Social Sciences''{[}23{]}. Cette étude a démontré que la
+couleur bleue symbolise l\textquotesingle activité officielle, la
+confiance et la responsabilité. Ces attributs sont essentiels pour
+donner à notre plateforme une apparence professionnelle. En utilisant le
+bleu, nous voulons que les utilisateurs perçoivent notre plateforme
+comme une entité sérieuse comparable à un ministère officiel.
+
+De plus, le blanc est une couleur qui incarne l\textquotesingle élégance
+et l\textquotesingle intelligence. Elle apporte une touche de pureté et
+de simplicité à notre charte graphique, rendant notre communication
+visuelle claire et raffinée. Le blanc permet également de créer un
+contraste harmonieux avec le bleu, renforçant ainsi
+l\textquotesingle impact visuel de notre palette de couleurs. Ensemble,
+le bleu et le blanc confèrent à notre plateforme une image à la fois
+moderne et institutionnelle, inspirant confiance et professionnalisme
+auprès de nos utilisateurs, tout en apportant une touche de légèreté et
+d\textquotesingle humour propre à l\textquotesingle univers des mèmes.
+
+\hypertarget{le-logo}{%
+\subparagraph{Le logo}\label{le-logo}}
+
+\includegraphics[width=3.25495in,height=2.42937in]{vertopal_85abb3a450304b88ae85306cdb1ba9f9/media/image28.png}
+
+\begin{quote}
+\textbf{Figure 25: Logo d'EduMemes}
+\end{quote}
+
+Le choix du type de logo s\textquotesingle est porté sur la combinaison,
+c\textquotesingle est-à-dire qu\textquotesingle il est basé sur la
+combinaison d\textquotesingle une image avec le nom de notre projet,
+afin de renforcer son identité et de le rendre mémorable.
+
+Des exemples de marques qui utilisent le type de logo combiné sont
+Adidas, Lacoste et Adobe.
+
+\hypertarget{icuxf4ne-de-ledumemes}{%
+\subparagraph{Icône de l'EduMemes}\label{icuxf4ne-de-ledumemes}}
+
+L\textquotesingle icône d\textquotesingle EduMemes représente une
+version simplifiée de son logo
+
+\begin{quote}
+\includegraphics[width=2.1875in,height=2.1875in]{vertopal_85abb3a450304b88ae85306cdb1ba9f9/media/image29.png}
+
+\textbf{Figure 26: Icône d'EduMemes}
+\end{quote}
+
+\hypertarget{section-2-planification-de-la-ruxe9alisation}{%
+\subsection{Section 2: Planification de la
+réalisation}\label{section-2-planification-de-la-ruxe9alisation}}
+
+\hypertarget{luxe9quipe-fondatrice}{%
+\subparagraph{L'équipe fondatrice}\label{luxe9quipe-fondatrice}}
+
+Notre équipe fondatrice se compose de deux membres passionnés et
+complémentaires :
+
+\begin{itemize}
+\item
+  M. LouayGuetat, ingénieur en informatique spécialisé en data science,
+  développeur web full-stack maîtrisant les langages et frameworks
+  modernes. Il poursuit également une formation continue dans les
+  nouvelles technologies en intelligence artificielle.
+\item
+  Moi, Mouhamed NourdineGuitouni, développeur mobile (iOS et Android),
+  graphic designer et digital marketer, passionné par les mèmes, le
+  montage vidéo, l\textquotesingle histoire et les sciences.
+\end{itemize}
+
+Nous partageons une vision commune et une profonde conviction dans le
+potentiel de notre projet. Notre collaboration repose sur la confiance,
+une communication ouverte et la complémentarité de nos compétences. Nous
+sommes déterminés à transformer ce projet en une réussite et à exploiter
+pleinement son potentiel de croissance.
+
+À la phase de développement, mon rôle principal consiste à créer la
+maquette du site web et de l\textquotesingle application mobile, ainsi
+qu\textquotesingle à développer la version mobile de notre plateforme.
+C\textquotesingle est pourquoi les sections suivantes se concentrent
+principalement sur l\textquotesingle application mobile de notre projet.
+
+\hypertarget{les-acteurs-de-la-plateforme}{%
+\subparagraph{Les acteurs de la
+plateforme}\label{les-acteurs-de-la-plateforme}}
+
+Le bon fonctionnement de la plateforme repose sur la participation de
+divers acteurs, chacun jouant un rôle essentiel. Les principaux
+intervenants sont :
+
+\begin{itemize}
+\item
+  L'apprenant : l\textquotesingle utilisateur principal de notre
+  solution, qui utilise la plateforme pour accéder au contenu éducatif,
+  interagir avec les informations et les mèmes pédagogiques.
+\item
+  L'enseignant : responsable de la création et de la mise à jour des
+  informations et du contenu des chapitres, assurant ainsi la qualité et
+  la pertinence des ressources éducatives.
+\item
+  Le créateur de mèmes : chargé de concevoir et de gérer les mèmes, en
+  s\textquotesingle assurant qu\textquotesingle ils sont à la fois
+  éducatifs et engageants.
+\item
+  L'administrateur de contenu : administrateur responsable de
+  l\textquotesingle organisation et de la gestion des matières, des
+  chapitres et de leurs contenus, garantissant une structure cohérente
+  et accessible.
+\item
+  L'administrateur : en charge de la gestion des privilèges et des
+  autorisations des utilisateurs, assurant ainsi la sécurité et la
+  confidentialité des données.
+
+  \begin{enumerate}
+  \def\labelenumi{\arabic{enumi}.}
+  \item ~
+    \hypertarget{la-hiuxe9rarchie-des-ruxf4les}{%
+    \subparagraph{La hiérarchie des
+    rôles}\label{la-hiuxe9rarchie-des-ruxf4les}}
+  \end{enumerate}
+\end{itemize}
+
+La hiérarchie des rôles est présentée dans la figure :
+
+\includegraphics[width=6.02061in,height=5.50208in]{vertopal_85abb3a450304b88ae85306cdb1ba9f9/media/image30.png}
+
+\begin{quote}
+\textbf{Figure 27: Hiérarchie des rôles}
+\end{quote}
+
+\hypertarget{diagramme-de-cas-dutilisation-global}{%
+\subparagraph{Diagramme de cas d'utilisation
+global}\label{diagramme-de-cas-dutilisation-global}}
+
+Le diagramme de cas d'utilisation fournit une vue
+d\textquotesingle ensemble du comportement fonctionnel d'un système
+logiciel. L'administrateur assigne des tâches aux utilisateurs en leur
+accordant des privilèges d'accès à leurs espaces.
+
+La figure ci-dessous illustre le diagramme de cas d'utilisation général
+de l'application
+
+\begin{quote}
+\includegraphics[width=5.91986in,height=6.96062in]{vertopal_85abb3a450304b88ae85306cdb1ba9f9/media/image31.png}
+
+\textbf{Figure 28: Diagramme de cas d'utilisation global}
+\end{quote}
+
+\hypertarget{diagramme-de-classes}{%
+\subparagraph{Diagramme de classes}\label{diagramme-de-classes}}
+
+Le diagramme de classes fournit une représentation détaillée de la
+structure du système logiciel. Il met en évidence les différentes
+classes, leurs attributs, leurs méthodes et les relations entre elles,
+offrant ainsi une vue d\textquotesingle ensemble de
+l\textquotesingle architecture du système.
+
+La figure ci-dessous présente le diagramme de classes global de
+l\textquotesingle application, illustrant les principales classes et
+leurs interactions
+
+\begin{quote}
+\includegraphics[width=6.66933in,height=5.9125in]{vertopal_85abb3a450304b88ae85306cdb1ba9f9/media/image32.png}
+
+\textbf{Figure 29: Diagramme de classes}
+\end{quote}
+
+\hypertarget{backlog-du-produit-et-planification-des-sprints}{%
+\subparagraph{Backlog du produit et planification des
+sprints}\label{backlog-du-produit-et-planification-des-sprints}}
+
+La backlog du produit et la planification des sprints constituent
+l\textquotesingle épine dorsale du développement de notre plateforme en
+assurant une approche organisée et itérative pour atteindre nos
+objectifs.
+
+Backlog du produit
+
+Table2 représente le backlog du produit de notre application :
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.8076}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.1151}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.0773}}@{}}
+\toprule()
+\multicolumn{3}{@{}>{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{1.0000} + 4\tabcolsep}@{}}{%
+\begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Product backlog}
+\end{minipage}} \\
+\midrule()
+\endhead
+\textbf{User Story} & \textbf{Priorité} & \textbf{UE} \\
+En tant qu\textquotesingle utilisateur, je peux
+m\textquotesingle inscrire sur la plateforme afin de personnaliser mon
+expérience. & 1 & 13 \\
+En tant qu'administrateur d\textquotesingle accès, je peux gérer les
+privilèges des utilisateurs à fin de m\textquotesingle assurer que
+seules les personnes autorisées ont accès aux fonctionnalités critiques
+de l\textquotesingle application. & 2 & 40 \\
+En tant qu'administrateur de contenu, je peux gérer les tables de base
+afin d'organiser le contenu et l'adapter au programme du ministère de
+l\textquotesingle Éducation. & 3 & 40 \\
+En tant qu'enseignant, je peux gérer le contenu pour assurer sa qualité
+afin de maintenir des normes élevées pour l\textquotesingle éducation. &
+4 & 13 \\
+En tant que créateur de mèmes, je peux gérer les mèmes afin de les
+rendre plus pertinents et amusants, tout en répondant aux tendances et
+aux attentes des enseignants et des apprenants. & 5 & 13 \\
+En tant qu\textquotesingle apprenant, je peux parcourir le contenu par
+matière et niveau et je peux utiliser la fonction ``Swipe'' pour
+naviguer afin de trouver facilement des informations éducatives et
+rendre l\textquotesingle expérience éducative interactive et engageante.
+& 6 & 40 \\
+En tant qu\textquotesingle apprenant, je peux interagir avec le contenu
+pour favoriser l\textquotesingle échange et le partage
+d\textquotesingle opinions. & 7 & 13 \\
+En tant que créateur de contenu (enseignant ou créateur de mèmes), je
+peux suivre les feedbacks afin d'améliorer le contenu et de répondre aux
+questions des apprenants. & 8 & 20 \\
+\bottomrule()
+\end{longtable}
+
+\begin{quote}
+\textbf{Table 3: Planification des sprints}
+\end{quote}
+
+Planification des sprints
+
+La planification des sprints est une étape indispensable pour la gestion
+du projet, après avoir détaillé le backlog du produit on passera au
+découpage en sprints.
+
+Table 4 représente le découpage du travail en sprints.
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.2685}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.5134}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.2181}}@{}}
+\toprule()
+\begin{minipage}[b]{\linewidth}\raggedright
+Sprint
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Cas d'utilisation
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Estimation
+\end{minipage} \\
+\midrule()
+\endhead
+Sprint 1 & S\textquotesingle authentifier Gérer accès
+
+Gérer tables de base & 30 jours \\
+Sprint 2 & Gérer contenu Consommer Contenu Suivre les feedbacks & 30
+jours \\
+\bottomrule()
+\end{longtable}
+
+\begin{quote}
+\textbf{Table 4: Planification des sprints}
+\end{quote}
+
+\hypertarget{conclusion-1}{%
+\subsection{Conclusion}\label{conclusion-1}}
+
+Ce chapitre a permis d\textquotesingle établir les bases essentielles de
+notre projet EduMemes. De l\textquotesingle enregistrement initial de
+l\textquotesingle idée à la conception détaillée du backlog du produit
+et des sprints. Nous sommes maintenant prêts à passer à la phase
+suivante du développement, armés d\textquotesingle une stratégie solide
+et claire.
+
+\hypertarget{chapitre-4-impluxe9mentation-dun-prototype}{%
+\section{Chapitre 4: Implémentation d'un
+prototype}\label{chapitre-4-impluxe9mentation-dun-prototype}}
+
+\hypertarget{section-5}{%
+\section{}\label{section-5}}
+
+\hypertarget{introduction-3}{%
+\subsection{Introduction}\label{introduction-3}}
+
+Dans ce dernier chapitre, notre objectif est de détailler la mise en
+œuvre pratique du projet. Nous allons passer en revue le travail concret
+effectué ainsi que la mise en place des différentes composantes de notre
+application.
+
+\begin{quote}
+\protect\hypertarget{_bookmark22}{}{}\textbf{Section 1: Technologies et
+Outils}
+\end{quote}
+
+Cette section détaille les différentes technologies et outils utilisés
+dans le développement de notre projet, en mettant
+l\textquotesingle accent sur les aspects de design, de développement et
+de gestion des données.
+
+\hypertarget{outils-de-design}{%
+\paragraph{Outils de design}\label{outils-de-design}}
+
+Pour garantir une interface utilisateur attrayante et une expérience
+utilisateur optimale, nous avons utilisé des outils de design de pointe.
+
+\hypertarget{photoshop}{%
+\subparagraph{Photoshop}\label{photoshop}}
+
+Photoshop est un outil essentiel pour la création de designs visuels de
+haute qualité. Nous l\textquotesingle avons utilisé pour créer les
+images qui constituent l\textquotesingle interface de notre application.
+
+La figure ci-dessous illustre un exemple de la création
+d\textquotesingle images pour les matières d\textquotesingle EduMemes
+avec Photoshop, en combinant des images liées à chaque matière avec des
+mèmes.
+
+\includegraphics[width=6.09636in,height=2.7775in]{vertopal_85abb3a450304b88ae85306cdb1ba9f9/media/image33.png}
+
+\begin{quote}
+\textbf{Figure 30: Création d\textquotesingle une image de matière
+Histoire avec Photoshop}
+\end{quote}
+
+\hypertarget{adobe-xd-et-figma}{%
+\subparagraph{Adobe XD et Figma}\label{adobe-xd-et-figma}}
+
+Adobe XD et Figma sont des outils indispensables pour le design UX/UI.
+Ces plateformes nous ont permis de créer des wireframes détaillés. Les
+capacités de collaboration en temps réel de Figma ont été
+particulièrement utiles pour travailler à distance.
+
+\hypertarget{duxe9veloppement}{%
+\paragraph{Développement}\label{duxe9veloppement}}
+
+Pour le développement de notre application, nous avons opté pour le
+développement natif. Ci-dessous, table 5 présente une comparaison entre
+le développement natif et le développement cross-plateforme.
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.2989}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3183}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3828}}@{}}
+\toprule()
+\begin{minipage}[b]{\linewidth}\raggedright
+Critères
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Développement Natif
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Développement Cross-Plateforme
+\end{minipage} \\
+\midrule()
+\endhead
+Performance & Haute performance & Performances parfois réduites \\
+Expérience Utilisateur & UX optimale, alignée aux guidelines de chaque
+plateforme & UX parfois compromise pour maintenir la cohérence \\
+Temps de Développement & Plus long & Plus court, un seul code pour
+toutes les plateformes \\
+Maintenance & Plus complexe, mises à jour séparées pour chaque
+plateforme & Simplifiée, une seule base de code à maintenir \\
+\bottomrule()
+\end{longtable}
+
+\begin{quote}
+\textbf{Table 5: Tableau comparatif: Développement natif vs
+Développement cross-plateforme}
+\end{quote}
+
+Nous avons choisi le développement natif pour tirer parti des
+performances optimales et de l\textquotesingle expérience utilisateur
+supérieure propre à chaque plateforme.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item ~
+  \hypertarget{ios}{%
+  \subparagraph{iOS}\label{ios}}
+
+  \begin{itemize}
+  \item
+    \textbf{Xcode:}est l\textquotesingle environnement de développement
+    intégré (IDE) officiel pour iOS. Il offre un ensemble
+    d\textquotesingle outils complet pour le développement, le test et
+    le déploiement des applications iOS. Nous avons utilisé Xcode pour
+    coder notre application dans des conditions réelles grâce à
+    l\textquotesingle émulateur intégré. {[}24{]}
+  \item
+    \textbf{SwiftUI :} est un framework moderne de développement
+    d\textquotesingle interfaces utilisateur pour iOS. Il permet de
+    créer des interfaces de manière déclarative et simplifiant le
+    processus de développement.{[}25{]}
+  \end{itemize}
+\item ~
+  \hypertarget{android}{%
+  \subparagraph{Android}\label{android}}
+
+  \begin{itemize}
+  \item
+    \textbf{Android Studio:}est l\textquotesingle environnement de
+    développement intégré (IDE) officiel pour le développement Android.
+    Il offre une suite d\textquotesingle outils de développement
+    robustes, y compris un émulateur et une intégration avec des
+    services Google. Nous avons utilisé Android Studio pour gérer le
+    cycle de vie complet de l\textquotesingle application, de
+    l\textquotesingle écriture du code au déploiement.{[}26{]}
+  \item
+    \textbf{Java:}est le langage de programmation principal pour le
+    développement Android. Il offre une grande flexibilité et une vaste
+    bibliothèque de ressources, permettant de créer des applications
+    robustes et performantes. Nous avons choisi Java pour sa stabilité
+    et sa maturité dans l\textquotesingle écosystème Android.
+  \end{itemize}
+\end{enumerate}
+
+\hypertarget{firebase}{%
+\paragraph{Firebase}\label{firebase}}
+
+Firebase est une plateforme qui propose une gamme de services backend
+tels que l\textquotesingle authentification, la base de données en temps
+réel, le stockage et l\textquotesingle hébergement. Nous avons intégré
+Firebase pour gérer l\textquotesingle authentification des utilisateurs,
+stocker et synchroniser les données en temps réel. Son intégration
+transparente avec les plateformes Android et iOS a facilité le
+développement et la maintenance de notre backend.
+
+\hypertarget{section-2-sprint-1}{%
+\subsection{Section 2: Sprint 1}\label{section-2-sprint-1}}
+
+Dans ce premier sprint, nous abordons les fonctionnalités essentielles
+de l\textquotesingle authentification, de la gestion des tables de base,
+ainsi que de la gestion d\textquotesingle accès. Ces fonctionnalités
+constituent les fondations de notre plateforme EduMemes et sont
+cruciales pour offrir une expérience utilisateur fluide et intuitive.
+
+\hypertarget{diagramme-de-cas-dutilisation-du-sprint-1}{%
+\paragraph{Diagramme de cas d'utilisation du Sprint
+1}\label{diagramme-de-cas-dutilisation-du-sprint-1}}
+
+Ci-joint, la figure 31 représente le diagramme de cas d'utilisation du
+sprint 1 et qui contient l'ensemble cas d'utilisation : s'authentifier,
+gérer tables de base et gérer accès.
+
+\begin{quote}
+\includegraphics[width=6.21686in,height=2.52281in]{vertopal_85abb3a450304b88ae85306cdb1ba9f9/media/image34.png}
+
+\textbf{Figure 31: Diagramme de cas d'utilisation du Sprint 1}
+\end{quote}
+
+\hypertarget{description-des-cas-dutilisation}{%
+\paragraph{Description des cas
+d'utilisation}\label{description-des-cas-dutilisation}}
+
+Cette partie se concentre sur une analyse approfondie des cas
+d\textquotesingle utilisation présentés dans le diagramme du Sprint 1,
+en fournissant des informations détaillées sur leur fonctionnement et
+leur pertinence dans le cadre du projet.
+
+\hypertarget{sauthentifier}{%
+\subparagraph{S\textquotesingle authentifier}\label{sauthentifier}}
+
+Ce cas d'utilisation constitue le point d\textquotesingle entrée
+essentiel pour tous les utilisateurs, qu\textquotesingle ils soient des
+apprenants, des créateurs de contenu tels que les enseignants et les
+créateurs de mèmes, ou des administrateurs. Sans cette authentification,
+aucun utilisateur ne peut accéder aux fonctionnalités de la plateforme.
+C\textquotesingle est donc une étape fondamentale qui garantit la
+sécurité et la confidentialité des données tout en assurant que seuls
+les utilisateurs autorisés peuvent interagir avec la plateforme.
+
+Les utilisateurs ont les possibilités de:
+
+\begin{itemize}
+\item
+  Se connecter à l\textquotesingle aide de leurs identifiants, tels que
+  leur adresse e-mail et leur mot de passe.
+\item
+  Créer un nouveau compte s\textquotesingle ils n\textquotesingle en ont
+  pas encore, en fournissant les informations nécessaires pour
+  l\textquotesingle inscription.
+\item
+  Récupérer leur mot de passe en cas d\textquotesingle oubli.
+\end{itemize}
+
+La figure 32 ci-dessous représente les interfaces
+d\textquotesingle authentification.
+
+\begin{quote}
+\includegraphics[width=5.84115in,height=5.82083in]{vertopal_85abb3a450304b88ae85306cdb1ba9f9/media/image35.png}
+
+\textbf{Figure 32: Les interfaces d\textquotesingle authentification}
+\end{quote}
+
+\hypertarget{guxe9rer-accuxe8s}{%
+\subparagraph{Gérer accès}\label{guxe9rer-accuxe8s}}
+
+L\textquotesingle apprenant peut créer son compte, sélectionner son
+niveau et commencer à consommer le contenu.
+
+Les créateurs et les administrateurs de contenu doivent attendre
+l\textquotesingle autorisation de l\textquotesingle administrateur
+d\textquotesingle accès après la création de leurs comptes pour se voir
+attribuer leurs rôles respectifs.
+
+L\textquotesingle administrateur d\textquotesingle accès a la capacité
+de modifier le rôle d\textquotesingle un utilisateur,
+qu\textquotesingle il s\textquotesingle agisse de créateur de mèmes,
+d\textquotesingle enseignant ou d\textquotesingle administrateur de
+contenu.
+
+Le créateur de contenu peut être un enseignant ou un créateur de mèmes.
+Il peut gérer plusieurs matières, par exemple, un créateur peut
+s\textquotesingle occuper de la matière d\textquotesingle histoire de
+niveau 9ème année et de la matière de géographie de niveau 7ème année.
+
+Cependant, une matière ne peut être gérée que par un seul enseignant et
+un seul créateur de
+
+mèmes (donc deux créateurs de contenu).
+
+L\textquotesingle attribution des matières à un créateur de contenu est
+réalisée par l\textquotesingle administrateur d\textquotesingle accès.
+La figure 33 ci-dessous montre l\textquotesingle interface de gestion du
+profil enseignant par un administrateur d\textquotesingle accès, où il
+peut modifier le rôle de l\textquotesingle enseignant et ajuster les
+matières qui lui sont attribuées.
+
+\begin{quote}
+\includegraphics[width=5.81498in,height=5.78417in]{vertopal_85abb3a450304b88ae85306cdb1ba9f9/media/image36.png}
+
+\textbf{Figure 33: Les interfaces de gestion des privilèges
+d\textquotesingle un enseignant}
+\end{quote}
+
+L\textquotesingle administrateur peut aussi gérer les créateurs de
+contenu d\textquotesingle un niveau. En sélectionnant le niveau, tous
+les créateurs de contenu des matières correspondantes
+s\textquotesingle affichent. Il peut ainsi retirer ou assigner un
+créateur de contenu à une matière.
+
+La figure 34 illustre les interfaces de gestion de la liste des
+créateurs de contenu de matières d\textquotesingle un niveau scolaire
+donné.
+
+\begin{quote}
+\includegraphics[width=6.03842in,height=6.02708in]{vertopal_85abb3a450304b88ae85306cdb1ba9f9/media/image37.png}
+
+\textbf{Figure 34: Les interfaces de gestion de la liste des éditeurs de
+contenu de matières d\textquotesingle un niveau scolaire donné}
+\end{quote}
+
+\hypertarget{guxe9rer-tables-de-bases}{%
+\subparagraph{Gérer tables de bases}\label{guxe9rer-tables-de-bases}}
+
+Le contenu est organisé selon la structure représentée dans la figure 35
+:
+
+\includegraphics[width=2.08059in,height=4.99125in]{vertopal_85abb3a450304b88ae85306cdb1ba9f9/media/image38.png}
+
+\begin{quote}
+\textbf{Figure 35: La structure des tables de bases}
+\end{quote}
+
+Les niveaux, les filières, les matières, les chapitres et les leçons
+forment les tables de base. La gestion de ces tables de base est assurée
+par l\textquotesingle administrateur de contenu, qui a la responsabilité
+de structurer et de maintenir l\textquotesingle organisation du contenu
+pédagogique.
+
+Les niveaux et les filières
+
+Les niveaux et les filières sont organisés comme illustré dans la table
+6 ci-dessous.
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.1033}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.1654}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.1702}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.1414}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.1400}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.1335}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.1462}}@{}}
+\toprule()
+\multirow{2}{*}{\begin{minipage}[b]{\linewidth}\raggedright
+\begin{quote}
+Cycle
+\end{quote}
+\end{minipage}} &
+\multicolumn{2}{>{\raggedright\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.3356} + 2\tabcolsep}}{%
+\begin{minipage}[b]{\linewidth}\raggedright
+\begin{quote}
+Enseignement de base
+\end{quote}
+\end{minipage}} &
+\multicolumn{4}{>{\raggedright\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.5611} + 6\tabcolsep}@{}}{%
+\multirow{2}{*}{\begin{minipage}[b]{\linewidth}\raggedright
+\begin{quote}
+Enseignement secondaire
+\end{quote}
+\end{minipage}}} \\
+& \begin{minipage}[b]{\linewidth}\raggedright
+\begin{quote}
+enseignement primaire
+\end{quote}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\begin{quote}
+enseignement préparatoire
+\end{quote}
+\end{minipage} \\
+\midrule()
+\endhead
+\begin{minipage}[t]{\linewidth}\raggedright
+\begin{quote}
+Niveau
+\end{quote}
+\end{minipage} & six années d\textquotesingle école primaire &
+\begin{minipage}[t]{\linewidth}\raggedright
+\begin{quote}
+De la 7ème année à la 9ème année
+\end{quote}
+\end{minipage} & \begin{minipage}[t]{\linewidth}\raggedright
+\begin{quote}
+1ère année secondaire
+\end{quote}
+\end{minipage} & \begin{minipage}[t]{\linewidth}\raggedright
+\begin{quote}
+2ème année secondaire
+\end{quote}
+\end{minipage} & \begin{minipage}[t]{\linewidth}\raggedright
+\begin{quote}
+3ème année secondaire
+\end{quote}
+\end{minipage} & \begin{minipage}[t]{\linewidth}\raggedright
+\begin{quote}
+4ème année secondaire
+\end{quote}
+\end{minipage} \\
+\multirow{7}{*}{\begin{minipage}[t]{\linewidth}\raggedright
+\begin{quote}
+Filière
+\end{quote}
+\end{minipage}} & \multirow{7}{*}{} & \multirow{7}{*}{} &
+\multirow{7}{*}{} &
+\multirow{3}{*}{\begin{minipage}[t]{\linewidth}\raggedright
+\begin{quote}
+Sciences
+\end{quote}
+\end{minipage}} &
+\multicolumn{2}{>{\raggedright\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.2797} + 2\tabcolsep}@{}}{%
+\begin{minipage}[t]{\linewidth}\raggedright
+\begin{quote}
+Sciences expérimentales
+\end{quote}
+\end{minipage}} \\
+& & & & &
+\multicolumn{2}{>{\raggedright\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.2797} + 2\tabcolsep}@{}}{%
+\begin{minipage}[t]{\linewidth}\raggedright
+\begin{quote}
+Mathématiques
+\end{quote}
+\end{minipage}} \\
+& & & & &
+\multicolumn{2}{>{\raggedright\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.2797} + 2\tabcolsep}@{}}{%
+\begin{minipage}[t]{\linewidth}\raggedright
+\begin{quote}
+Sciences techniques
+\end{quote}
+\end{minipage}} \\
+& & & &
+\multicolumn{3}{>{\raggedright\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.4197} + 4\tabcolsep}@{}}{%
+Lettres} \\
+& & & &
+\multicolumn{3}{>{\raggedright\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.4197} + 4\tabcolsep}@{}}{%
+\begin{minipage}[t]{\linewidth}\raggedright
+\begin{quote}
+Technologie informatique
+\end{quote}
+\end{minipage}} \\
+& & & & \begin{minipage}[t]{\linewidth}\raggedright
+\begin{quote}
+Économie et services
+\end{quote}
+\end{minipage} &
+\multicolumn{2}{>{\raggedright\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.2797} + 2\tabcolsep}@{}}{%
+\begin{minipage}[t]{\linewidth}\raggedright
+\begin{quote}
+Économie et gestion
+\end{quote}
+\end{minipage}} \\
+& & & &
+\multicolumn{3}{>{\raggedright\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.4197} + 4\tabcolsep}@{}}{%
+Sport} \\
+\bottomrule()
+\end{longtable}
+
+\begin{quote}
+\textbf{Table 6: Les niveaux et les filières de l'enseignement de
+primaire et secondaire {[}27{]}}
+\end{quote}
+
+Dans notre prototype, nous mettons l\textquotesingle accent sur le
+niveau de la 9ème année.
+
+Les matières
+
+Chaque niveau dispose de ses propres matières, qui peuvent varier selon
+la filière. Par exemple, les élèves de 3ème année en filière économie et
+gestion ont une matière d'histoire, tandis que ceux en filière
+mathématiques n'en ont pas.
+
+L'administrateur de contenu peut gérer les matières disponibles sur la
+plateforme EduMemes. Il a la possibilité d\textquotesingle ajouter de
+nouvelles matières, de modifier les informations des matières existantes
+ou d'ajuster leur visibilité. Une matière peut être rendue visible aux
+apprenants lorsque son contenu est prêt et peut être consultable, ou
+invisible dans le cas contraire.
+
+\textbf{Remarque :} la matière de l\textquotesingle éducation islamique
+est exclue de notre plateforme. Bien que notre objectif soit de rendre
+l'éducation amusante tout en respectant le contenu des
+
+matières, nous croyons que les matières religieuses nécessitent de la
+spiritualité, ce qui est mieux réalisé sans
+l\textquotesingle utilisation de mèmes.
+
+La figure 36 illustre les interfaces d'ajout et de modification d'une
+matière.
+
+\includegraphics[width=4.38634in,height=3.51083in]{vertopal_85abb3a450304b88ae85306cdb1ba9f9/media/image39.png}
+
+\begin{quote}
+\textbf{Figure 36: Les interfaces d'ajout et de modification d'une
+matière}
+\end{quote}
+
+Les chapitres et les leçons
+
+Les matières sont composées de chapitres, et les chapitres sont découpés
+en leçons pour une meilleure organisation.
+
+\includegraphics[width=4.07468in,height=3.63917in]{vertopal_85abb3a450304b88ae85306cdb1ba9f9/media/image40.png}
+
+\begin{quote}
+\textbf{Figure 37: Structures des chapitres{[}28{]}}
+\end{quote}
+
+L'administrateur de contenu peut créer des nouveaux chapitres et leçons,
+modifier les détails des chapitres et des leçons existants ou ajuster la
+visibilité d'un chapitre en le rendant visible aux autres utilisateurs
+s'il est prêt et consultable, ou invisible dans le cas contraire. Cela
+lui offre un contrôle total sur l\textquotesingle organisation et la
+structure du contenu d'une matière.
+
+La figure 38 illustre l'interface d'ajout d'une leçon.
+
+\includegraphics[width=3.10347in,height=2.21319in]{vertopal_85abb3a450304b88ae85306cdb1ba9f9/media/image41.png}
+
+\begin{quote}
+\textbf{Figure 38: L'interface d'ajout d'une leçon}
+\end{quote}
+
+La figure 39 illustre les interfaces d'ajout et de modification d'un
+chapitre.
+
+\includegraphics[width=5.50124in,height=3.63917in]{vertopal_85abb3a450304b88ae85306cdb1ba9f9/media/image43.png}
+
+\begin{quote}
+\textbf{Figure 39: Les interfaces d'ajout et de modification d'un
+chapitre}
+\end{quote}
+
+\hypertarget{section-3-sprint-2}{%
+\subsection{Section 3: Sprint 2}\label{section-3-sprint-2}}
+
+Dans ce deuxième sprint, nous nous concentrons sur les fonctionnalités
+de base comme la gestion de contenu, la consommation de contenu et le
+suivi des feedbacks. Ces éléments enrichissent
+l\textquotesingle expérience utilisateur sur notre plateforme en
+facilitant la création et l\textquotesingle évaluation du contenu.
+
+\hypertarget{diagramme-de-cas-dutilisation-du-sprint-2}{%
+\paragraph{Diagramme de cas d'utilisation du Sprint
+2}\label{diagramme-de-cas-dutilisation-du-sprint-2}}
+
+La figure 40 représente le diagramme de cas d'utilisation du sprint 2 et
+qui contient l'ensemble cas d'utilisation : gérer contenu, consommer
+contenu et suivre feedbacks.
+
+\includegraphics[width=6.24671in,height=3.55875in]{vertopal_85abb3a450304b88ae85306cdb1ba9f9/media/image44.png}
+
+\begin{quote}
+\textbf{Figure 40: Diagramme de cas d'utilisation du Sprint 2}
+\end{quote}
+
+\hypertarget{description-des-cas-dutilisation-1}{%
+\paragraph{Description des cas
+d'utilisation}\label{description-des-cas-dutilisation-1}}
+
+Cette partie se concentre sur une analyse approfondie des cas
+d\textquotesingle utilisation présentés dans le diagramme du Sprint 2,
+en fournissant des informations détaillées sur leur fonctionnement et
+leur importance pour le projet.
+
+\hypertarget{guxe9rer-contenu}{%
+\subparagraph{Gérer contenu}\label{guxe9rer-contenu}}
+
+Ce cas d\textquotesingle utilisation permet aux créateurs de contenu de
+gérer le contenu spécifique à chaque chapitre.
+
+Les créateurs de mèmes peuvent ajouter, éditer ou supprimer des mèmes.
+Les enseignants peuvent ajouter, éditer ou supprimer des informations.
+
+Les enseignants peuvent gérer aussi la description d'un chapitre,
+fournissant ainsi une idée claire du contenu du chapitre.
+
+La figure 41 illustre les interfaces d\textquotesingle édition
+d\textquotesingle un EduMème (une information ou peut-être aussi un
+mème).
+
+\begin{quote}
+\includegraphics[width=4.90439in,height=4.87667in]{vertopal_85abb3a450304b88ae85306cdb1ba9f9/media/image45.png}
+
+\textbf{Figure 41: Les interfaces d\textquotesingle édition
+d\textquotesingle un EduMème}
+\end{quote}
+
+La figure 42 représente l'interface d\textquotesingle édition de la
+description d'un chapitre.
+
+\includegraphics[width=3.26528in,height=2.85403in]{vertopal_85abb3a450304b88ae85306cdb1ba9f9/media/image46.png}
+
+\begin{quote}
+\textbf{Figure 42: L'interface d\textquotesingle édition de la
+description d'un chapitre}
+\end{quote}
+
+Les risques liés au contenu
+
+Cette partie explore notre engagement envers la gestion des risques pour
+assurer la viabilité et la croissance continues de notre projet
+éducatif. Nous nous concentrons sur identifier les risques potentiels
+liés au contenu, afin de garantir une expérience
+d\textquotesingle apprentissage enrichissante et durable pour tous les
+utilisateurs.
+
+Identification des risques potentiels liés au contenu
+
+\begin{itemize}
+\item
+  Retard dans l\textquotesingle approvisionnement du contenu éducatif
+\item
+  Risque lié à la réception négative des mèmes par les apprenants
+\item
+  Risque de contenu éducatif obsolète ou non fiable
+\item
+  Risque de désintérêt des utilisateurs au fil du temps
+\end{itemize}
+
+Calculer le Risk Priority Number (RPN)
+
+Le Risk Priority Number (RPN) est une valeur numérique qui permet de
+quantifier la sévérité, la fréquence et la détectabilité des risques
+potentiels. Chaque risque est caractérisé par :
+
+\textbf{Sévérité (S)}: L\textquotesingle impact du risque sur la mission
+de l'entreprise.
+
+\begin{itemize}
+\item
+  Échelle : de 1 (peu sévère) à 5 (très sévère)
+\item
+  Un risque peu sévère peut être contourné sans problème.
+\item
+  Un risque très sévère impacte toute l'entreprise (par exemple, un
+  sous-traitant ou un fournisseur irremplaçable).
+\end{itemize}
+
+\begin{quote}
+\textbf{Fréquence (F)}: La fréquence d\textquotesingle apparition du
+risque.
+\end{quote}
+
+\begin{itemize}
+\item
+  Échelle : de 1 (rare, par exemple, un fournisseur financièrement
+  stable) à 5 (très fréquent)
+\end{itemize}
+
+\begin{quote}
+\textbf{Détectabilité (D)}: La capacité à prévoir le problème à temps.
+\end{quote}
+
+\begin{itemize}
+\item
+  Échelle : de 1 (le problème peut être corrigé à temps) à 5 (impossible
+  de détecter le risque)
+\end{itemize}
+
+Pour calculer le RPN, il faut multiplier les valeurs de Sévérité (S), de
+Fréquence (F) et de Détectabilité (D) : RPN = S*F*D. {[}29{]}
+
+Table 7 récapitule les informations que nous utilisons pour définir et
+calculer le NPR pour chaque risque identifié.
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.4383}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1272}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1454}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1703}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1189}}@{}}
+\toprule()
+\begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Risque}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Sévérité}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Fréquence}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Détectabilité́}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\begin{quote}
+\textbf{RPN}
+\end{quote}
+\end{minipage} \\
+\midrule()
+\endhead
+Retard dans l\textquotesingle approvisionnement du contenu éducatif & 2
+& 3 & 2 & 12 \\
+Réception négative des mèmes par les utilisateurs & 5 & 2 & 3 & 30 \\
+Contenu éducatif obsolète ou non fiable & 5 & 2 & 3 & 30 \\
+Perte d\textquotesingle intérêt des utilisateurs avec le temps & 3 & 2 &
+4 & 24 \\
+\bottomrule()
+\end{longtable}
+
+\begin{quote}
+\textbf{Table 7: Les risques et leur valeur RPN}
+\end{quote}
+
+Tri de risques dans l'ordre décroissant
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  Contenu éducatif obsolète ou non fiable - RPN: 30
+\item
+  Réception négative des mèmes par les utilisateurs - RPN: 30
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{1}
+\item
+  Désintérêt des utilisateurs au fil du temps - RPN: 24
+\item
+  Retard dans l\textquotesingle approvisionnement du contenu éducatif -
+  RPN: 12
+
+  \begin{enumerate}
+  \def\labelenumii{\arabic{enumii}.}
+  \item ~
+    Des actions pour atténuer les risques
+  \end{enumerate}
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\item ~
+  Contenu éducatif obsolète ou non fiable (RPN: 30) :
+
+  \begin{itemize}
+  \item
+    La gestion du contenu informatif est assurée exclusivement par des
+    enseignants et des experts en éducation.
+  \item
+    Ajouter des liens vers les sources des informations provenant des
+    sites web consultés.
+  \end{itemize}
+\end{enumerate}
+
+\begin{quote}
+\includegraphics[width=2.59586in,height=0.96708in]{vertopal_85abb3a450304b88ae85306cdb1ba9f9/media/image48.jpeg}
+\end{quote}
+
+\textbf{Figure 43: Ajout d'un lien vers le source d'une information}
+
+\begin{itemize}
+\item
+  Possibilité de modifier la visibilité du contenu avant sa publication,
+  offrant ainsi plus de temps pour la vérification des informations.
+\item
+  Les enseignants peuvent répondre aux questions des apprenants dans la
+  section des commentaires de chaque partie du contenu.
+\end{itemize}
+
+\begin{quote}
+\includegraphics[width=3.42906in,height=0.75116in]{vertopal_85abb3a450304b88ae85306cdb1ba9f9/media/image49.jpeg}
+
+\textbf{Figure 44: Exemple de commentaire d'un enseignant sur la
+plateforme EduMemes}
+\end{quote}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{1}
+\item ~
+  Réception négative des mèmes par les utilisateurs (RPN: 30) :
+
+  \begin{itemize}
+  \item
+    Chaque mème créé par un créateur de mèmes doit être validé par un
+    enseignant avant d\textquotesingle être publié.
+  \item
+    Chaque créateur de mèmes doit respecter une liste de règles que nous
+    avons établies.
+  \end{itemize}
+\end{enumerate}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.0511}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.9489}}@{}}
+\toprule()
+\multicolumn{2}{@{}>{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{1.0000} + 2\tabcolsep}@{}}{%
+\begin{minipage}[b]{\linewidth}\raggedright
+Les règles à respecter par les créateurs de mèmes
+\end{minipage}} \\
+\midrule()
+\endhead
+1 & Respecter la religion islamique ainsi que toutes les croyances
+religieuses en général. \\
+2 & Éviter toute forme de nudité, de violence, de langage ou de
+comportements inappropriés dans le mème. \\
+3 & Respecter tous les genres, sans diminuer ni les femmes ni les
+hommes. \\
+\bottomrule()
+\end{longtable}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.0511}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.9489}}@{}}
+\toprule()
+\begin{minipage}[b]{\linewidth}\raggedright
+4
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Utiliser les mèmes pour faciliter la compréhension et la mémorisation
+des informations de manière ludique.
+\end{minipage} \\
+\midrule()
+\endhead
+5 & Assurer que le sujet du mème soit en lien direct avec la leçon et le
+thème concernés. \\
+6 & Veiller à ce que le mème se rapporte aux informations
+précédentes. \\
+7 & Adapter le mème à l\textquotesingle âge des élèves du niveau
+concerné. \\
+8 & Collaborer avec l\textquotesingle enseignant de la matière pour la
+création du contenu. \\
+9 & Utiliser la langue arabe ou la langue de la matière pour le mème. \\
+\bottomrule()
+\end{longtable}
+
+\begin{quote}
+\textbf{Table 8: Les règles à respecter par les créateurs de mèmes}
+\end{quote}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{2}
+\item ~
+  Désintérêt des utilisateurs au fil du temps (RPN: 24) :
+
+  \begin{itemize}
+  \item
+    Suivre les feedbacks des apprenants pour améliorer
+    l\textquotesingle expérience utilisateur.
+  \item
+    Introduire régulièrement de nouveaux éléments attractifs.
+  \end{itemize}
+\end{enumerate}
+
+Par exemple, l'utilisation de la synthèse vocale IA
+
+Nous avons intégré une fonctionnalité de synthèse vocale basée sur
+l\textquotesingle intelligence artificielle. Cette fonctionnalité
+utilise la technologie text-to-speech (TTS) pour lire à haute voix le
+texte des informations ou des mèmes présents sur la plateforme.
+
+L\textquotesingle AVSpeechSynthesizer est un composant clé du framework
+AVFoundation d\textquotesingle Apple, permettant la conversion de texte
+en parole. Cette fonctionnalité, intégrée dans les applications iOS via
+Xcode, offre une opportunité unique pour améliorer
+l\textquotesingle accessibilité et l\textquotesingle engagement
+utilisateur.
+
+En utilisant AVSpeechSynthesizer, les développeurs peuvent créer des
+applications capables de lire à haute voix des textes, ajoutant une
+dimension auditive aux contenus visuels. Par exemple, dans notre projet
+EduMemes, nous avons intégré AVSpeechSynthesizer pour permettre la
+lecture à haute voix des informations et des mèmes éducatifs. Cela
+enrichit l\textquotesingle expérience utilisateur en rendant
+l\textquotesingle apprentissage plus interactif et engageant.
+
+L\textquotesingle implémentation de cette fonctionnalité est
+relativement simple et flexible. Nous pouvons contrôler la langue, le
+débit et la tonalité de la synthèse vocale. Le synthétiseur vocal
+AVSpeechSynthesizer gère ensuite la conversion du texte en parole,
+assurant une qualité sonore naturelle et fluide. {[}30{]}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{3}
+\item ~
+  Retard dans l\textquotesingle approvisionnement du contenu éducatif
+  (RPN: 18) :
+
+  \begin{itemize}
+  \item
+    Fournir un ensemble d\textquotesingle outils pour aider les
+    créateurs de contenu à produire leurs matériaux éducatifs.
+  \end{itemize}
+\end{enumerate}
+
+Outils aidants les enseignants à la création de contenu
+
+Les outils suivants permettent aux enseignants de créer, modifier et
+enrichir leurs contenus pédagogiques sur notre plateforme. Ces outils
+incluent des logiciels en ligne et hors ligne, des applications et des
+ressources variées adaptées à différentes disciplines et besoins
+pédagogiques.
+
+Mèmes.tn
+
+Pour renforcer notre projet actuel EduMemes, nous envisageons développer
+à l\textquotesingle avenir une plateforme innovante baptisée mèmes.tn,
+le premier site web tunisien dédié aux mèmes. Cette plateforme aura pour
+vocation de rassembler une vaste bibliothèque de mèmes tunisiens et
+arabes, facilitant ainsi la création de mèmes par les utilisateurs. Les
+internautes pourront non seulement télécharger leurs propres mèmes, mais
+aussi les partager avec la communauté, favorisant ainsi un échange riche
+et diversifié.
+
+Un aspect essentiel de mèmes.tn sera la section dédiée aux "mèmes
+éducatifs". Cette section regroupera une multitude de modèles de mèmes
+éducatifs, ainsi que des mèmes spécialement adaptés à des fins
+pédagogiques. Les utilisateurs auront la possibilité de contribuer à
+l\textquotesingle enrichissement de cette section en créant et en
+partageant des mèmes éducatifs. Cela permettra de créer une base de
+données précieuse pour les enseignants et les créateurs de contenu, qui
+pourront utiliser ces mèmes pour rendre l\textquotesingle apprentissage
+plus amusant et engageant.
+
+En offrant une plateforme dédiée aux mèmes, nous visons à encourager la
+créativité et l\textquotesingle innovation dans le domaine de
+l\textquotesingle éducation, tout en renforçant l\textquotesingle impact
+de notre projet EduMemes. Cette synergie entre EduMemes et Mèmes.tn
+permettra de diversifier les ressources disponibles pour les apprenants
+et de maximiser l\textquotesingle efficacité de
+l\textquotesingle apprentissage ludique et interactif.
+
+Camtasia
+
+Camtasia est un logiciel de montage vidéo complet qui permet de créer
+des vidéos éducatives de haute qualité. Il offre des fonctionnalités
+avancées de capture d\textquotesingle écran, d\textquotesingle édition
+et d\textquotesingle ajout d\textquotesingle effets visuels et sonores,
+idéal pour la création de tutoriels, de cours en ligne et de
+présentations engageantes.{[}31{]}
+
+La figure ci-dessous présente les recommandations des enseignants
+concernant l\textquotesingle utilisation de Camtasia, telles
+qu\textquotesingle affichées sur le site web de
+l\textquotesingle application.
+
+\begin{quote}
+\includegraphics[width=6.32941in,height=3.15683in]{vertopal_85abb3a450304b88ae85306cdb1ba9f9/media/image51.jpeg}
+
+\textbf{Figure 45: Recommandations des enseignants pour Camtasia
+{[}31{]}}
+\end{quote}
+
+GeoGebra
+
+GeoGebra est une application dynamique de mathématiques qui intègre la
+géométrie, l\textquotesingle algèbre, le calcul et la modélisation.
+
+\begin{quote}
+\includegraphics[width=6.33403in,height=1.66381in]{vertopal_85abb3a450304b88ae85306cdb1ba9f9/media/image53.jpeg}
+
+\textbf{Figure 46: Suite de calculatrice dans GeoGebra}
+\end{quote}
+
+Il est largement utilisé par les enseignants, les étudiants et les
+mathématiciens pour explorer et visualiser des concepts mathématiques de
+manière interactive. GeoGebra permet de créer des constructions
+géométriques dynamiques, de visualiser des équations et des fonctions,
+et de manipuler des expressions mathématiques. Il supporte également la
+création de graphes en trois dimensions pour explorer des fonctions
+multi variables et des surfaces. {[}32{]}
+
+\begin{quote}
+\includegraphics[width=5.12083in,height=3.53732in]{vertopal_85abb3a450304b88ae85306cdb1ba9f9/media/image55.jpeg}
+
+\textbf{Figure 47: Exemple d\textquotesingle équation et sa
+représentation graphique sur GeoGebra}
+\end{quote}
+
+Canvas
+
+Canva est une plateforme de conception graphique en ligne qui offre une
+multitude d\textquotesingle outils et de modèles pour créer des
+présentations, des infographies, des affiches et
+d\textquotesingle autres supports visuels de manière simple et
+attrayante.
+
+\begin{quote}
+\includegraphics[width=5.37569in,height=3.76355in]{vertopal_85abb3a450304b88ae85306cdb1ba9f9/media/image57.jpeg}
+
+\textbf{Figure 48: l'interface de Canva}
+\end{quote}
+
+Canva propose une version gratuite avec des fonctionnalités de base,
+ainsi qu\textquotesingle une version premium offrant un accès à des
+fonctionnalités avancées et à une plus grande variété de modèles et de
+ressources. {[}33{]}
+
+Pexels
+
+Pexels est une plateforme en ligne qui propose une vaste collection
+d\textquotesingle images et de vidéos libres de droits, ce qui en fait
+une ressource précieuse pour les enseignants et les créateurs de
+contenu. Vous pouvez trouver facilement des visuels de haute qualité
+pour illustrer vos supports visuels, sans avoir à vous soucier des
+problèmes de droits d\textquotesingle auteur.
+
+\begin{quote}
+\includegraphics[width=6.33403in,height=3.83292in]{vertopal_85abb3a450304b88ae85306cdb1ba9f9/media/image59.jpeg}
+
+\textbf{Figure 49: L'interface de Pexels}
+\end{quote}
+
+La plateforme offre une interface conviviale qui permet une recherche
+rapide et efficace par mots-clés, ainsi qu\textquotesingle une variété
+de catégories pour trouver l\textquotesingle image ou la vidéo qui
+correspond le mieux à vos besoins. {[}34{]}
+
+H5P
+
+H5P est une plateforme de création d\textquotesingle interactions en
+ligne qui permet aux enseignants et aux créateurs de contenu de
+concevoir facilement des activités interactives pour
+l\textquotesingle apprentissage en ligne.
+
+\begin{quote}
+\includegraphics[width=5.17956in,height=4.45657in]{vertopal_85abb3a450304b88ae85306cdb1ba9f9/media/image61.jpeg}
+
+\textbf{Figure 50: Types de contenu interactif sur la plateforme H5P}
+\end{quote}
+
+Grâce à H5P, vous pouvez créer une variété de contenus interactifs tels
+que des quiz, des présentations interactives, des jeux, des vidéos
+interactives et bien plus encore, sans avoir besoin de compétences en
+programmation. La plateforme propose une large gamme de modèles et de
+types d\textquotesingle activités prédéfinis, ce qui facilite la
+création d\textquotesingle expériences d\textquotesingle apprentissage
+engageantes et interactives. {[}35{]}
+
+En plus de ces outils, il existe plusieurs autres outils non payants
+disponibles sur Internet qui peuvent également être très utiles pour la
+création de contenus. Ils permettent aux enseignants de diversifier et
+d\textquotesingle enrichir leur matériel pédagogique.
+
+\hypertarget{consommer-contenu}{%
+\subparagraph{Consommer contenu}\label{consommer-contenu}}
+
+Ce cas d\textquotesingle utilisation permet aux apprenants de parcourir
+et interagir avec le contenu disponible sur la plateforme EduMemes.
+
+Naviguer contenu
+
+Les apprenants peuvent consulter les matières, explorer les différents
+chapitres, accéder au contenu associé à chaque chapitre et utiliser la
+fonctionnalité de swipe pour naviguer entre les informations et les
+mèmes. La navigation est conçue pour être intuitive et conviviale,
+offrant aux utilisateurs une expérience fluide lors de la recherche et
+de l\textquotesingle accès aux ressources éducatives.
+
+La figure 51 illustre les interfaces de consultation des matières.
+
+\includegraphics[width=5.39844in,height=5.35333in]{vertopal_85abb3a450304b88ae85306cdb1ba9f9/media/image63.png}
+
+\begin{quote}
+\textbf{Figure 51: Les interfaces de consultation des matières}
+\end{quote}
+
+La figure 52 illustre les interfaces de consultation des chapitres d'une
+matière.
+
+\includegraphics[width=5.73579in,height=5.6925in]{vertopal_85abb3a450304b88ae85306cdb1ba9f9/media/image64.png}
+
+\begin{quote}
+\textbf{Figure 52: Les interfaces de consultation des chapitres d'une
+matière}
+\end{quote}
+
+La figure 53 illustre l'interface de consultation du contenu associé à
+un chapitre.
+
+\includegraphics[width=3.2521in,height=6.58167in]{vertopal_85abb3a450304b88ae85306cdb1ba9f9/media/image65.png}
+
+\begin{quote}
+\textbf{Figure 53: L'interface de consultation du contenu associé à un
+chapitre}
+\end{quote}
+
+La figure 54 illustre l'interface de consultation des mèmes et des
+informations.
+
+\includegraphics[width=3.62313in,height=7.33333in]{vertopal_85abb3a450304b88ae85306cdb1ba9f9/media/image66.png}
+
+\begin{quote}
+\textbf{Figure 54: L'interface de consultation des mèmes et des
+informations}
+\end{quote}
+
+Interagir avec contenu
+
+Les apprenants peuvent interagir avec le contenu disponible sur la
+plateforme EduMemes. Ils peuvent commenter et liker le contenu éducatif,
+favorisant ainsi l'engagement et la collaboration au sein de la
+communauté éducative. Les apprenants peuvent aussi ajouter une
+information ou un mème à leur liste de favoris pour un accès facile et
+une référence ultérieure.
+
+La figure 55 illustre les interactions d'un mème.
+
+\includegraphics[width=5.91399in,height=5.885in]{vertopal_85abb3a450304b88ae85306cdb1ba9f9/media/image67.png}
+
+\begin{quote}
+\textbf{Figure 55: Les interactions d'un mème dans l'application
+EduMème}
+\end{quote}
+
+Suivre progrès
+
+Les apprenants peuvent suivre leur progression et leurs performances sur
+la plateforme "EduMemes". Ils peuvent marquer un chapitre comme terminé
+une fois qu\textquotesingle ils l\textquotesingle ont compris, et suivre
+leur progression dans chaque matière, ce qui les aide à évaluer leur
+compréhension et leur évolution.
+
+La figure 56 illustre les interfaces de suivi de progression d'un
+apprenant.
+
+\includegraphics[width=4.9569in,height=4.92708in]{vertopal_85abb3a450304b88ae85306cdb1ba9f9/media/image68.png}
+
+\begin{quote}
+\textbf{Figure 56: Les interfaces de suivi de progression d'un
+apprenant}
+\end{quote}
+
+\hypertarget{suivre-feedbacks}{%
+\subparagraph{Suivre feedbacks}\label{suivre-feedbacks}}
+
+Ce cas d'utilisation permet aux créateurs de contenu de suivre les
+feedbacks et les commentaires laissés par d'autres utilisateurs sur la
+plateforme EduMemes. Ils peuvent consulter les réactions et les
+suggestions des utilisateurs concernant le contenu éducatif et les
+fonctionnalités de la plateforme, leur permettant ainsi
+d\textquotesingle adapter et d\textquotesingle améliorer continuellement
+le contenu en fonction des besoins et des retours
+d\textquotesingle information.
+
+La figure 57 illustre les interfaces de suivi des feedbacks d'un mème.
+
+\includegraphics[width=4.7712in,height=4.73in]{vertopal_85abb3a450304b88ae85306cdb1ba9f9/media/image69.png}
+
+\begin{quote}
+\textbf{Figure 57: Les interfaces de suivi des feedbacks d'un mème}
+\end{quote}
+
+\hypertarget{conclusion-2}{%
+\subsection{Conclusion}\label{conclusion-2}}
+
+Ce chapitre détaille notre travail pratique sur le projet EduMemes,
+mettant en place chaque élément de l\textquotesingle application pour
+offrir une expérience optimale. En examinant en détail chaque partie du
+projet, nous avons progressé vers notre objectif. Ce travail constitue
+une étape importante vers le déploiement de notre plateforme éducative.
+
+\hypertarget{conclusion-guxe9nuxe9rale}{%
+\section{Conclusion Générale}\label{conclusion-guxe9nuxe9rale}}
+
+Dans le cadre de mon projet de fin d\textquotesingle études,
+j\textquotesingle ai développé EduMemes, une plateforme éducative (site
+web et applications mobile iOS et Android) innovante qui réinvente
+l\textquotesingle approche traditionnelle de
+l\textquotesingle apprentissage. EduMemes offre aux utilisateurs une
+expérience unique en combinant l\textquotesingle humour et
+l\textquotesingle éducation, favorisant ainsi un engagement actif et une
+assimilation efficace des connaissances.
+
+Au cours de ce projet, j\textquotesingle ai exploré
+l\textquotesingle importance de repousser les limites de
+l\textquotesingle éducation traditionnelle et de proposer des solutions
+adaptées à notre ère numérique. Des étapes clés telles que la
+conceptualisation, la validation du concept et la mise en œuvre de la
+plateforme ont renforcé ma conviction quant à la pertinence et à
+l\textquotesingle impact potentiel de EduMemes.
+
+Cependant, malgré les avancées significatives réalisées, plusieurs
+critiques peuvent être soulevées concernant le travail accompli. Les
+applications développées sont encore au stade de prototype et
+nécessitent des tests approfondis pour évaluer leur efficacité et leur
+convivialité. Il est crucial de recueillir des retours
+d\textquotesingle utilisateurs pour identifier les améliorations
+nécessaires. Le développement futur doit se concentrer sur
+l\textquotesingle optimisation de l\textquotesingle interface
+utilisateur et l\textquotesingle enrichissement des contenus
+pédagogiques, afin de transformer le prototype en un produit minimum
+viable (MVP) robuste et efficace. Même si nous avons présenté notre
+prototype initial à l\textquotesingle inspecteur de
+l\textquotesingle éducation, qui a apprécié l\textquotesingle idée, il
+est maintenant indispensable de montrer nos progrès à un plus grand
+nombre d\textquotesingle experts pour obtenir des avis diversifiés et
+constructifs. Pour ce faire, il sera essentiel d\textquotesingle obtenir
+les avis de hauts responsables du ministère de l'Éducation ainsi que des
+experts en pédagogie, afin d\textquotesingle assurer que les solutions
+proposées répondent aux standards éducatifs et aux besoins des élèves.
+
+En vue d\textquotesingle améliorer EduMemes, plusieurs extensions
+futures peuvent être envisagées. L\textquotesingle intégration de
+l\textquotesingle intelligence artificielle pourrait améliorer
+l\textquotesingle interactivité et permettre une analyse plus fine des
+progrès des élèves. On peut également prévoir l\textquotesingle ajout de
+quiz, de tests et de QCM pour offrir des moyens supplémentaires
+d\textquotesingle évaluation et d\textquotesingle apprentissage
+interactif aux utilisateurs. De plus, l\textquotesingle expansion des
+contenus disponibles, couvrant un éventail plus large de matières et de
+niveaux scolaires, serait bénéfique pour répondre aux
+
+besoins éducatifs variés des utilisateurs. La participation à des
+hackathons permettra également de recueillir des idées innovantes et de
+renforcer la collaboration avec d\textquotesingle autres développeurs et
+éducateurs. Par ailleurs, une stratégie de marketing digital efficace
+sera cruciale pour promouvoir EduMemes et atteindre un public plus
+large.
+
+Ainsi, EduMemes représente bien plus qu\textquotesingle une simple
+plateforme éducative. C\textquotesingle est une vision de
+l\textquotesingle avenir de l\textquotesingle apprentissage, où
+l\textquotesingle humour et la technologie se conjuguent pour créer une
+expérience d\textquotesingle apprentissage révolutionnaire, accessible à
+tous et adaptée aux besoins de chacun.
+
+\hypertarget{bibliographie-webographie}{%
+\section{Bibliographie/ Webographie}\label{bibliographie-webographie}}
+
+{[}01{]}.
+https:/\href{http://www.organism.earth/library/document/essential-lectures-7}{/www.organism.earth/library/document/essential-lectures-7}
+(accès le Juin 16,
+
+2024).
+
+{[}02{]}.
+https://datareportal.com/reports/digital-2024-deep-dive-the-time-we-spend-on-social-
+
+media (accès le Mai 22, 2024).
+
+{[}03{]}.
+\url{http://www.edunet.tn/article_education/statistiques/stat2022_2023/stat_scolaire.pdf}
+
+(accès le Février 21, 2024).
+
+{[}04{]}. https://guitouni.net/astro-kids (accès le Juin 17, 2024).
+
+{[}05{]}. https://guitouni.net/naro/ (accès le Juin 17, 2024).
+
+{[}06{]}.
+https:/\href{http://www.merriam-webster.com/dictionary/mème}{/www.merriam-webster.com/dictionary/mème}
+(accès le Avril 29, 2024).
+
+{[}07{]}.
+https:/\href{http://www.dictionary.com/browse/mème}{/www.dictionary.com/browse/mème}
+(accès le Février 20, 2024).
+
+{[}08{]}.
+https:/\href{http://www.pinterest.com/pin/852306298203896166/}{/www.pinterest.com/pin/852306298203896166/}
+(accès le Juin 6, 2024).
+
+{[}09{]}. \url{https://www.tiktok.com/\%40asusfrance} (accès le Avril
+29, 2024).
+
+{[}10{]}.
+https:/\href{http://www.ypulse.com/article/2019/03/05/3-stats-that-show-what-mèmes-mean-to-}{/www.ypulse.com/article/2019/03/05/3-stats-that-show-what-mèmes-mean-to-}
+
+gen-z-millennials/?pi\_list\_email=guittano\%40gmail.com (accès le Juin
+15, 2024).
+
+{[}11{]}.
+https://x.com/Earth\_Updates/status/1774032074703266278/photo/1 (accès
+le Mai 22,
+
+2024).
+
+{[}12{]}.
+https://stylecaster.com/lists/solar-eclipse-mèmes/spongebob-always-hits/
+(accès le Juin 17, 2024).
+
+{[}13{]}.
+https:/\href{http://www.facebook.com/groups/300004060509717}{/www.facebook.com/groups/300004060509717}
+(accès le Mai 02, 2024).
+
+{[}14{]}. https://influencermarketinghub.com/short-form-video-content/
+(accès le Juin 15,
+
+2024).
+
+{[}15{]}.
+https:/\href{http://www.semrush.com/website/}{/www.semrush.com/website/}
+(accès le Mai 18, 2024).
+
+{[}16{]}.
+\url{http://www.otdav.tn/index.php/fr/connaitre-l-otdav/creation} (accès
+le Juin 17, 2024).
+
+{[}17{]}.
+\url{http://www.otdav.tn/index.php/fr/qu-est-ce-que-le-droit-d-auteur}
+(accès le Juin 17,
+
+2024).
+
+{[}18{]}. \url{http://www.otdav.tn/index.php/fr/oeuvres-protegees}
+(accès le Juin 17, 2024).
+
+{[}19{]}.
+\url{http://www.otdav.tn/index.php/fr/services/deposer-vos-oeuvres/deposer}
+(accès le Juin 17, 2024).
+
+{[}20{]}.
+https:/\href{http://www.ovhcloud.com/fr/domains/domain-name-definition/}{/www.ovhcloud.com/fr/domains/domain-name-definition/}
+(accès le juin 17,
+
+2024).
+
+{[}21{]}.
+https:/\href{http://www.keliweb.com/billing/knowledgebase/10423/Differences-between-top-}{/www.keliweb.com/billing/knowledgebase/10423/Differences-between-top-}
+level-second-level-and-third-level-
+
+domains.html\#:\textasciitilde:text=The\%20second\%20level\%20domain\%20describes,part\%20of\%20th
+e\%20entire\%20domain. (accès le Juin 17, 2024).
+
+\begin{quote}
+{[}22{]}. \emph{Cours conception et design, Digital marketing ESSECT.}
+M. M. Jemai, 2021. {[}23{]}.
+https:/\href{http://www.arjonline.org/papers/arjhss/v2-i1/9.pdf}{/www.arjonline.org/papers/arjhss/v2-i1/9.pdf}
+(accès le Juin 17, 2024).
+\end{quote}
+
+{[}24{]}. https://developer.apple.com/xcode/ (accès le Juin 3, 2024).
+
+{[}25{]}. https://developer.apple.com/xcode/swiftui/ (accès le Juin 3,
+2024).
+
+{[}26{]}. https://developer.android.com/?hl=fr (accès le Juin 17, 2024).
+
+{[}27{]}.
+https://fr.wikipedia.org/wiki/Syst\%C3\%A8me\_\%C3\%A9ducatif\_en\_Tunisie
+(accès
+
+le Juin 5, 2024).
+
+\emph{.}\RL{كتاب علوم حياة الأرض للسنة التاسعة من التعليم الأساسي}
+{[}28{]}.
+
+\begin{quote}
+{[}29{]}. \emph{Cours digital governance, Digitalisation des services
+ESSECT.} M. Hend Bouziri, 2023.
+\end{quote}
+
+{[}30{]}.
+https://developer.apple.com/documentation/avfaudio/avspeechsynthesizer/
+(accès le Mai 23, 2024).
+
+{[}31{]}.
+https:/\href{http://www.techsmith.com/camtasia/use-cases/education-videos}{/www.techsmith.com/camtasia/use-cases/education-videos}
+(accès le Mai 23,
+
+2024).
+
+{[}32{]}. https:/\href{http://www.geogebra.org/}{/www.geogebra.org/}
+(accès le Mai 23, 2024).
+
+{[}33{]}. https:/\href{http://www.canva.com/}{/www.canva.com/} (accès le
+Mai 23, 2024).
+
+{[}34{]}.
+https:/\href{http://www.pexels.com/fr-fr/}{/www.pexels.com/fr-fr/}
+(accès le Mai 23, 2024).
+
+{[}35{]}. https://h5p.org/content-types-and-applications (accès le Mai
+35, 2024).
+
+\begin{quote}
+\textbf{Annexes}
+\end{quote}
+
+\hypertarget{maquette-de-la-page-web-dauthentification}{%
+\subparagraph{Maquette de la page web
+d'authentification}\label{maquette-de-la-page-web-dauthentification}}
+
+\includegraphics[width=6.26054in,height=3.52917in]{vertopal_85abb3a450304b88ae85306cdb1ba9f9/media/image70.jpeg}
+
+\hypertarget{maquette-de-la-page-web-de-gestion-daccuxe9s}{%
+\subparagraph{Maquette de la page web de gestion
+d'accés}\label{maquette-de-la-page-web-de-gestion-daccuxe9s}}
+
+\includegraphics[width=6.24028in,height=3.54302in]{vertopal_85abb3a450304b88ae85306cdb1ba9f9/media/image71.jpeg}
+
+\hypertarget{maquette-des-pages-web-de-gestion-de-tables-des-bases}{%
+\subparagraph{Maquette des pages web de gestion de tables des
+bases}\label{maquette-des-pages-web-de-gestion-de-tables-des-bases}}
+
+\includegraphics[width=6.15255in,height=4.52479in]{vertopal_85abb3a450304b88ae85306cdb1ba9f9/media/image72.png}\includegraphics[width=6.23792in,height=2.75917in]{vertopal_85abb3a450304b88ae85306cdb1ba9f9/media/image73.jpeg}
+
+\begin{quote}
+\includegraphics[width=6.33822in,height=4.51646in]{vertopal_85abb3a450304b88ae85306cdb1ba9f9/media/image74.jpeg}
+\end{quote}
+
+\includegraphics[width=6.24499in,height=2.89802in]{vertopal_85abb3a450304b88ae85306cdb1ba9f9/media/image75.jpeg}
+
+\begin{quote}
+\includegraphics[width=6.27094in,height=6.83333in]{vertopal_85abb3a450304b88ae85306cdb1ba9f9/media/image76.jpeg}
+\end{quote}
+
+\hypertarget{maquette-des-pages-web-de-navigation-de-contenu}{%
+\subparagraph{Maquette des pages web de navigation de
+contenu}\label{maquette-des-pages-web-de-navigation-de-contenu}}
+
+\includegraphics[width=6.29955in,height=3.54292in]{vertopal_85abb3a450304b88ae85306cdb1ba9f9/media/image77.jpeg}
+
+\includegraphics[width=5.63664in,height=3.49823in]{vertopal_85abb3a450304b88ae85306cdb1ba9f9/media/image78.jpeg}
+
+\begin{quote}
+\includegraphics[width=5.78335in,height=5.03708in]{vertopal_85abb3a450304b88ae85306cdb1ba9f9/media/image79.jpeg}
+\end{quote}
+
+\includegraphics[width=6.24091in,height=3.51615in]{vertopal_85abb3a450304b88ae85306cdb1ba9f9/media/image80.jpeg}
+
+\begin{quote}
+\includegraphics[width=6.38555in,height=3.59792in]{vertopal_85abb3a450304b88ae85306cdb1ba9f9/media/image81.jpeg}
+\end{quote}
+
+\includegraphics[width=5.30837in,height=3.34594in]{vertopal_85abb3a450304b88ae85306cdb1ba9f9/media/image82.jpeg}
+
+\begin{quote}
+\includegraphics[width=6.38467in,height=4.36333in]{vertopal_85abb3a450304b88ae85306cdb1ba9f9/media/image83.jpeg}
+\end{quote}
+
+\hypertarget{maquettes-de-pages-web-de-suivi-de-feedbacks}{%
+\subparagraph{Maquettes de pages web de suivi de
+feedbacks}\label{maquettes-de-pages-web-de-suivi-de-feedbacks}}
+
+\includegraphics[width=6.24018in,height=3.51615in]{vertopal_85abb3a450304b88ae85306cdb1ba9f9/media/image84.jpeg}
+
+\hypertarget{titre-plateforme-innovante-de-soutien-scolaire}{%
+\subparagraph{Titre: Plateforme innovante de soutien
+scolaire}\label{titre-plateforme-innovante-de-soutien-scolaire}}
+
+Résumé :
+
+Le présent projet de fin d\textquotesingle études vise à concevoir et
+développer une plateforme innovante nommée EduMemes ou \RL{والتعليم}
+\RL{الميم}. Cette plateforme éducative novatrice dédiée aux élèves
+transforme l\textquotesingle apprentissage en une expérience ludique et
+engageante en utilisant les mèmes. Conçu pour répondre aux besoins des
+apprenants dans notre ère numérique, EduMemes combine humour et
+éducation pour offrir une approche unique à
+l\textquotesingle assimilation des connaissances.
+
+Ce projet explore l\textquotesingle origine de l\textquotesingle idée,
+les défis et les opportunités liés à l\textquotesingle éducation, ainsi
+que les différentes étapes de développement d'EduMemes. En intégrant des
+éléments tels que la protection de l\textquotesingle idée, la création
+d\textquotesingle une identité visuelle et la planification des sprints,
+EduMemes vise à révolutionner l\textquotesingle éducation en ligne et à
+offrir une expérience d\textquotesingle apprentissage innovante et
+efficace pour tous les utilisateurs.
+
+\textbf{Mots clés:} EduMemes, éducation numérique, innovation, mèmes,
+humour.
+
+\hypertarget{title-innovative-platform-for-academic-support}{%
+\subparagraph{Title: Innovative platform for academic
+support}\label{title-innovative-platform-for-academic-support}}
+
+Abstract:
+
+The present final project aims to design and develop an innovative
+platform named EduMemes or \RL{والتعليم} \RL{الميم}. This innovative
+educational platform dedicated to students transforms learning into a
+fun and engaging experience by using meme. Designed to meet the needs of
+learners in our digital era, EduMemes combines humor and education to
+offer a unique approach to knowledge assimilation.
+
+This project explores the origin of the idea, the challenges and
+opportunities related to education, as well as the various stages of
+EduMemes development. By integrating elements such as idea protection,
+visual identity creation, and sprint planning, EduMemes aims to
+revolutionize online education and provide an innovative and efficient
+learning experience for all users.
+
+\textbf{Keywords:} EduMemes, digital education, innovation, memes,
+humor.
+
+\end{document}
