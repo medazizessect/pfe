@@ -1,89 +1,73 @@
-\chapter{Préparation et planification}
+\chapter{Préparation, Planification et Architecture Système}
 
 \section{Introduction}
-Cette étape vise à structurer le passage de l’idée au produit fonctionnel, à travers des choix méthodologiques, organisationnels et le cadrage des outils de gestion de projet.
+Le développement d'une plateforme d'intelligence artificielle appliquée à la mobilité urbaine nécessite une rigueur organisationnelle et technique sans faille. Ce chapitre décrit la méthodologie de gestion de projet adoptée, hybridation entre le cadre organisationnel Scrum et les pratiques d'ingénierie d'Extreme Programming (XP). Il expose également l'architecture système cible, en insistant sur la différence entre l'environnement de simulation (Proof of Concept) et l'environnement de production basé sur les réseaux de vidéosurveillance municipaux.
 
-\section{Préparation Initiale}
-\subsection{Recherche et choix du nom de domaine}
-Une étude des disponibilités a été réalisée sur différentes plateformes (OVH, Zenhosting). Après benchmark, le nom "circuli.tn" a été réservé (Figure~\ref{fig:domaine-ovh}). Ce choix optimise le référencement et la communication projet.
+\section{Méthodologie de Gestion de Projet : Hybridation Scrum et XP}
+Pour répondre à l'incertitude inhérente aux projets d'intelligence artificielle tout en garantissant un code robuste, nous avons opté pour une approche hybride combinant Scrum et Extreme Programming (XP).
 
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=0.55\textwidth]{media/domaine_ovh.png}
-  \caption{Recherche et réservation du nom de domaine (OVH)}
-  \label{fig:domaine-ovh}
-\end{figure}
-
-\subsection{Élaboration de la charte graphique}
-Palette de couleurs, choix des icônes et conception des premiers wireframes (maquettes) via Canva permettent une cohérence visuelle (voir Figure~\ref{fig:palette-couleur}).
-
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=0.45\textwidth]{media/palette_couleur.png}
-  \caption{Palette graphique du projet Circuli}
-  \label{fig:palette-couleur}
-\end{figure}
-
-\subsection{Définition des rôles des acteurs et outils}
-Trois groupes principaux :
+\subsection{Le cadre Scrum : Pilotage et Alignement Métier}
+Scrum a été utilisé pour structurer le temps et maximiser la valeur livrée aux parties prenantes (ici, simulées par la collectivité locale).
 \begin{itemize}
-  \item Utilisateurs finaux (collectivités, agents)
-  \item Équipe projet (chef de projet, développeur IA, frontend, backend)
-  \item Encadrant, parties prenantes institutionnelles
+    \item \textbf{Sprints de 2 semaines} : Un rythme itératif permettant de réajuster rapidement les paramètres du modèle YOLOv8 ou l'interface de Business Intelligence.
+    \item \textbf{Le Product Backlog} : Recueil des User Stories (ex: "En tant qu'opérateur urbain, je veux visualiser les zones de congestion pour ajuster les feux tricolores").
+    \item \textbf{Cérémonies} : Sprint Planning pour la définition des objectifs, Daily Scrum pour la synchronisation technique, et Sprint Review pour la validation des modules.
 \end{itemize}
-Outils collaboratifs : GitHub (gestion du code), Notion (planification), Google Drive (ressources partagées).
 
-\section{Gestion de projet et planification agile}
-\subsection{Planification par Sprints Scrum}
-La méthode Scrum a été utilisée : découpage du backlog en User Stories, priorisation, sprints de 2 semaines, Scrum board partagé Notion/GitHub.
+\subsection{Extreme Programming (XP) : Excellence Technique}
+Là où Scrum s'arrête à l'organisation, XP dicte la manière de développer le système en temps réel :
+\begin{itemize}
+    \item \textbf{Intégration Continue (CI)} : Chaque modification du pipeline d'acquisition vidéo ou de l'API FastAPI est immédiatement packagée via Docker pour s'assurer qu'aucune régression n'affecte la production.
+    \item \textbf{Conception Simple et Refactoring} : L'architecture modulaire de \textit{Circuli} a été pensée pour être la plus découplée possible, séparant strictement la couche de capture (`capture_reconnaissance`) de la couche d'exposition des données (`bi_analytics`).
+    \item \textbf{Standards de codage} : Typage strict sous Python 3.11 avec Pydantic pour garantir la validité des flux JSON entre l'IA et le backend.
+\end{itemize}
 
+\section{Architecture d'Acquisition : Du PoC à la Réalité Municipale}
+\subsection{L'Architecture Cible : Réseau Vidéo Urbain (RTSP / ONVIF)}
+Dans le cadre d'un déploiement réel en conditions de "Smart City", le système \textit{Circuli} est conçu pour s'interfacer directement avec le Système de Gestion Vidéo (VMS) de la municipalité. Les caméras de vidéosurveillance urbaine (CCTV) transmettent leurs flux en temps réel via le protocole \textbf{RTSP (Real Time Streaming Protocol)} encodé généralement en H.264 ou H.265.
+
+Le module d'acquisition de notre système est totalement agnostique. Il utilise la librairie OpenCV, capable de lire un flux direct via l'instruction : 
+\texttt{cv2.VideoCapture("rtsp://user:password@ip\_camera:554/stream")}
+
+\subsection{Le Simulateur (Proof of Concept) via YouTube Live}
+Durant la phase de développement académique, l'accès direct aux serveurs sécurisés du Ministère de l'Intérieur ou des municipalités est restreint pour des raisons de cybersécurité. 
+
+Pour surmonter cette contrainte tout en conservant des conditions réelles (lumière changeante, trafic dense, intempéries), nous avons mis en place un \textbf{simulateur urbain} (Digital Twin). Au lieu d'attaquer une IP privée, le module utilise \texttt{yt-dlp} pour extraire les flux en direct de caméras urbaines diffusées publiquement sur YouTube. Cette approche valide l'entièreté de la chaîne d'ingestion algorithmique de manière iso-fonctionnelle au protocole RTSP.
+
+\section{Planification Macroscopique des Sprints}
 \begin{table}[H]
-  \centering
-  \begin{tabular}{lll}
-    \toprule
-    Sprint & But & Durée (jours) \\
-    \midrule
-    1 & Setup, initialisation repo, design & 10 \\
-    2 & IA, dashboard, UI mobile/web & 14 \\
-    3 & Suivi, feedback, ajustements & 8 \\
-    \bottomrule
-  \end{tabular}
-  \caption{Découpage des sprints durant la préparation}
-  \label{tab:sprints}
+    \centering
+    \resizebox{\textwidth}{!}{
+    \begin{tabular}{llp{7cm}l}
+        \toprule
+        \textbf{Phase} & \textbf{Itération} & \textbf{Objectifs Techniques (Scrum/XP)} & \textbf{Statut} \\
+        \midrule
+        Cadrage & Sprint 1 & Définition de l'architecture Docker, mise en place des standards de code XP. Réservation du domaine. & Terminé \\
+        Data \& IA & Sprint 2 & Intégration de YOLOv8, gestion agnostique des flux vidéo (YouTube PoC vs RTSP target), paramétrage des ROI. & Terminé \\
+        Backend & Sprint 3 & Développement de l'API FastAPI, modélisation PostgreSQL, tests d'intégration. & Terminé \\
+        BI \& DevOps & Sprint 4 & Construction des dashboards Grafana, orchestration des DAGs via Apache Airflow, optimisation CPU. & Terminé \\
+        \bottomrule
+    \end{tabular}
+    }
+    \caption{Planification globale du projet sous hybridation Scrum/XP}
 \end{table}
 
-\subsection{Gestion des risques et tableau RPN}
-Chaque risque identifié est analysé : fréquence, gravité, détectabilité. Un Risk Priority Number (RPN) est calculé (voir Table~\ref{tab:risques}).
+\section{Analyse des Risques selon la méthode AMDEC}
+L'Analyse des Modes de Défaillance, de leurs Effets et de leur Criticité (AMDEC) est primordiale pour un système temps réel. La criticité $C$ est calculée par $C = Gravité \times Fréquence \times Détectabilité$.
 
 \begin{table}[H]
-\centering
-\begin{tabular}{lccc}
-\toprule
-Risque & Gravité & Fréquence & RPN\\
-\midrule
-Échec détection IA & 8 & 5 & 40\\
-Retard sur livrables & 7 & 4 & 28\\
-Perte de données & 9 & 2 & 18\\
-\bottomrule
-\end{tabular}
-\caption{Analyse des risques principaux (méthode RPN)}
-\label{tab:risques}
+    \centering
+    \begin{tabular}{p{4cm}ccccl}
+        \toprule
+        \textbf{Mode de défaillance} & \textbf{G} & \textbf{F} & \textbf{D} & \textbf{Criticité} & \textbf{Action Préventive (XP)} \\
+        \midrule
+        Coupure du flux RTSP municipal & 8 & 6 & 2 & \textbf{96} & Logique de "Retry" implémentée dans Airflow. \\
+        Saturation CPU/RAM (Fuite mémoire OpenCV) & 9 & 4 & 4 & \textbf{144} & Conteneurisation Docker avec limites de ressources strictes. \\
+        Faux positifs (nuit/pluie) & 7 & 7 & 3 & \textbf{147} & Fine-tuning des hyperparamètres de confiance YOLOv8. \\
+        \bottomrule
+    \end{tabular}
+    \caption{Matrice d'analyse des risques (AMDEC)}
 \end{table}
-
-\section{Diagrammes UML et organisation technique}
-\subsection{Diagramme de cas d’utilisation}
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=0.65\textwidth]{media/usecase_umldiag.png}
-  \caption{Diagramme de cas d’utilisation Circuli (acteurs et principaux cas d’usage)}
-\end{figure}
-
-\subsection{Diagramme de classes}
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=0.65\textwidth]{media/class_diag.png}
-  \caption{Diagramme UML de classes : abstraction logicielle du backend}
-\end{figure}
 
 \section{Conclusion}
-Une bonne anticipation technique et organisationnelle (domaines, charte, outils structurants, méthode agile et gestion de risques) conditionne le bon déroulé de la suite du projet prototype.
+La combinaison de Scrum pour le pilotage et d'Extreme Programming pour l'implémentation logicielle offre un cadre robuste. L'architecture a été conçue pour s'insérer nativement dans un réseau IP municipal (RTSP), validée conceptuellement par notre simulateur de flux vidéo externe.
