@@ -1,16 +1,57 @@
-\chapter{Implémentation d'un prototype}
+\chapter{Implémentation du Prototype et Expérimentations}
 
 \section{Introduction}
-% Insérez l'introduction du chapitre 4
+Cette étape couvre la concrétisation technique : réalisation par sprints, choix technos, assemblage back/front IA et expérimentation terrain.
 
-\section{Technologie et Outils}
-% Insérez le tableau comparatif Développement natif vs Cross-plateforme, et les outils (GeoGebra, Canva, etc.)
+\section{Choix technologiques et architecture}
+L’ensemble du système repose sur :
+\begin{itemize}
+  \item \textbf{Backend IA} : Python (modules Python YOLOv8, OpenCV pour traitement image, FastAPI pour REST API)
+  \item \textbf{Interface Mobile} : React Native (expo)
+  \item \textbf{Front web admin} : ReactJS
+  \item \textbf{Base de données} : PostgreSQL (hébergement sur cloud)
+  \item \textbf{Stockage images/vidéos} : AWS S3
+  \item \textbf{Collaboration} : GitHub, Notion, Trello
+\end{itemize}
 
-\section{Sprint 1}
-% Insérez le texte et les figures du Sprint 1 (Interfaces d'authentification, gestion, etc.)
+\section{Sprint 1 : authentification, backoffice, configuration}
+Objectifs : Création des modèles User, UI de connexion (Figure~\ref{fig:auth-ui}), dashboard initial (Figure~\ref{fig:dashboard}).
 
-\section{Sprint 2}
-% Insérez le texte et les figures du Sprint 2 (Édition, interactions, suivi, etc.)
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.45\textwidth]{media/interface_auth.png}
+  \caption{Interface d’authentification du backoffice admin}
+  \label{fig:auth-ui}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.55\textwidth]{media/dashboard_prototype.png}
+  \caption{Dashboard de monitoring du projet Circuli (prototype)}
+  \label{fig:dashboard}
+\end{figure}
+
+\section{Sprint 2 : intégration IA, dashboards, reporting}
+Objectifs : Liaison module YOLOv8 avec API cloud, affichage dynamique sur carte (backend Python + React Native frontend). Dashboards KPIs (latence, fps, MOTA, Figure~\ref{fig:kpi-dashboard}).
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.60\textwidth]{media/kpi_dashboard.png}
+  \caption{Tableau de bord d’analyse des KPI urbains (détection, suivi, flux)}
+  \label{fig:kpi-dashboard}
+\end{figure}
+
+\section{Sprint 3 : Feedback utilisateur et finalisation}
+Tests terrain : recueil d'avis auprès des municipalités pilotes ; ajustements.
+
+\section{Résultats expérimentaux}
+\subsection{Performances IA sur terrain}
+On mesure : taux d’erreur de détection, latence réelle, stabilité du tracking, perceptions utilisateurs.
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.7\textwidth]{media/deploiement_photo.png}
+  \caption{Déploiement sur un carrefour test (photo terrain)}
+\end{figure}
 
 \section{Conclusion}
-% Insérez la conclusion du chapitre 4
+Le prototype démontre la faisabilité technologique, la modularité, l’exploitabilité terrain, et ouvre la voie à un déploiement multi-villes. Les feedbacks serviront à améliorer l’UX, la précision IA et la robustesse avant industrialisation.

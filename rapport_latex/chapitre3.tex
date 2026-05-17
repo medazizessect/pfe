@@ -1,13 +1,89 @@
 \chapter{Préparation et planification}
 
 \section{Introduction}
-% Insérez l'introduction du chapitre 3
+Cette étape vise à structurer le passage de l’idée au produit fonctionnel, à travers des choix méthodologiques, organisationnels et le cadrage des outils de gestion de projet.
 
 \section{Préparation Initiale}
-% Insérez le texte sur le nom de domaine, la charte graphique, les acteurs, etc.
+\subsection{Recherche et choix du nom de domaine}
+Une étude des disponibilités a été réalisée sur différentes plateformes (OVH, Zenhosting). Après benchmark, le nom "circuli.tn" a été réservé (Figure~\ref{fig:domaine-ovh}). Ce choix optimise le référencement et la communication projet.
 
-\section{Planification de la réalisation}
-% Insérez le texte (Diagrammes de cas d'utilisation global, classes, sprints)
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.55\textwidth]{media/domaine_ovh.png}
+  \caption{Recherche et réservation du nom de domaine (OVH)}
+  \label{fig:domaine-ovh}
+\end{figure}
+
+\subsection{Élaboration de la charte graphique}
+Palette de couleurs, choix des icônes et conception des premiers wireframes (maquettes) via Canva permettent une cohérence visuelle (voir Figure~\ref{fig:palette-couleur}).
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.45\textwidth]{media/palette_couleur.png}
+  \caption{Palette graphique du projet Circuli}
+  \label{fig:palette-couleur}
+\end{figure}
+
+\subsection{Définition des rôles des acteurs et outils}
+Trois groupes principaux :
+\begin{itemize}
+  \item Utilisateurs finaux (collectivités, agents)
+  \item Équipe projet (chef de projet, développeur IA, frontend, backend)
+  \item Encadrant, parties prenantes institutionnelles
+\end{itemize}
+Outils collaboratifs : GitHub (gestion du code), Notion (planification), Google Drive (ressources partagées).
+
+\section{Gestion de projet et planification agile}
+\subsection{Planification par Sprints Scrum}
+La méthode Scrum a été utilisée : découpage du backlog en User Stories, priorisation, sprints de 2 semaines, Scrum board partagé Notion/GitHub.
+
+\begin{table}[H]
+  \centering
+  \begin{tabular}{lll}
+    \toprule
+    Sprint & But & Durée (jours) \\
+    \midrule
+    1 & Setup, initialisation repo, design & 10 \\
+    2 & IA, dashboard, UI mobile/web & 14 \\
+    3 & Suivi, feedback, ajustements & 8 \\
+    \bottomrule
+  \end{tabular}
+  \caption{Découpage des sprints durant la préparation}
+  \label{tab:sprints}
+\end{table}
+
+\subsection{Gestion des risques et tableau RPN}
+Chaque risque identifié est analysé : fréquence, gravité, détectabilité. Un Risk Priority Number (RPN) est calculé (voir Table~\ref{tab:risques}).
+
+\begin{table}[H]
+\centering
+\begin{tabular}{lccc}
+\toprule
+Risque & Gravité & Fréquence & RPN\\
+\midrule
+Échec détection IA & 8 & 5 & 40\\
+Retard sur livrables & 7 & 4 & 28\\
+Perte de données & 9 & 2 & 18\\
+\bottomrule
+\end{tabular}
+\caption{Analyse des risques principaux (méthode RPN)}
+\label{tab:risques}
+\end{table}
+
+\section{Diagrammes UML et organisation technique}
+\subsection{Diagramme de cas d’utilisation}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.65\textwidth]{media/usecase_umldiag.png}
+  \caption{Diagramme de cas d’utilisation Circuli (acteurs et principaux cas d’usage)}
+\end{figure}
+
+\subsection{Diagramme de classes}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.65\textwidth]{media/class_diag.png}
+  \caption{Diagramme UML de classes : abstraction logicielle du backend}
+\end{figure}
 
 \section{Conclusion}
-% Insérez la conclusion du chapitre 3
+Une bonne anticipation technique et organisationnelle (domaines, charte, outils structurants, méthode agile et gestion de risques) conditionne le bon déroulé de la suite du projet prototype.
