@@ -1,13 +1,13 @@
 \chapter{Préparation, Planification et Architecture Système}
 
 \section{Introduction}
-Le développement d'une plateforme d'intelligence artificielle appliquée à la mobilité urbaine nécessite une rigueur organisationnelle et technique sans faille. Ce chapitre décrit les étapes préparatoires, la méthodologie de gestion de projet adoptée, le découpage des tâches en sprints, ainsi que l'architecture système cible et les diagrammes de conception (UML).
+Le succès d'un projet d'intelligence artificielle pour la smart city repose autant sur la gestion, l'organisation et la fiabilité du code que sur la performance des modèles. Ce chapitre détaille la logique de structuration choisie, les arguments derrière les choix techniques, et comment l'ensemble du projet Circuli est planifié pour assurer robustesse, flexibilité et évolutivité.
 
 \section{Préparation Initiale}
 Avant d'entamer le développement logiciel, une phase de préparation a permis de poser les bases identitaires et organisationnelles du projet.
 
 \subsection{Recherche et choix du nom de domaine}
-Une étude des disponibilités a été réalisée sur différentes plateformes (OVH, Zenhosting). Après benchmark, le nom "circuli.tn" a été retené. Ce choix optimise le référencement et s'aligne parfaitement avec l'identité de la plateforme (circulation intelligente).
+Une étude des disponibilités a été réalisée sur différentes plateformes (OVH, Zenhosting). Après benchmark, le nom "circuli.tn" a été retenu. Ce choix optimise le référencement et s'aligne parfaitement avec l'identité de la plateforme (circulation intelligente).
 
 \begin{figure}[H]
   \centering
@@ -34,29 +34,97 @@ Le projet implique trois groupes principaux :
   \item \textbf{Outils collaboratifs} : GitHub (gestion du code), Notion (planification), Google Drive (ressources partagées).
 \end{itemize}
 
+\section{Méthodologie et choix organisationnels}
+Dès la conception, nous avons opté pour une organisation modulaire et industrialisée :
+\begin{enumerate}
+    \item \textbf{Découpage par domaines fonctionnels} : Deux modules principaux — \texttt{capture\_reconnaissance} (flux vidéo, IA) et \texttt{bi\_analytics} (API, KPIs, dashboard).
+    \item \textbf{Conteneurisation systématique (Docker)} : Chaque composant est isolé, testable individuellement, redéployable sur n'importe quel serveur/cloud.
+    \item \textbf{Workflow orchestré (Airflow)} : Toute la logique d'acquisition, détection, stockage, etc. est automatisée via des DAGs (Directed Acyclic Graphs).
+    \item \textbf{Collaboration et DevOps} : Git/GitHub pour le code source, dashboarding partagé (Grafana), API documentée (FastAPI).
+\end{enumerate}
 
-\section{Méthodologie de Gestion de Projet : Hybridation Scrum et XP}
-Pour répondre à l'incertitude inhérente aux projets d'intelligence artificielle tout en garantissant un code robuste, nous avons opté pour une approche hybride combinant Scrum et Extreme Programming (XP).
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.85\textwidth]{media/archi_circuli.png}
+  \caption{Architecture modulaire de Circuli : acquisition, IA, API, BI/dashboard}
+  \label{fig:archi-circuli}
+\end{figure}
 
-\subsection{Le cadre Scrum : Pilotage et Alignement Métier}
-Scrum a été utilisé pour structurer le temps et maximiser la valeur livrée aux parties prenantes.
+\section{Détails techniques et justification des choix}
+\subsection{Langage et IA}
+Python 3.11+ a été choisi pour sa maturité en ML/Deep Learning et pour l'intégration avec YOLOv8, bibliothèque ultralytics leader pour la détection d'objets.
+
+\subsection{API et orchestration}
 \begin{itemize}
-    \item \textbf{Sprints} : Un rythme itératif permettant de réajuster rapidement les paramètres.
-    \item \textbf{Cérémonies} : Sprint Planning, Daily Scrum, et Sprint Review pour la validation des modules.
+    \item \textbf{FastAPI} : Génère automatiquement la documentation interactive et permet un mapping simple entre endpoints et traitements IA/post-processing.
+    \item \textbf{Apache Airflow} : Gère le lancement automatique/séquentiel des tâches critiques telles que la récupération de flux, l'inférence IA, et l'export des résultats vers la base ou le dashboard.
 \end{itemize}
 
-\subsection{Extreme Programming (XP) : Excellence Technique}
+\subsection{Dashboard et stockage}
+Le choix de Grafana et PostgreSQL permet de présenter les indicateurs clés de la mobilité en temps réel, avec historisation, différents rôles d'accès (ingénieur, décideur) et portabilité des dashboards.
+
+\subsection{Acquisition vidéo}
+yt-dlp permet un streaming robuste de sources hétérogènes (YouTube live, RTSP, liens caméras municipales...) que ne supportent pas les librairies OpenCV natives.
+
+\subsection{Industrialisation}
+La présence d'un script \texttt{setup\_all.sh} permet l'initialisation complète du projet, depuis le build des images Docker jusqu'au lancement de la stack complète via \texttt{docker-compose} : aucune dépendance cachée, reproductibilité parfaite.
+
+\section{Organisation et structure du dépôt}
+\begin{verbatim}
+parki/
+├── capture_reconnaissance/   # Acquisition et détection
+│   ├── dags/                 # Workflows Airflow
+│   ├── scripts/              # Scripts traitement vidéo, détection
+│   ├── config/               # Streams et modèles paramétrables
+│   └── Dockerfile
+├── bi_analytics/             # Backoffice, dashboards
+│   ├── app/                  # Application FastAPI
+│   ├── grafana/              # Provisionning, dashboards
+│   └── Dockerfile
+├── static/                   # Logos, assets images
+├── docker-compose.yml        # Orchestration globale (interservices)
+├── setup_all.sh              # Initialisation automatisée complète
+└── README.md
+\end{verbatim}
+
+\section{Automatisation, CI/CD et reproductibilité}
+Tout build, déploiement, reconfiguration est automatisé grâce au couplage Docker / Airflow :
 \begin{itemize}
-    \item \textbf{Intégration Continue (CI)} : Chaque modification est packagée via Docker.
-    \item \textbf{Conception Simple} : Architecture découplée entre `capture_reconnaissance` et `bi_analytics`.
-    \item \textbf{Standards de codage} : Typage strict sous Python 3.11 avec Pydantic.
+    \item Suppression du “it works on my machine”.
+    \item Déploiement local ou cloud identique (tests, production).
+    \item (À venir) : Intégration Github Actions ou GitLab CI pour les tests et la livraison continue.
 \end{itemize}
 
+\section{Sécurité, gestion des accès et scalabilité}
+Gestion centralisée des secrets (credentials base/API dans variables d'environnement Docker), monitoring via Grafana, possibilité de répliquer le service capture sur d'autres flux autonomes.
 
-\section{Backlog du produit et planification des sprints}
-Le Product Backlog et la planification des sprints constituent l'épine dorsale du développement en assurant une approche organisée et itérative.
+\section{Gestion de Projet Agile : Hybridation Scrum et XP}
+Pour répondre à l'incertitude inhérente aux projets d'intelligence artificielle tout en garantissant un code robuste, nous avons opté pour une approche hybride combinant Scrum et Extreme Programming (XP). Le développement s'est réparti en sprints successifs, chaque livrable validant une avancée clé.
 
-\subsection{Backlog du produit}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.8\textwidth]{media/workflow_sprint.png}
+  \caption{Exemple de kanban / scrum board pour la gestion agile du projet}
+  \label{fig:kanban-circuli}
+\end{figure}
+
+\subsection{Planification macroscopique}
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|c|l|l|}
+        \hline
+        \textbf{Sprint} & \textbf{Objectif} & \textbf{État} \\
+        \hline
+        1 & Setup : structure repo, Dockerisation, tests unitaires & Terminé \\
+        2 & IA/Acquisition : implémentation YOLO, pipeline Airflow, config flux & Terminé \\
+        3 & BI : API FastAPI, dashboards Grafana & Terminé \\
+        4 & Documentation, tests multi-flux, préparation soutenance & En cours \\
+        \hline
+    \end{tabular}
+    \caption{Découpage par sprint du projet Circuli}
+\end{table}
+
+\subsection{Backlog du produit (Détail)}
 \begin{table}[H]
     \centering
     \resizebox{\textwidth}{!}{
@@ -77,7 +145,7 @@ Le Product Backlog et la planification des sprints constituent l'épine dorsale 
         \bottomrule
     \end{tabular}
     }
-    \caption{Product Backlog du projet CIRCULI}
+    \caption{Product Backlog détaillé du projet CIRCULI}
 \end{table}
 
 \subsection{Planification détaillée des Sprints}
@@ -197,4 +265,4 @@ L'Analyse des Modes de Défaillance (Criticité $C = G \times F \times D$) a per
 \end{table}
 
 \section{Conclusion}
-Ce chapitre a permis de clarifier la méthodologie du projet. De la définition de la charte graphique et du nom de domaine jusqu'à l'hybridation des méthodes Scrum/XP, tout a été planifié de manière rigoureuse. Les diagrammes UML et l'analyse AMDEC consolident l'approche technique qui sera implémentée dans le chapitre suivant.
+Une organisation modulaire, une démarche agile documentée, des choix technologiques rationnels et des outils industriels assurent à Circuli crédibilité, maintenabilité et capacité de passage à l'échelle, piliers d'un vrai projet smart city. De la définition de la charte graphique jusqu'à l'hybridation des méthodes Scrum/XP, tout a été planifié de manière rigoureuse.
