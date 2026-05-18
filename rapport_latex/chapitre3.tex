@@ -1,73 +1,53 @@
 \chapter{Préparation, Planification et Architecture Système}
 
 \section{Introduction}
-Le succès d'un projet d'intelligence artificielle pour la smart city repose autant sur la gestion, l'organisation et la fiabilité du code que sur la performance des modèles. Ce chapitre détaille la logique de structuration choisie, les arguments derrière les choix techniques, et comment l'ensemble du projet Circuli est planifié pour assurer robustesse, flexibilité et évolutivité.
+Le succès d'un projet d'intelligence artificielle pour la smart city repose autant sur la gestion, l'organisation et la fiabilité du code que sur la performance des modèles. Ce chapitre détaille la logique de structuration choisie, les arguments derrière les choix techniques, et comment l'ensemble du projet CIRCU·LI est planifié pour assurer robustesse, flexibilité et évolutivité. Il pose également le contexte global, la problématique, et la conduite du changement inhérente à l'adoption de ce système.
 
-\section{Préparation Initiale}
-Avant d'entamer le développement logiciel, une phase de préparation a permis de poser les bases techniques, identitaires et organisationnelles du projet.
+\section{Contexte et Motivation du Projet}
+\subsection{Contexte du projet et ODD}
+Notre projet CIRCU·LI s’inscrit dans le contexte des Objectifs de Développement Durable (ODD) et prend place au sein d’un environnement urbain et technologique en pleine mutation. Face aux défis croissants liés à la gestion de la mobilité et à l’optimisation des flux de circulation, notre motivation est d’explorer des approches innovantes pour améliorer la planification urbaine et la sécurité routière.
 
-\subsection{Environnement de développement et déploiement local (Ubuntu)}
-Contrairement à un déploiement web classique nécessitant l'acquisition d'un nom de domaine via un hébergeur (de type OVH), nous avons privilégié une architecture locale déployée sur une machine fonctionnant sous \textbf{Ubuntu}. Ce choix technique s'inscrit dans une logique de "Edge Computing" : il permet de s'affranchir des latences réseau liées au Cloud et d'exploiter directement les ressources matérielles locales (CPU/RAM) pour assurer l'inférence du modèle d'Intelligence Artificielle en temps réel sur les flux vidéo.
-
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=0.6\textwidth]{media/ubuntu_env.png}
-  \caption{Environnement de développement et serveur local sous Ubuntu}
-  \label{fig:ubuntu-env}
-\end{figure}
-
-\subsection{Élaboration de la charte graphique}
-La palette de couleurs, le choix des icônes et la conception des premiers wireframes via Canva ont permis d'assurer une cohérence visuelle pour toutes les interfaces (voir Figure~\ref{fig:palette-couleur}).
-
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=0.45\textwidth]{media/palette_couleur.png}
-  \caption{Palette graphique du projet Circuli}
-  \label{fig:palette-couleur}
-\end{figure}
-
-\subsection{Définition des rôles des acteurs et outils}
-Le projet implique trois groupes principaux :
+CIRCU·LI contribue directement aux Objectifs de Développement Durable (ODD) suivants :
 \begin{itemize}
-  \item \textbf{Utilisateurs finaux} : Collectivités, agents municipaux, responsables mobilité.
-  \item \textbf{Équipe projet} : Chef de projet, data scientist, développeur full-stack.
-  \item \textbf{Outils collaboratifs} : GitHub (gestion du code), Notion (planification), Google Drive (ressources partagées).
+    \item \textbf{ODD 9 (Industrie, Innovation et Infrastructure)} : CIRCU·LI introduit des solutions innovantes de gestion des flux urbains via la collecte en temps réel et l’analyse intelligente.
+    \item \textbf{ODD 11 (Villes et Communautés durables)} : En réduisant la congestion, le projet contribue à rendre les villes plus sûres et plus accessibles.
+    \item \textbf{ODD 13 (Lutte contre le Changement Climatique)} : L'optimisation des flux diminue les émissions de gaz à effet de serre.
+    \item \textbf{ODD 8 (Travail décent et croissance économique)} : La réduction de la pollution liée au trafic participe au bien-être des citoyens (environnement sain, réduction du stress).
+    \item \textbf{ODD 17 (Partenariats)} : Le projet met en œuvre des collaborations entre municipalités, opérateurs et acteurs technologiques.
 \end{itemize}
 
-\section{Méthodologie et choix organisationnels}
-Dès la conception, nous avons opté pour une organisation modulaire et industrialisée :
+\subsection{Problématique}
+La gestion de la mobilité urbaine constitue aujourd’hui l’un des défis majeurs des collectivités locales. Avec l’augmentation continue du nombre de véhicules et l’urbanisation croissante, les villes font face à une congestion permanente. Malgré la présence de caméras, ces données restent sous-exploitées. Cette absence d’un système centralisé entraîne une réaction tardive aux problèmes de circulation et l'insatisfaction croissante des citoyens. CIRCU·LI naît de la nécessité de transformer ces données brutes en informations exploitables pour une gouvernance proactive.
+
+\subsection{Motivation}
+La croissance rapide du trafic exige des solutions plus intelligentes. Notre motivation provient de la volonté d'exploiter pleinement les données de mobilité pour rendre la ville fluide. CIRCU·LI est motivé par la vision de faire évoluer la gestion de la mobilité d’un modèle réactif vers un modèle prédictif et proactif.
+
+\section{Conduite du changement et Stratégie (BSC)}
+\subsection{Conduite du changement}
+L’introduction d’une plateforme intelligente nécessite une conduite du changement structurée.
 \begin{enumerate}
-    \item \textbf{Découpage par domaines fonctionnels} : Deux modules principaux — \texttt{capture\_reconnaissance} (flux vidéo, IA) et \texttt{bi\_analytics} (API, KPIs, dashboard).
-    \item \textbf{Conteneurisation systématique (Docker)} : Chaque composant est isolé, testable individuellement, redéployable sur n'importe quel serveur Ubuntu.
-    \item \textbf{Workflow orchestré (Airflow)} : Toute la logique d'acquisition, détection, stockage, etc. est automatisée via des DAGs (Directed Acyclic Graphs).
-    \item \textbf{Collaboration et DevOps} : Git/GitHub pour le code source, dashboarding partagé (Grafana), API documentée (FastAPI).
+    \item \textbf{Identification des acteurs} : Municipalités, opérateurs de mobilité, analystes et citoyens.
+    \item \textbf{Sensibilisation} : Présentation des objectifs et bénéfices.
+    \item \textbf{Formation} : Initiation des décideurs aux indicateurs BI.
+    \item \textbf{Mise en œuvre progressive} : Phase pilote sur un périmètre limité.
+    \item \textbf{Évaluation} : Suivi de l'adoption et de l'impact sur la réduction de la congestion.
 \end{enumerate}
 
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=0.85\textwidth]{media/archi_circuli.png}
-  \caption{Architecture modulaire de Circuli : acquisition, IA, API, BI/dashboard}
-  \label{fig:archi-circuli}
-\end{figure}
-
-\section{Détails techniques et justification des choix}
-\subsection{Langage et IA}
-Python 3.11+ a été choisi pour sa maturité en ML/Deep Learning et pour l'intégration avec YOLOv8, bibliothèque ultralytics leader pour la détection d'objets.
-
-\subsection{API et orchestration}
+\subsection{Alignement stratégique (Balanced Scorecard - BSC)}
+L’approche Balanced Scorecard permet de traduire la vision stratégique en objectifs mesurables :
 \begin{itemize}
-    \item \textbf{FastAPI} : Génère automatiquement la documentation interactive et permet un mapping simple entre endpoints et traitements IA/post-processing.
-    \item \textbf{Apache Airflow} : Gère le lancement automatique/séquentiel des tâches critiques.
+    \item \textbf{Financier} : Optimiser les coûts d'exploitation IT (cible : réduction de 20\% en 2 ans).
+    \item \textbf{Clients} : Fournir des tableaux de bord clairs (cible : satisfaction > 85\%).
+    \item \textbf{Processus internes} : Automatiser l'analyse vidéo (cible : Uptime $\geq$ 99\%).
+    \item \textbf{Apprentissage} : Développer une culture d'innovation via la formation IA/BI.
 \end{itemize}
 
-\subsection{Dashboard et stockage}
-Le choix de Grafana et PostgreSQL permet de présenter les indicateurs clés de la mobilité en temps réel.
+\section{Étude comparative et technologique}
+\subsection{Benchmarking}
+L’objectif de ce benchmarking est d’analyser des solutions existantes pour positionner CIRCU·LI. Par exemple, des solutions comme Citilog (France) ou Miovision (Canada) sont très coûteuses et peu adaptables au contexte local. CIRCU·LI se démarque par une utilisation des caméras existantes, une forte intégration BI et un coût maîtrisé.
 
-\subsection{Acquisition vidéo}
-yt-dlp permet un streaming robuste de sources hétérogènes (YouTube live, RTSP, liens caméras municipales...) directement traitées par le serveur Ubuntu.
-
-\subsection{Industrialisation}
-La présence d'un script \texttt{setup\_all.sh} (exécuté sous bash Ubuntu) permet l'initialisation complète du projet, depuis le build des images Docker jusqu'au lancement de la stack complète via \texttt{docker-compose}.
+\subsection{Technologie et outils}
+La conception repose sur une sélection rigoureuse : Python, OpenCV et \textbf{YOLOv8} pour l'IA ; FastApi pour les Web Services ; PostgreSQL pour le stockage ; \textbf{Power BI / Grafana} pour la visualisation ; et Docker pour la conteneurisation. Le choix d'un serveur local Ubuntu garantit un traitement vidéo à faible latence (Edge Computing).
 
 \section{Gestion de Projet Agile : Hybridation Scrum et XP}
 Pour répondre à l'incertitude inhérente aux projets d'intelligence artificielle, nous avons opté pour une approche hybride combinant Scrum et Extreme Programming (XP). Le développement s'est réparti en \textbf{4 sprints} successifs.
@@ -195,8 +175,7 @@ Pour répondre à l'incertitude inhérente aux projets d'intelligence artificiel
 \end{table}
 
 \section{Diagrammes UML et modélisation}
-Pour formaliser les interactions entre les acteurs et la plateforme, nous avons modélisé les processus métiers via le langage UML.
-
+Pour formaliser les interactions entre les acteurs et la plateforme CIRCU·LI, nous avons modélisé les processus métiers via le langage UML.
 \subsection{Diagramme de cas d'utilisation}
 \begin{figure}[H]
   \centering
@@ -211,21 +190,5 @@ Pour formaliser les interactions entre les acteurs et la plateforme, nous avons 
   \caption{Diagramme de classes UML de l'architecture logicielle}
 \end{figure}
 
-\section{Analyse des Risques (AMDEC)}
-L'Analyse des Modes de Défaillance a permis de sécuriser le développement local.
-
-\begin{table}[H]
-    \centering
-    \begin{tabular}{p{4cm}ccccl}
-        \toprule
-        \textbf{Mode de défaillance} & \textbf{G} & \textbf{F} & \textbf{D} & \textbf{Criticité} & \textbf{Action Préventive} \\
-        \midrule
-        Saturation CPU/RAM (Ubuntu) & 9 & 4 & 4 & \textbf{144} & Conteneurisation Docker. \\
-        Faux positifs (nuit/pluie) & 7 & 7 & 3 & \textbf{147} & Fine-tuning YOLOv8. \\
-        \bottomrule
-    \end{tabular}
-    \caption{Matrice d'analyse des risques (AMDEC)}
-\end{table}
-
 \section{Conclusion}
-Ce chapitre a permis de clarifier la méthodologie du projet. Du choix d'une architecture locale Ubuntu (Edge Computing) jusqu'à l'hybridation des méthodes Scrum/XP divisée en 4 Sprints (dont un dédié exclusivement au benchmarking), tout a été planifié de manière rigoureuse. Les diagrammes UML et l'analyse AMDEC consolident l'approche technique qui sera implémentée dans le chapitre suivant.
+La combinaison d'une étude de contexte rigoureuse (ODD, conduite du changement) avec une architecture agile documentée assure à CIRCU·LI sa viabilité. Du choix des technologies (YOLO, BI) jusqu'à l'hybridation Scrum/XP répartie sur 4 Sprints, tout a été orchestré pour garantir une livraison robuste. Les diagrammes UML consolident l'approche qui sera implémentée dans le chapitre suivant.
