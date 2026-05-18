@@ -10,7 +10,7 @@ Pour répondre à l'incertitude inhérente aux projets d'intelligence artificiel
 Scrum a été utilisé pour structurer le temps et maximiser la valeur livrée aux parties prenantes (ici, simulées par la collectivité locale).
 \begin{itemize}
     \item \textbf{Sprints de 2 semaines} : Un rythme itératif permettant de réajuster rapidement les paramètres du modèle YOLOv8 ou l'interface de Business Intelligence.
-    \item \textbf{Le Product Backlog} : Recueil des User Stories (ex: "En tant qu'opérateur urbain, je veux visualiser les zones de congestion pour ajuster les feux tricolores").
+    \item \textbf{Le Product Backlog} : Recueil des User Stories.
     \item \textbf{Cérémonies} : Sprint Planning pour la définition des objectifs, Daily Scrum pour la synchronisation technique, et Sprint Review pour la validation des modules.
 \end{itemize}
 
@@ -22,35 +22,131 @@ Là où Scrum s'arrête à l'organisation, XP dicte la manière de développer l
     \item \textbf{Standards de codage} : Typage strict sous Python 3.11 avec Pydantic pour garantir la validité des flux JSON entre l'IA et le backend.
 \end{itemize}
 
+\section{Backlog du produit et planification des sprints}
+La backlog du produit et la planification des sprints constituent l'épine dorsale du développement de notre plateforme en assurant une approche organisée et itérative pour atteindre nos objectifs.
+
+\subsection{Backlog du produit}
+Le tableau ci-dessous présente l'ensemble des fonctionnalités attendues (User Stories), priorisées et estimées en Story Points.
+
+\begin{table}[H]
+    \centering
+    \resizebox{\textwidth}{!}{
+    \begin{tabular}{lllp{6cm}lc}
+        \toprule
+        \textbf{ID} & \textbf{EN TANT QUE…} & \textbf{JE SOUHAITE…} & \textbf{DANS LE BUT DE…} & \textbf{PRIORITÉ} & \textbf{Story Points} \\
+        \midrule
+        S01 & Système & authentifier les utilisateurs & sécuriser l'accès à la plateforme & Élevée & 5 \\
+        S02 & Administrateur & gérer les comptes et rôles & contrôler les accès & Élevé & 5 \\
+        P01 & Analyste & collecter et structurer les données & alimenter Power BI et préparer l'analyse & Élevé & 3 \\
+        P02 & Analyste & créer des tableaux de bord Power BI & visualiser les indicateurs clés & Moyenne & 5 \\
+        IA01 & Système & détecter auto. les types de véhicules & reconnaître les véhicules & Élevé & 8 \\
+        IA02 & Data Scientist & entraîner et valider le modèle & garantir la précision & Élevé & 8 \\
+        IA03 & Développeur & intégrer le module IA & utiliser la reconnaissance dans la plateforme & Moyenne & 5 \\
+        R01 & Responsable mobilité & recevoir des recommandations & optimiser les déplacements urbains & Élevé & 5 \\
+        \midrule
+        \multicolumn{5}{l}{\textbf{TOTAL}} & \textbf{44} \\
+        \bottomrule
+    \end{tabular}
+    }
+    \caption{Product Backlog du projet CIRCULI}
+\end{table}
+
+\subsection{Planification détaillée des Sprints}
+La charge de travail a été répartie sur plusieurs Sprints afin de garantir une livraison continue de valeur.
+
+\subsubsection*{Sprint 1 : Socle technique et sécurité (14 Jours)}
+\begin{table}[H]
+    \centering
+    \resizebox{\textwidth}{!}{
+    \begin{tabular}{llc}
+        \toprule
+        \textbf{USER STORY (ID)} & \textbf{TÂCHES} & \textbf{DURÉE (JOURS)} \\
+        \midrule
+        \textbf{US-S01 – Authentification} & Analyse besoins sécurité & 1 \\
+        \textit{Sécuriser l'accès} & Conception schéma utilisateurs & 1 \\
+        & Développement login & 1 \\
+        & Développement logout & 1 \\
+        & Gestion sessions et tokens & 1 \\
+        & Tests sécurité et fonctionnels & 1 \\
+        \midrule
+        \textbf{US-S02 – Gestion comptes \& rôles} & Définition rôles et permissions & 1 \\
+        \textit{Contrôler les accès} & Développement CRUD utilisateurs & 2 \\
+        & Gestion des rôles & 1 \\
+        & Interface administration & 2 \\
+        & Tests et validation & 1 \\
+        \midrule
+        \textbf{US-P01 – Collecte des données} & Identification sources de données & 1 \\
+        \bottomrule
+    \end{tabular}
+    }
+    \caption{Détail des tâches du Sprint 1}
+\end{table}
+
+\subsubsection*{Sprint 2 : Intelligence Artificielle et BI (14 Jours)}
+\begin{table}[H]
+    \centering
+    \resizebox{\textwidth}{!}{
+    \begin{tabular}{llc}
+        \toprule
+        \textbf{USER STORY (ID)} & \textbf{TÂCHES} & \textbf{DURÉE (JOURS)} \\
+        \midrule
+        \textbf{US-P02 – Tableaux de bord BI} & Connexion Power BI aux données & 0,5 \\
+        & Création des dashboards & 1 \\
+        & Tests et ajustements visuels & 0,5 \\
+        \midrule
+        \textbf{US-IA01 – Détection véhicules} & Constitution dataset images/vidéos & 1 \\
+        & Annotation des données & 2 \\
+        & Sélection du modèle IA & 1 \\
+        & Entraînement initial du modèle & 2 \\
+        & Tests de détection & 1 \\
+        \midrule
+        \textbf{US-IA02 – Entraînement \& validation} & Optimisation hyperparamètres & 1 \\
+        & Entraînement avancé & 2 \\
+        & Évaluation des performances & 1 \\
+        & Validation finale du modèle & 1 \\
+        \bottomrule
+    \end{tabular}
+    }
+    \caption{Détail des tâches du Sprint 2}
+\end{table}
+
+\subsubsection*{Sprint 3 : Intégration et Recommandations (14 Jours)}
+\begin{table}[H]
+    \centering
+    \resizebox{\textwidth}{!}{
+    \begin{tabular}{llc}
+        \toprule
+        \textbf{USER STORY (ID)} & \textbf{TÂCHES} & \textbf{DURÉE (JOURS)} \\
+        \midrule
+        \textbf{US-IA03 – Intégration IA} & Développement API IA & 1 \\
+        & Intégration backend & 1 \\
+        & Intégration frontend & 1 \\
+        & Tests d'intégration & 1 \\
+        \midrule
+        \textbf{US-R01 – Recommandations mobilité} & Analyse besoins décisionnels & 1 \\
+        & Définition règles métier & 1 \\
+        & Développement moteur de recommandation & 2 \\
+        & Visualisation des recommandations & 1 \\
+        & Tests utilisateurs & 1 \\
+        \midrule
+        \textbf{US-AM – Amélioration continue} & Corrections et optimisation & 2 \\
+        & Documentation technique & 1 \\
+        & Préparation livraison finale & 1 \\
+        \bottomrule
+    \end{tabular}
+    }
+    \caption{Détail des tâches du Sprint 3}
+\end{table}
+
+
 \section{Architecture d'Acquisition : Du PoC à la Réalité Municipale}
 \subsection{L'Architecture Cible : Réseau Vidéo Urbain (RTSP / ONVIF)}
-Dans le cadre d'un déploiement réel en conditions de "Smart City", le système \textit{Circuli} est conçu pour s'interfacer directement avec le Système de Gestion Vidéo (VMS) de la municipalité. Les caméras de vidéosurveillance urbaine (CCTV) transmettent leurs flux en temps réel via le protocole \textbf{RTSP (Real Time Streaming Protocol)} encodé généralement en H.264 ou H.265.
-
-Le module d'acquisition de notre système est totalement agnostique. Il utilise la librairie OpenCV, capable de lire un flux direct via l'instruction : 
-\texttt{cv2.VideoCapture("rtsp://user:password@ip\_camera:554/stream")}
+Dans le cadre d'un déploiement réel en conditions de "Smart City", le système \textit{Circuli} est conçu pour s'interfacer directement avec le Système de Gestion Vidéo (VMS) de la municipalité. Les caméras de vidéosurveillance urbaine (CCTV) transmettent leurs flux en temps réel via le protocole \textbf{RTSP (Real Time Streaming Protocol)}.
 
 \subsection{Le Simulateur (Proof of Concept) via YouTube Live}
 Durant la phase de développement académique, l'accès direct aux serveurs sécurisés du Ministère de l'Intérieur ou des municipalités est restreint pour des raisons de cybersécurité. 
 
-Pour surmonter cette contrainte tout en conservant des conditions réelles (lumière changeante, trafic dense, intempéries), nous avons mis en place un \textbf{simulateur urbain} (Digital Twin). Au lieu d'attaquer une IP privée, le module utilise \texttt{yt-dlp} pour extraire les flux en direct de caméras urbaines diffusées publiquement sur YouTube. Cette approche valide l'entièreté de la chaîne d'ingestion algorithmique de manière iso-fonctionnelle au protocole RTSP.
-
-\section{Planification Macroscopique des Sprints}
-\begin{table}[H]
-    \centering
-    \resizebox{\textwidth}{!}{
-    \begin{tabular}{llp{7cm}l}
-        \toprule
-        \textbf{Phase} & \textbf{Itération} & \textbf{Objectifs Techniques (Scrum/XP)} & \textbf{Statut} \\
-        \midrule
-        Cadrage & Sprint 1 & Définition de l'architecture Docker, mise en place des standards de code XP. Réservation du domaine. & Terminé \\
-        Data \& IA & Sprint 2 & Intégration de YOLOv8, gestion agnostique des flux vidéo (YouTube PoC vs RTSP target), paramétrage des ROI. & Terminé \\
-        Backend & Sprint 3 & Développement de l'API FastAPI, modélisation PostgreSQL, tests d'intégration. & Terminé \\
-        BI \& DevOps & Sprint 4 & Construction des dashboards Grafana, orchestration des DAGs via Apache Airflow, optimisation CPU. & Terminé \\
-        \bottomrule
-    \end{tabular}
-    }
-    \caption{Planification globale du projet sous hybridation Scrum/XP}
-\end{table}
+Pour surmonter cette contrainte, nous avons mis en place un \textbf{simulateur urbain} (Digital Twin). Au lieu d'attaquer une IP privée, le module utilise \texttt{yt-dlp} pour extraire les flux en direct de caméras urbaines diffusées publiquement sur YouTube. Cette approche valide l'entièreté de la chaîne d'ingestion algorithmique de manière iso-fonctionnelle.
 
 \section{Analyse des Risques selon la méthode AMDEC}
 L'Analyse des Modes de Défaillance, de leurs Effets et de leur Criticité (AMDEC) est primordiale pour un système temps réel. La criticité $C$ est calculée par $C = Gravité \times Fréquence \times Détectabilité$.
@@ -70,4 +166,4 @@ L'Analyse des Modes de Défaillance, de leurs Effets et de leur Criticité (AMDE
 \end{table}
 
 \section{Conclusion}
-La combinaison de Scrum pour le pilotage et d'Extreme Programming pour l'implémentation logicielle offre un cadre robuste. L'architecture a été conçue pour s'insérer nativement dans un réseau IP municipal (RTSP), validée conceptuellement par notre simulateur de flux vidéo externe.
+La combinaison de Scrum pour le pilotage et d'Extreme Programming pour l'implémentation logicielle offre un cadre robuste. Le découpage précis du Product Backlog et la répartition des tâches sur 3 sprints ont permis un développement itératif et contrôlé. L'architecture a été conçue pour s'insérer nativement dans un réseau IP municipal (RTSP), validée conceptuellement par notre simulateur de flux vidéo externe.
