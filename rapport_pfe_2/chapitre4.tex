@@ -1,0 +1,51 @@
+\chapter{Implémentation Technique et Réalisation du Prototype}
+
+\section{Introduction}
+Ce chapitre est dédié à la transcription complète de notre architecture conceptuelle en un produit logiciel hautement fonctionnel, robuste et déployable. Il détaille techniquement et mathéma[...]
+
+\section{Module d'Acquisition et Prétraitement Vidéo}
+
+\subsection{Agnosticité de l'ingestion vidéo}
+Conformément à la philosophie \textit{Extreme Programming} (XP) visant la flexibilité et la réutilisabilité du code, le script d'ingestion vidéo a été abstrait de sa source physique. Le cœ[...]
+
+\subsection{Filtrage spatial : Application de la Région d'Intérêt (ROI)}
+L'application d'une Région d'Intérêt (ROI) est une étape de prétraitement absolument vitale pour la performance temps réel. En ignorant mathématiquement le ciel, les trottoirs éloignés, l[...]
+
+\begin{algorithm}[H]
+\caption{Algorithme de prétraitement et d'application dynamique de la ROI}
+\begin{algorithmic}[1]
+\STATE \textbf{Initialiser} $flux \leftarrow \text{cv2.VideoCapture}(SOURCE\_URL)$
+\STATE \textbf{Définir la zone utile} $ROI \leftarrow [x_{min}, y_{min}, x_{max}, y_{max}]$
+\WHILE{$flux.isOpened()$}
+    \STATE $ret, frame \leftarrow flux.read()$
+    \IF{\textbf{not} $ret$}
+        \STATE \textbf{Log:} "Perte du signal réseau"
+        \STATE \textbf{Reconnecter} flux avec délai d'attente exponentiel
+    \ENDIF
+    \STATE \COMMENT{Découpage tensoriel pour ne conserver que la route}
+    \STATE $frame\_roi \leftarrow frame[y_{min}:y_{max}, x_{min}:x_{max}]$
+    \STATE $tensor \leftarrow \text{preprocess\_for\_yolo}(frame\_roi)$ \COMMENT{Normalisation et redimensionnement}
+    \STATE $predictions \leftarrow \text{YOLOv8.predict}(tensor)$
+    \STATE $\text{push\_to\_api}(predictions)$ \COMMENT{Envoi asynchrone au Backend}
+\ENDWHILE
+\end{algorithmic}
+\end{algorithm}
+
+\section{Module de Détection (Intelligence Artificielle)}
+
+\subsection{Fonctionnement mathématique du modèle YOLOv8}
+L'acronyme YOLO signifie "You Only Look Once". Contrairement aux algorithmes d'anciennes générations (comme Faster R-CNN) qui nécessitent deux passes distinctes (une première pour identifier d[...]
+
+L'image d'entrée est divisée par l'algorithme en une grille de $S \times S$ cellules. Si le centre de gravité géométrique d'un véhicule (voiture, bus, camion) tombe dans une cellule spécifi[...]
+
+Pendant son entraînement et son inférence, YOLOv8 s'appuie sur une fonction de perte (Loss Function) complexe, composée de trois sous-fonctions optimisées par descente de gradient :
+\begin{equation}
+Loss = \lambda_{box} \mathcal{L}_{box} + \lambda_{cls} \mathcal{L}_{cls} + \lambda_{dfl} \mathcal{L}_{dfl}
+\end{equation}
+
+\begin{itemize}
+    \item \textbf{$\mathcal{L}_{box}$} (Box Loss) : Calcule l'erreur géométrique entre les coordonnées de la boîte de détection prédite et la réalité. Elle utilise la métrique IoU (Inters[...]
+    \item \textbf{$\mathcal{L}_{cls}$} (Classification Loss) : Pénalise le réseau s'il se trompe de classe (ex: identifier un camion au lieu d'une voiture). Elle repose sur la fonction mathémat[...]
+    \item \textbf{$\mathcal{L}_{dfl}$} (Distribution Focal Loss) : Améliore la détection des contours flous, très fréquent pour les véhicules en mouvement rapide créant un "Motion Blur".
+\end{itemize}
+[...]

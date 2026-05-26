@@ -1,0 +1,101 @@
+\chapter{Étude préliminaire}
+
+\section{Introduction}
+Ce premier chapitre présente les fondements du projet \textbf{CIRCULI}. Il aborde le contexte général de la gestion urbaine intelligente, l'origine de l'idée du projet ainsi que la problématiq[...]
+
+La solution proposée à travers la plateforme CIRCULI est ensuite détaillée, en mettant l'accent sur son architecture, ses fonctionnalités principales et sa valeur ajoutée pour les acteurs pub[...]
+
+\section{Origine de l'idée}
+\begin{quote}
+« \textit{On ne peut améliorer que ce que l'on mesure et comprend.} »\\
+--- \textbf{Peter Drucker} ---
+\end{quote}
+
+L'idée du projet \textbf{CIRCULI} est née d'un constat concret lié aux difficultés rencontrées par les collectivités locales dans la gestion quotidienne de la mobilité urbaine et des flux d[...]
+
+Au fil des observations et des échanges avec des acteurs du secteur public, il est apparu que les méthodes traditionnelles de suivi et de planification de la mobilité reposent principalement su[...]
+
+Ce manque de visibilité globale et d'outils d'aide à la décision adaptés a mis en évidence la nécessité d'une solution innovante capable de centraliser, analyser et valoriser les données u[...]
+
+Ainsi, CIRCULI s'inscrit comme une réponse aux enjeux actuels des villes intelligentes, en mettant la donnée au cœur du processus décisionnel afin d'améliorer la fluidité de la circulation, [...]
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{media/image_debits_journaliers.png} % Remplacez par le nom de votre image
+    \caption{Extraits du plan des débits journaliers moyens de la circulation motorisée des véhicules à deux essieux ou plus, source recensement général de la circulation de 2017}
+    \label{fig:debits-journaliers}
+\end{figure}
+
+
+\section{Problématique}
+Le projet CIRCULI s'inscrit dans un contexte urbain où se déplacer devient de plus en plus difficile. Dans de nombreuses villes, les routes sont souvent encombrées, surtout à certaines heures [...]
+
+L'analyse des données disponibles montre que ces difficultés ne sont pas dues à une seule cause, mais à une combinaison de facteurs : une forte utilisation de la voiture, une concentration des[...]
+
+\subsection{Routes saturées et méthodes de gestion limitées}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{media/image7.jpeg} % Remplacez par le vrai nom du fichier
+    \caption{Répartition modale par délégation et volumes de déplacements associés}
+    \label{fig:repartition-modale}
+\end{figure}
+
+Les données analysées montrent que la majorité des déplacements en ville se fait encore en voiture individuelle. La figure \ref{fig:repartition-modale} indique que la voiture est le moyen de t[...]
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{media/image8.jpeg}
+    \caption{Flux d'échanges et internes réalisés en VP à l'échelle des macro-zones de l'EMD}
+    \label{fig:flux-echanges}
+\end{figure}
+
+Cette forte utilisation de la voiture entraîne une concentration importante du trafic vers le centre-ville. La figure \ref{fig:flux-echanges} illustre clairement que de nombreux déplacements con[...]
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{media/image9.jpeg}
+    \caption{Etat des circulations sur les boulevards centraux, situation août 2020}
+    \label{fig:etat-circulations}
+\end{figure}
+
+Les figures \ref{fig:hierarchie-urbain} et \ref{fig:hierarchie-ecrans} présentent l'organisation du réseau routier. Elles montrent que, même si les routes existent et sont nombreuses, la circul[...]
+
+Ces constats montrent que les méthodes actuelles de gestion du trafic, basées principalement sur des observations occasionnelles ou des décisions ponctuelles, ne suffisent plus. Sans outils cap[...]
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{media/image11.jpeg}
+    \caption{Hiérarchie viaire du cœur urbain}
+    \label{fig:hierarchie-urbain}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{media/image12.jpeg}
+    \caption{Hiérarchie viaire, écrans d'analyse et capacités théoriques entrantes}
+    \label{fig:hierarchie-ecrans}
+\end{figure}
+
+
+\subsection{Résultats instables et manque d'anticipation}
+
+Les performances du système de circulation varient fortement dans le temps. La figure \ref{fig:repartition-duree} montre que, dans des conditions normales, de nombreux trajets en voiture peuvent [...]
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{media/image13.png}
+    \caption{Répartition des déplacements en VP en fonction de la durée du déplacement}
+    \label{fig:repartition-duree}
+\end{figure}
+
+La figure \ref{fig:isochrones} met en évidence que certaines zones deviennent difficiles d'accès lorsque le trafic augmente. Les temps de trajet s'allongent, ce qui complique les déplacements q[...]
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{media/image14.jpeg}
+    \caption{Isochrones VP 20 et 25 minutes depuis la Place Farhat Hached, en situation fluide, source des données de base « Here ».}
+    \label{fig:isochrones}
+\end{figure}
+
+[...] 

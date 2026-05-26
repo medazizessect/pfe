@@ -1,0 +1,111 @@
+\documentclass[12pt, a4paper]{report}
+
+% ==========================================
+% PACKAGES ESSENTIELS
+% ==========================================
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel} 
+\usepackage{graphicx} 
+\usepackage{geometry}
+\geometry{a4paper, margin=2.5cm}
+\usepackage{hyperref} 
+\usepackage{algorithm2e} 
+\usepackage{float}
+\usepackage{booktabs} 
+\usepackage{amsmath, amsfonts, amssymb} 
+\usepackage{ulem} 
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    filecolor=magenta,      
+    urlcolor=blue,
+}
+
+\begin{document}
+
+% ==========================================
+% PAGE DE GARDE
+% ==========================================
+\begin{titlepage}
+    \centering
+    Ministère de l'enseignement supérieur et de la recherche scientifique\\[0.5cm]
+    \textbf{Université de Tunis}\\[1cm]
+    
+    \textbf{\Large PROJET DE FIN D'ÉTUDES}\\[0.5cm]
+    Pour obtenir le diplôme de master professionnel Co-construit:\\[0.5cm]
+    \textbf{\Large Digitalisation Des Services}\\[1cm]
+
+    \uline{Élaboré par}\\[0.3cm]
+    \textbf{Mohamed Aziz Trabelsi}\\[1cm]
+
+    \uline{Sous la direction de}\\[0.3cm]
+    \textbf{Mr Bacem ben Soui}\\[1cm]
+
+    Année universitaire : 2025 - 2026\\[1cm]
+    \vfill
+\end{titlepage}
+
+% ==========================================
+% DEDICACES & REMERCIEMENTS
+% ==========================================
+\chapter*{Dédicaces}
+\addcontentsline{toc}{chapter}{Dédicaces}
+Je souhaite avant tout dédier ces mots à l’Éternel, Dieu Tout-Puissant, et Lui exprimer ma profonde gratitude pour Son amour infini, Sa bienveillance et toutes les grâces dont Il m’a combl[...]
+
+À ma chère mère Zohra et à mon cher père Lotfi, je dédie ce travail avec une immense reconnaissance. Vos sacrifices, votre patience, vos prières sincères et votre soutien indéfectible ont[...]
+
+Je tiens également à rendre un hommage particulier à la mémoire de mon cousin Haroun, qui nous a quittés trop tôt. Son souvenir restera à jamais gravé dans mon cœur et dans celui de toute[...]
+
+Que Dieu nous guide tous vers la réussite, le bonheur et l’épanouissement, et qu’Il nous couvre de Sa protection et de Ses bénédictions.
+
+
+\chapter*{Remerciements}
+\addcontentsline{toc}{chapter}{Remerciements}
+C’est avec un profond honneur et un immense plaisir que je tiens à adresser ces quelques mots de remerciement à toutes les personnes qui ont contribué, de près ou de loin, à la réalisation[...]
+
+Je souhaite exprimer toute ma gratitude à M. Bacem Ben Soui pour la confiance qu’il m’a témoignée en acceptant de m’encadrer, ainsi que pour son accompagnement, ses précieux conseils et [...]
+
+Je profite également de cette occasion pour adresser mes sincères remerciements aux membres du jury qui m’ont fait l’honneur d’évaluer ce travail.
+
+Par ailleurs, je tiens à remercier l’ensemble des enseignants de l’École Supérieure des Sciences Économiques et Commerciales de Tunis pour la qualité de leur enseignement et pour les conn[...]
+
+Enfin, mes remerciements les plus chaleureux s’adressent à mes proches, pour leur soutien indéfectible, leur encouragement constant et le temps précieux qu’ils ont généreusement consacré[...]
+
+
+% ==========================================
+% TABLES ET LISTES
+% ==========================================
+\tableofcontents
+\listoffigures
+\listoftables
+
+% ==========================================
+% INTRODUCTION GENERALE
+% ==========================================
+\chapter*{Introduction Générale}
+\addcontentsline{toc}{chapter}{Introduction Générale}
+Les villes font aujourd’hui face à des défis majeurs liés à la croissance urbaine, à la mobilité, à la gestion des ressources et à la qualité de vie des citoyens. L’augmentation du tr[...]
+Par ailleurs, les collectivités territoriales disposent d’un volume croissant de données issues de différentes sources telles que les systèmes d’information géographique, les capteurs urb[...]
+Face à ces enjeux, une question centrale se pose : comment exploiter efficacement les données urbaines afin d’améliorer la mobilité, optimiser les ressources et soutenir une gouvernance urba[...]
+C’est dans cette optique que s’inscrit le projet CIRCU·LI, une plateforme intelligente dédiée à l’analyse, à la visualisation et à l’exploitation des données urbaines. CIRCU·LI vis[...]
+Ce rapport présente les différentes étapes de conception et de réalisation du projet CIRCU·LI. Il commence par une étude préliminaire et une analyse du contexte général, suivies par la d�[...]
+
+
+% ==========================================
+% INCLUSION DES CHAPITRES
+% ==========================================
+\include{chapitre1}
+\include{chapitre2}
+\include{chapitre3}
+\include{chapitre4}
+
+% ==========================================
+% CONCLUSION GENERALE
+% ==========================================
+\chapter*{Conclusion Générale}
+\addcontentsline{toc}{chapter}{Conclusion Générale}
+% Insérez ici votre conclusion générale et les perspectives du projet.
+
+\end{document}

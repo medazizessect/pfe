@@ -1,0 +1,51 @@
+\chapter{Exploration du Cadre Stratégique et Benchmarking}
+
+\section{Introduction}
+Dans ce deuxième chapitre, nous approfondissons le cadre stratégique de notre projet et présentons une évaluation rigoureuse (benchmarking) des algorithmes de détection et de comptage de véhi[...]
+
+\section{Contexte du projet}
+Notre projet se situe dans le contexte des Objectifs de Développement Durable (ODD). Face au défi de la mobilité intelligente et de la gestion du trafic, notre motivation est d'explorer des appr[...]
+
+\subsection{Objectifs de Développement Durable (ODD)}
+Notre projet contribue directement à plusieurs Objectifs de Développement Durable des Nations Unies, en mettant l'accent sur l'innovation et l'infrastructure :
+
+\begin{itemize}
+    \item \textbf{ODD 9 : Industrie, Innovation et Infrastructure} : L'utilisation de l'intelligence artificielle pour l'analyse du trafic représente une innovation technologique majeure favorisa[...]
+    \item \textbf{ODD 11 : Villes et Communautés Durables} : En offrant un outil d'analyse précis, le projet vise à optimiser les flux de circulation, réduisant ainsi la congestion et amélior[...]
+    \item \textbf{ODD 13 : Mesures relatives à la lutte contre les changements climatiques} : Une meilleure gestion du trafic entraîne une réduction significative du temps passé dans les embou[...]
+\end{itemize}
+
+\section{Benchmarking des Algorithmes de Comptage de Véhicules}
+Afin de proposer la solution d'intelligence artificielle la plus robuste et la plus performante pour la plateforme CIRCULI, nous avons réalisé un benchmark exhaustif. L'objectif est de détermin[...]
+
+\subsection{Configuration Expérimentale}
+L'évaluation a été réalisée sur un flux vidéo urbain réel (\texttt{Test Video.mp4}) en utilisant uniquement les ressources CPU (device: \texttt{cpu}). La région d'intérêt (ROI) pour le c[...]
+
+La vérité terrain (Ground Truth) établie manuellement pour cette vidéo est de :
+\begin{itemize}
+    \item \textbf{Véhicules entrants (IN)} : 15
+    \item \textbf{Véhicules sortants (OUT)} : 15
+\end{itemize}
+
+\subsection{Modèles Évalués}
+Nous avons confronté 14 modèles issus de deux grandes familles d'apprentissage :
+\begin{enumerate}
+    \item \textbf{Modèles de Machine Learning Classique} (basés sur l'extraction de caractéristiques HOG) : SVM, K-Nearest Neighbors (KNN), Decision Tree, Naive Bayes, Réseaux de neurones arti[...]
+    \item \textbf{Modèles de Deep Learning} : YOLOv8n, YOLOv8s, Faster R-CNN, Mask R-CNN, SSD, RetinaNet, et MobileNet-SSD.
+\end{enumerate}
+
+\subsection{Analyse des Indicateurs Clés de Performance (KPI)}
+Le tableau ci-dessous extrait les métriques fondamentales mesurées pour chaque catégorie de modèle, illustrant l'écart technologique entre les méthodes classiques et profondes.
+
+\begin{table}[H]
+    \centering
+    \resizebox{\textwidth}{!}{
+    \begin{tabular}{llcccc}
+        \toprule
+        \textbf{Modèle} & \textbf{Type} & \textbf{FPS Moyen} & \textbf{Latence Moyenne (ms)} & \textbf{Err. Relative IN} & \textbf{F1-Score IN} \\
+        \midrule
+        YOLOv8n & Deep Learning & 19.07 & 52.42 & 0.400 & 0.70 \\
+        YOLOv8s & Deep Learning & 9.56 & 103.27 & 0.333 & 0.76 \\
+        Faster R-CNN & Deep Learning & 0.48 & 2080.21 & 0.266 & 0.84 \\
+        Mask R-CNN & Deep Learning & 0.42 & 2330.34 & 0.400 & 0.80 \\
+[...]
