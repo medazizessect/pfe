@@ -1,0 +1,86 @@
+\chapter{Planification Agile du Projet : Sprint 3 (DevOps et Observabilité)}
+
+\section{Introduction}
+Après la validation des fondations du prototype (Sprint 1) et l’intégration des modules de traitement (Sprint 2), le Sprint 3 a été dédié à la \textbf{mise en production contrôlée} du système et à l’amélioration de sa \textbf{robustesse opérationnelle}. Dans une plateforme Smart City, le passage du script fonctionnel vers un service continuellement exécutable (24/7) constitue un changement majeur : la valeur n’est plus uniquement dans la précision du modèle, mais aussi dans la capacité à \textbf{orchestrer, surveiller et maintenir} l’ensemble de la chaîne de traitement.
+
+Ce chapitre présente une planification Agile orientée « produit » : les user stories ont été transformées en tâches techniques, puis réalisées en itérations courtes avec validation continue.
+
+\section{Objectifs du Sprint 3}
+Les objectifs principaux étaient les suivants :
+\begin{itemize}
+    \item \textbf{Industrialiser l’exécution} des traitements vidéo (lancer/arrêter/reprendre automatiquement des jobs).
+    \item \textbf{Automatiser les pipelines} (ingestion, prétraitement, inférence, push vers API, mise à jour des indicateurs).
+    \item \textbf{Mettre en place l’observabilité} : métriques, logs et alertes.
+    \item \textbf{Fiabiliser le système} en gérant les interruptions réseau (flux RTSP) et les défaillances applicatives.
+\end{itemize}
+
+\section{Backlog Sprint 3}
+Le backlog suivant a été retenu (extrait synthétique) :
+\begin{itemize}
+    \item \textbf{US-3.1 : Orchestration des jobs vidéo} (Airflow DAG).
+    \item \textbf{US-3.2 : Relance automatique en cas d’échec} (retry policy, backoff).
+    \item \textbf{US-3.3 : Centralisation des métriques} (Prometheus/Grafana ou métriques applicatives).
+    \item \textbf{US-3.4 : Journalisation structurée} (logs JSON + niveaux).
+    \item \textbf{US-3.5 : Alerting} (seuils de latence, erreurs, perte de flux).
+\end{itemize}
+
+\section{Orchestration des traitements avec Apache Airflow}
+\subsection{Motivation}
+Dans un environnement urbain, les caméras peuvent être nombreuses et hétérogènes. Lancer manuellement un script Python est viable pour un test, mais devient ingérable à grande échelle.
+
+\subsection{Approche retenue}
+Nous avons modélisé le traitement d’un flux vidéo comme une \textbf{chaîne de tâches} :
+\begin{enumerate}
+    \item Vérifier la disponibilité du flux (RTSP / fichier simulé).
+    \item Lancer le prétraitement (ROI + normalisation).
+    \item Exécuter l’inférence YOLO.
+    \item Envoyer les résultats au backend.
+    \item Publier les métriques (FPS, latence, nombre d’objets).
+\end{enumerate}
+
+Airflow a permis de :
+\begin{itemize}
+    \item planifier l’exécution (schedule),
+    \item gérer les dépendances entre tâches,
+    \item relancer automatiquement les étapes en échec,
+    \item tracer l’historique d’exécution.
+\end{itemize}
+
+\section{Résilience et stratégies de reprise}
+\subsection{Gestion des coupures réseau}
+Un flux RTSP peut être interrompu pour diverses raisons (maintenance, instabilité réseau, surcharge). Pour éviter de bloquer le pipeline :
+\begin{itemize}
+    \item une politique de \textbf{reconnexion} a été appliquée,
+    \item un \textbf{timeout} a été défini sur la lecture des frames,
+    \item un \textbf{backoff exponentiel} est utilisé avant nouvelle tentative.
+\end{itemize}
+
+\subsection{Idempotence des traitements}
+Afin d’éviter la duplication des résultats lors des retries, l’envoi des mesures est conçu comme une opération \textbf{idempotente} : chaque fenêtre temporelle (par exemple 1 minute) possède un identifiant (timestamp + cameraId), garantissant que le backend écrase/merge proprement si un retry survient.
+
+\section{Observabilité : métriques, logs, tableaux de bord}
+\subsection{Métriques suivies}
+Les KPI techniques suivants ont été suivis :
+\begin{itemize}
+    \item \textbf{FPS moyen} (débit de traitement),
+    \item \textbf{Latence moyenne} (prétraitement + inférence + push),
+    \item \textbf{Taux d’échec} des jobs Airflow,
+    \item \textbf{Disponibilité du flux} (uptime),
+    \item \textbf{Nombre d’objets détectés} par classe (voiture, bus, camion).
+\end{itemize}
+
+\subsection{Logs structurés}
+Les logs ont été structurés pour accélérer le diagnostic :
+\begin{itemize}
+    \item niveau (INFO/WARN/ERROR),
+    \item identifiant caméra,
+    \item timestamp,
+    \item durée de traitement,
+    \item code erreur si applicable.
+\end{itemize}
+
+\section{Bilan du Sprint 3}
+Le Sprint 3 a transformé une solution de prototype en une base \textbf{déployable et maintenable}. Le gain principal réside dans la \textbf{maîtrise opérationnelle} : planification, relance automatique et visibilité sur l’état du système.
+
+\section{Conclusion}
+Ce sprint prépare la transition vers un sprint focalisé sur l’Intelligence Artificielle (optimisation modèle, tracking, calibrage des seuils) en garantissant que l’infrastructure d’exécution est stable et observable.
