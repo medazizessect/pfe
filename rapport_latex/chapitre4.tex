@@ -57,7 +57,7 @@ Pour notre cas d'usage spécifique (trafic urbain souvent dense), le modèle ret
 
 \subsection{Automatisation des Workflows avec Apache Airflow}
 Dans un réseau urbain à grande échelle comptant potentiellement des dizaines de caméras, lancer et monitorer manuellement des scripts Python individuels est inenvisageable. Pour pallier cela, nous avons déployé l'orchestrateur \textbf{Apache Airflow}. 
-Airflow nous permet de générer des \textbf{DAG} (Directed Acyclic Graphs). Un DAG de CIRCU·LI exécute séquentiellement : 
+Airflow nous permet de générer des \textbf{DAG} (Directed Acyclic Graphs). Un DAG de CIRCULI exécute séquentiellement : 
 1) La vérification de la disponibilité réseau de la caméra. 
 2) Le déclenchement sécurisé du module d'inférence YOLO. 
 3) La surveillance continue de la mémoire RAM du processus.
@@ -65,7 +65,7 @@ Airflow nous permet de générer des \textbf{DAG} (Directed Acyclic Graphs). Un 
 Airflow garantit la résilience opérationnelle absolue : si une caméra municipale tombe en panne à cause d'une intempérie, le nœud échoue silencieusement, alerte automatiquement l'administrateur, et applique une logique de "Retry" exponentiel, évitant ainsi le crash en chaîne de l'ensemble du système.
 
 \subsection{Infrastructure as Code et Conteneurisation (Docker)}
-Afin de prévenir tout conflit de dépendances (le fameux syndrome "ça marche sur ma machine"), l'intégralité de la plateforme \textit{CIRCU·LI} s'instancie au travers de la technologie Docker. Un unique fichier d'orchestration \texttt{docker-compose.yml} gère le cycle de vie de \textbf{4 conteneurs indépendants} connectés sur un réseau bridge interne sécurisé :
+Afin de prévenir tout conflit de dépendances (le fameux syndrome "ça marche sur ma machine"), l'intégralité de la plateforme \textit{CIRCULI} s'instancie au travers de la technologie Docker. Un unique fichier d'orchestration \texttt{docker-compose.yml} gère le cycle de vie de \textbf{4 conteneurs indépendants} connectés sur un réseau bridge interne sécurisé :
 \begin{itemize}
     \item Un conteneur \textbf{Airflow/Python} (chargé du Machine Learning).
     \item Un conteneur \textbf{FastAPI} (API serveur web).
@@ -93,7 +93,7 @@ Exemple de payload JSON sécurisé attendu par l'API :
 
 \subsection{Restitution Visuelle et Décisionnelle sous Grafana}
 Connecté en direct à la base relationnelle PostgreSQL via des requêtes SQL optimisées, Grafana a pour mission de traduire les millions de lignes brutes générées par FastAPI en indicateurs décisionnels limpides (KPIs).
-Le tableau de bord dynamique conçu sur mesure pour les responsables de la mobilité de \textit{CIRCU·LI} permet de visualiser :
+Le tableau de bord dynamique conçu sur mesure pour les responsables de la mobilité de \textit{CIRCULI} permet de visualiser :
 \begin{itemize}
     \item \textbf{Les jauges de volumétrie globale} : Comptage agrégé du trafic par heure, jour ou semaine, permettant de comparer des tendances historiques.
     \item \textbf{L'identification des Peak Hours (Heures de pointe)} : Mise en évidence visuelle par des Heatmaps (cartes de chaleur) des moments critiques de congestion sur des carrefours précis.
@@ -106,462 +106,296 @@ Lors des simulations sur un flux continu (qualité 1080p), l'algorithme YOLOv8 c
 
 \section{Diagrammes UML et Modélisation Architecturale}
 
-\subsection{Vue d'ensemble}
+\subsection{Diagramme de Cas d'Utilisation}
 
-L'architecture logicielle de CIRCULI est modélisée selon les standards UML 2.5. Trois diagrammes principaux capturent les différentes perspectives du système :
-
-\begin{enumerate}
-    \item \textbf{Diagramme de Cas d'Utilisation} : Identifie les acteurs et leurs interactions avec le système.
-    \item \textbf{Diagramme de Classe} : Détaille la structure statique des composants logiciels.
-    \item \textbf{Diagramme de Séquence} : Illustre les flux temporels de communication.
-\end{enumerate}
-
-\subsubsection{Génération des diagrammes UML via Draw.io}
-
-Les diagrammes UML suivants peuvent être générés ou visualisés via \textbf{Draw.io} (https://draw.io). Le code PlantUML correspondant est fourni ci-dessous pour faciliter la génération automatisée ou l'import dans des outils compatibles.
-
-\subsubsection{Diagramme de Cas d'Utilisation}
-
-Le diagramme de cas d'utilisation identifie les interactions entre les acteurs et le système CIRCULI :
+Le diagramme de cas d'utilisation identifie les interactions entre les acteurs (Agent Municipal, Citoyen, Administrateur) et le système CIRCULI. Il formalise les 6 cas d'utilisation principaux supportés par la plateforme.
 
 \begin{figure}[H]
     \centering
-    \fbox{\begin{minipage}{0.95\textwidth}
-    \textbf{DIAGRAMME DE CAS D'UTILISATION}
-    
-    \vspace{0.3cm}
-    
-    \textbf{Acteurs} :
-    \begin{itemize}
-        \item Agent Municipal (Responsable mobilité)
-        \item Citoyen (Utilisateur public)
-        \item Administrateur Système (Technicien DevOps)
-    \end{itemize}
-    
-    \vspace{0.3cm}
-    
-    \textbf{Cas d'utilisation} :
-    \begin{itemize}
-        \item UC-1 : Visualiser trafic en temps réel (Agent Municipal)
-        \item UC-2 : Générer rapport hebdomadaire (Agent Municipal)
-        \item UC-3 : Consulter indicateurs KPI (Agent + Citoyen)
-        \item UC-4 : Télécharger données publiques (Citoyen)
-        \item UC-5 : Configurer caméras et ROI (Admin)
-        \item UC-6 : Gérer utilisateurs et accès (Admin)
-    \end{itemize}
-    
-    \vspace{0.3cm}
-    
-    \textbf{Code PlantUML pour génération} :
-    
-    \texttt{@startuml}
-    
-    \texttt{left to right direction}
-    
-    \texttt{actor "Agent Municipal" as agent}
-    
-    \texttt{actor "Citoyen" as citizen}
-    
-    \texttt{actor "Admin" as admin}
-    
-    \texttt{usecase "Visualiser trafic" as UC1}
-    
-    \texttt{usecase "Générer rapport" as UC2}
-    
-    \texttt{usecase "Consulter KPI" as UC3}
-    
-    \texttt{usecase "Télécharger données" as UC4}
-    
-    \texttt{usecase "Configurer caméras" as UC5}
-    
-    \texttt{usecase "Gérer utilisateurs" as UC6}
-    
-    \texttt{agent --> UC1}
-    
-    \texttt{agent --> UC2}
-    
-    \texttt{agent --> UC3}
-    
-    \texttt{citizen --> UC3}
-    
-    \texttt{citizen --> UC4}
-    
-    \texttt{admin --> UC5}
-    
-    \texttt{admin --> UC6}
-    
-    \texttt{@enduml}
-    
-    \end{minipage}}
-    \caption{Diagramme de Cas d'Utilisation (générable via PlantUML/Draw.io)}
+    \begin{tikzpicture}[scale=1.0]
+        % Système
+        \draw [thick, rounded corners=0.2cm] (-0.5, -2.5) rectangle (8.5, 5);
+        \node [anchor=north, font=\textbf] at (4, 5.1) {SYSTÈME CIRCULI};
+        
+        % Acteurs (à gauche)
+        \node [ellipse, draw, minimum width=1.2cm, minimum height=0.8cm, fill=blue!20] (agent) at (0, 3.5) {Agent Municipal};
+        \node [ellipse, draw, minimum width=1.2cm, minimum height=0.8cm, fill=green!20] (citizen) at (0, 1.5) {Citoyen};
+        \node [ellipse, draw, minimum width=1.2cm, minimum height=0.8cm, fill=red!20] (admin) at (0, -0.5) {Administrateur};
+        
+        % Cas d'utilisation (à droite)
+        \node [ellipse, draw, minimum width=1.8cm, minimum height=0.6cm] (uc1) at (4, 4) {Visualiser trafic};
+        \node [ellipse, draw, minimum width=1.8cm, minimum height=0.6cm] (uc2) at (4, 3) {Générer rapports};
+        \node [ellipse, draw, minimum width=1.8cm, minimum height=0.6cm] (uc3) at (4, 2) {Consulter KPI};
+        \node [ellipse, draw, minimum width=1.8cm, minimum height=0.6cm] (uc4) at (4, 0.5) {Télécharger données};
+        \node [ellipse, draw, minimum width=1.8cm, minimum height=0.6cm] (uc5) at (4, -1) {Configurer caméras};
+        \node [ellipse, draw, minimum width=1.8cm, minimum height=0.6cm] (uc6) at (4, -2) {Gérer utilisateurs};
+        
+        % Relations agent - cas
+        \draw [->] (agent) -- (uc1);
+        \draw [->] (agent) -- (uc2);
+        \draw [->] (agent) -- (uc3);
+        
+        % Relations citoyen - cas
+        \draw [->] (citizen) -- (uc3);
+        \draw [->] (citizen) -- (uc4);
+        
+        % Relations admin - cas
+        \draw [->] (admin) -- (uc5);
+        \draw [->] (admin) -- (uc6);
+    \end{tikzpicture}
+    \caption{Diagramme de Cas d'Utilisation CIRCULI}
     \label{fig:uml-usecase}
 \end{figure}
 
-\subsubsection{Diagramme de Classe}
+\subsection{Diagramme de Classe - Architecture 4 Couches}
 
-Le diagramme de classe modélise les 12 classes principales réparties en 4 couches (Acquisition, IA, Données, Alertes) :
+Le diagramme de classe représente les 12 classes principales du système, organisées selon une architecture en 4 couches : Acquisition, Intelligence Artificielle, Données, et Alertes/Monitoring.
 
 \begin{figure}[H]
     \centering
-    \fbox{\begin{minipage}{0.95\textwidth}
-    \textbf{DIAGRAMME DE CLASSE - ARCHITECTURE 4 COUCHES}
-    
-    \vspace{0.3cm}
-    
-    \textbf{Couche 1 : Acquisition Vidéo}
-    \begin{itemize}
-        \item \textbf{Camera} : Gestion des flux RTSP/MP4
-        \item \textbf{VideoProcessor} : Prétraitement et ROI
-        \item \textbf{ROI} : Région d'intérêt polygonale
-    \end{itemize}
-    
-    \textbf{Couche 2 : Intelligence Artificielle}
-    \begin{itemize}
-        \item \textbf{YOLOv8Model} : Modèle de détection
-        \item \textbf{NMS} : Suppression des non-maxima
-        \item \textbf{Detection} : Objet détecté
-    \end{itemize}
-    
-    \textbf{Couche 3 : Données}
-    \begin{itemize}
-        \item \textbf{APIBackend} : Interface FastAPI
-        \item \textbf{Database} : PostgreSQL
-        \item \textbf{Metrics} : KPI agrégés
-    \end{itemize}
-    
-    \textbf{Couche 4 : Alertes \& Monitoring}
-    \begin{itemize}
-        \item \textbf{AlertManager} : Gestion des alertes
-        \item \textbf{Logger} : Journalisation structurée
-        \item \textbf{GrafanaConnector} : Dashboards
-    \end{itemize}
-    
-    \vspace{0.3cm}
-    
-    \textbf{Code PlantUML pour génération} :
-    
-    \texttt{@startuml}
-    
-    \texttt{class Camera \{}
-    
-    \texttt{- cameraId: string}
-    
-    \texttt{- url: string}
-    
-    \texttt{- status: enum}
-    
-    \texttt{+ connect(): bool}
-    
-    \texttt{+ getFrame(): Array}
-    
-    \texttt{\}}
-    
-    \texttt{class YOLOv8Model \{}
-    
-    \texttt{- confidence\_threshold: float}
-    
-    \texttt{+ infer(tensor): Detection[]}
-    
-    \texttt{\}}
-    
-    \texttt{class Detection \{}
-    
-    \texttt{- objectId: int}
-    
-    \texttt{- className: string}
-    
-    \texttt{- confidence: float}
-    
-    \texttt{- bbox: tuple}
-    
-    \texttt{\}}
-    
-    \texttt{class Database \{}
-    
-    \texttt{- host: string}
-    
-    \texttt{+ insert(table, data): void}
-    
-    \texttt{+ query(sql): Result}
-    
-    \texttt{\}}
-    
-    \texttt{Camera --> VideoProcessor}
-    
-    \texttt{VideoProcessor --> YOLOv8Model}
-    
-    \texttt{YOLOv8Model --> Detection}
-    
-    \texttt{Detection --> Database}
-    
-    \texttt{@enduml}
-    
-    \end{minipage}}
-    \caption{Diagramme de Classe (générable via PlantUML/Draw.io)}
+    \begin{tikzpicture}[scale=0.85]
+        % Couche 1 : Acquisition (haut)
+        \draw [fill=yellow!10, thick, rounded corners=0.1cm] (-4, 7) rectangle (-0.5, 9.5);
+        \node [anchor=north, font=\bfseries\small] at (-2.25, 9.6) {Couche 1: Acquisition};
+        
+        \draw [fill=white, thick] (-3.8, 8.2) rectangle (-2.5, 9) node [pos=0.5, font=\small] {Camera};
+        \draw [fill=white, thick] (-2.3, 8.2) rectangle (-1, 9) node [pos=0.5, font=\small] {VideoProcessor};
+        \draw [fill=white, thick] (-0.8, 8.2) rectangle (0.5, 9) node [pos=0.5, font=\small] {ROI};
+        
+        % Couche 2 : IA (milieu-haut)
+        \draw [fill=yellow!10, thick, rounded corners=0.1cm] (0.8, 7) rectangle (4.3, 9.5);
+        \node [anchor=north, font=\bfseries\small] at (2.55, 9.6) {Couche 2: IA};
+        
+        \draw [fill=white, thick] (1, 8.2) rectangle (2.2, 9) node [pos=0.5, font=\small] {YOLOv8};
+        \draw [fill=white, thick] (2.4, 8.2) rectangle (3.5, 9) node [pos=0.5, font=\small] {NMS};
+        \draw [fill=white, thick] (3.7, 8.2) rectangle (4.1, 9) node [pos=0.5, font=\small] {Detection};
+        
+        % Couche 3 : Données (milieu-bas)
+        \draw [fill=yellow!10, thick, rounded corners=0.1cm] (-4, 4.5) rectangle (-0.5, 6.5);
+        \node [anchor=north, font=\bfseries\small] at (-2.25, 6.6) {Couche 3: Données};
+        
+        \draw [fill=white, thick] (-3.8, 5.5) rectangle (-2.5, 6.2) node [pos=0.5, font=\small] {APIBackend};
+        \draw [fill=white, thick] (-2.3, 5.5) rectangle (-1, 6.2) node [pos=0.5, font=\small] {Database};
+        \draw [fill=white, thick] (-0.8, 5.5) rectangle (0.5, 6.2) node [pos=0.5, font=\small] {Metrics};
+        
+        % Couche 4 : Alertes (bas)
+        \draw [fill=yellow!10, thick, rounded corners=0.1cm] (0.8, 4.5) rectangle (4.3, 6.5);
+        \node [anchor=north, font=\bfseries\small] at (2.55, 6.6) {Couche 4: Alertes};
+        
+        \draw [fill=white, thick] (1, 5.5) rectangle (2.2, 6.2) node [pos=0.5, font=\small] {AlertMgr};
+        \draw [fill=white, thick] (2.4, 5.5) rectangle (3.5, 6.2) node [pos=0.5, font=\small] {Logger};
+        \draw [fill=white, thick] (3.7, 5.5) rectangle (4.1, 6.2) node [pos=0.5, font=\small] {Grafana};
+        
+        % Flèches de dépendance (flux de données)
+        \draw [->] (-2.25, 8.2) -- (-2.25, 6.5);
+        \draw [->] (2.55, 8.2) -- (2.55, 6.5);
+        \draw [->] (-2.25, 5.5) -- (-2.25, 4.5);
+        \draw [->] (2.55, 5.5) -- (2.55, 4.5);
+        
+        % Annotations flux
+        \node [font=\tiny, anchor=west] at (-1.5, 7.3) {Frame};
+        \node [font=\tiny, anchor=west] at (3.2, 7.3) {Détections};
+    \end{tikzpicture}
+    \caption{Diagramme de Classe - Architecture 4 Couches}
     \label{fig:uml-class}
 \end{figure}
 
-\subsubsection{Diagramme de Séquence}
+\subsection{Diagramme de Séquence - Flux Complet (T0 à T0+135ms)}
 
-Le diagramme de séquence illustre le flux temporel complet du traitement d'une frame vidéo :
+Le diagramme de séquence illustre le flux temporel complet du traitement d'une frame vidéo, de son acquisition par la caméra jusqu'à sa persistance en base de données.
 
 \begin{figure}[H]
     \centering
-    \fbox{\begin{minipage}{0.95\textwidth}
-    \textbf{DIAGRAMME DE SÉQUENCE - FLUX COMPLET}
-    
-    \vspace{0.3cm}
-    
-    \textbf{Étapes temporelles du traitement} :
-    
-    \begin{enumerate}
-        \item[\textbf{T0}] Camera acquiert frame (30 FPS)
-        \item[\textbf{T0+5ms}] VideoProcessor applique ROI
-        \item[\textbf{T0+10ms}] Normalisation 640×640
-        \item[\textbf{T0+15ms}] YOLOv8 inférence début
-        \item[\textbf{T0+67ms}] Prédictions brutes retournées
-        \item[\textbf{T0+70ms}] NMS filtrage
-        \item[\textbf{T0+72ms}] Détections finales
-        \item[\textbf{T0+75ms}] APIBackend envoi POST
-        \item[\textbf{T0+105ms}] Database insert
-        \item[\textbf{T0+125ms}] ACK reçu
-        \item[\textbf{T0+130ms}] Metrics recording
-        \item[\textbf{T0+135ms}] Cycle terminé
-    \end{enumerate}
-    
-    \vspace{0.3cm}
-    
-    \textbf{Latence totale} : 135 millisecondes (acceptable temps réel)
-    
-    \vspace{0.3cm}
-    
-    \textbf{Code PlantUML pour génération} :
-    
-    \texttt{@startuml}
-    
-    \texttt{participant Camera}
-    
-    \texttt{participant VideoProcessor}
-    
-    \texttt{participant YOLOv8}
-    
-    \texttt{participant APIBackend}
-    
-    \texttt{participant Database}
-    
-    \texttt{Camera --> VideoProcessor: readFrame()}
-    
-    \texttt{VideoProcessor --> VideoProcessor: applyROI()}
-    
-    \texttt{VideoProcessor --> YOLOv8: infer(tensor)}
-    
-    \texttt{YOLOv8 --> YOLOv8: NMS filter}
-    
-    \texttt{YOLOv8 --> APIBackend: detections[]}
-    
-    \texttt{APIBackend --> Database: insert()}
-    
-    \texttt{Database --> APIBackend: ACK}
-    
-    \texttt{@enduml}
-    
-    \end{minipage}}
-    \caption{Diagramme de Séquence (générable via PlantUML/Draw.io)}
+    \begin{tikzpicture}[scale=0.9]
+        % Acteurs
+        \node [draw, minimum width=1cm] (cam) at (0, 0) {Camera};
+        \node [draw, minimum width=1cm] (proc) at (2, 0) {Processor};
+        \node [draw, minimum width=1cm] (yolo) at (4, 0) {YOLOv8};
+        \node [draw, minimum width=1cm] (api) at (6, 0) {APIBackend};
+        \node [draw, minimum width=1cm] (db) at (8, 0) {Database};
+        
+        % Lignes de vie
+        \foreach \x in {0, 2, 4, 6, 8} {
+            \draw [dashed, thin] (\x, -0.5) -- (\x, -8);
+        }
+        
+        % Messages (flèches)
+        \draw [->, thick] (0, -1) -- (2, -1.3) node [midway, above, font=\small] {readFrame() T0};
+        \draw [->, thick] (2, -1.8) -- (4, -2.1) node [midway, above, font=\small] {infer() T0+15ms};
+        \draw [->, thick] (4, -3.5) -- (2, -3.8) node [midway, below, font=\small] {detections T0+67ms};
+        \draw [->, thick] (2, -4.3) -- (6, -4.6) node [midway, above, font=\small] {sendPOST() T0+75ms};
+        \draw [->, thick] (6, -5.1) -- (8, -5.4) node [midway, above, font=\small] {insert() T0+105ms};
+        \draw [->, thick, dashed] (8, -5.9) -- (6, -6.2) node [midway, below, font=\small] {ACK T0+125ms};
+        
+        % Annotations timing
+        \node [font=\tiny, anchor=east, text width=1.5cm] at (-0.3, -2) {
+            \textbf{Timeline:}\\
+            T0+5ms: ROI\\
+            T0+10ms: Norm\\
+            T0+67ms: Raw\\
+            T0+72ms: NMS\\
+        };
+        
+        % Boîte finale
+        \draw [thick, rounded corners=0.1cm] (-0.5, -7.5) rectangle (8.5, -7);
+        \node [font=\bfseries, anchor=center] at (4, -7.25) {Latence totale: 135 ms};
+    \end{tikzpicture}
+    \caption{Diagramme de Séquence - Flux Complet de Traitement}
     \label{fig:uml-sequence}
 \end{figure}
 
 \section{Datamart et Modélisation Analytique}
 
-\subsection{Architecture Datamart : Star Schema (Schéma en Étoile)}
+\subsection{Architecture Star Schema (Schéma en Étoile - Kimball)}
 
-Le datamart CIRCULI suit la méthodologie Kimball avec une architecture en \textbf{Star Schema}. Cette approche permet une interrogation analytique optimale des données de trafic urbain.
+Le datamart CIRCULI suit la méthodologie Kimball avec une architecture de schéma en étoile optimisée pour les requêtes analytiques.
 
-\subsubsection{Dimensionalité et Faits}
-
-\begin{table}[H]
+\begin{figure}[H]
     \centering
-    \resizebox{\textwidth}{!}{
-    \begin{tabular}{|l|l|l|}
-    \hline
-    \textbf{Type} & \textbf{Élément} & \textbf{Description} \\
-    \hline
-    \multirow{5}{*}{\textbf{Table de Faits}} & fact\_detections & Chaque détection de véhicule (granularité : 1 ligne par objet détecté) \\
-    & Clés étrangères & camera\_id, time\_id, location\_id, vehicle\_class\_id \\
-    & Mesures & confidence, area\_pixels, x\_center, y\_center \\
-    \hline
-    \multirow{5}{*}{\textbf{Dimensions}} & dim\_camera & Informations caméra (localisation GPS, type) \\
-    & dim\_time & Timestamp, heure, jour, semaine, mois, année \\
-    & dim\_location & Zones géographiques (carrefour, route, quartier) \\
-    & dim\_vehicle\_class & Classe d'objet (car, bus, truck, other) \\
-    \hline
-    \end{tabular}
-    }
-    \caption{Star Schema - Tables de Faits et Dimensions}
-    \label{tbl:star-schema}
-\end{table}
+    \begin{tikzpicture}[scale=1]
+        % Table de faits (centre)
+        \draw [fill=red!20, thick] (1.5, 1.5) rectangle (3.5, 3.5);
+        \node [anchor=north, font=\bfseries] at (2.5, 3.6) {FACT\_DETECTIONS};
+        \node [font=\tiny, anchor=center] at (2.5, 2.5) {
+            \begin{tabular}{l}
+            detection\_id (PK)\\
+            confidence\\
+            area\_pixels\\
+            x\_center, y\_center
+            \end{tabular}
+        };
+        
+        % Dimensions (périphérie)
+        % DIM_CAMERA (haut-gauche)
+        \draw [fill=blue!20, thick] (-1, 4.5) rectangle (1, 6);
+        \node [font=\bfseries, anchor=center] at (0, 5.25) {DIM\_CAMERA};
+        \draw [->] (1, 3.3) -- (0.5, 4.5);
+        
+        % DIM_TIME (haut-droite)
+        \draw [fill=blue!20, thick] (4, 4.5) rectangle (6, 6);
+        \node [font=\bfseries, anchor=center] at (5, 5.25) {DIM\_TIME};
+        \draw [->] (3.5, 3.3) -- (4.5, 4.5);
+        
+        % DIM_LOCATION (bas-gauche)
+        \draw [fill=blue!20, thick] (-1, 0) rectangle (1, 1.5);
+        \node [font=\bfseries, anchor=center] at (0, 0.75) {DIM\_LOCATION};
+        \draw [->] (1.5, 1.8) -- (0.5, 1.5);
+        
+        % DIM_VEHICLE_CLASS (bas-droite)
+        \draw [fill=blue!20, thick] (4, 0) rectangle (6, 1.5);
+        \node [font=\bfseries, anchor=center] at (5, 0.75) {DIM\_VEHICLE};
+        \draw [->] (3.5, 1.8) -- (4.5, 1.5);
+        
+        % Labels
+        \node [font=\small] at (-1.5, 3.5) {camera\_id};
+        \node [font=\small] at (6.5, 3.5) {time\_id};
+        \node [font=\small] at (-1.5, 2) {location\_id};
+        \node [font=\small] at (6.5, 2) {vehicle\_id};
+    \end{tikzpicture}
+    \caption{Star Schema - Architecture Datamart Kimball}
+    \label{fig:star-schema}
+\end{figure}
 
-\subsection{Diagramme Entity-Relationship (ERD) Détaillé}
+\subsection{Entity-Relationship Diagram (ERD)}
 
-\subsubsection{Tables Dimensions}
-
-\begin{table}[H]
+\begin{figure}[H]
     \centering
-    \resizebox{\textwidth}{!}{
-    \begin{tabular}{|p{2cm}|p{2.5cm}|p{2.5cm}|p{2.5cm}|}
-    \hline
-    \multicolumn{4}{|c|}{\textbf{DIM\_CAMERA}} \\
-    \hline
-    \textbf{Colonne} & \textbf{Type} & \textbf{Contrainte} & \textbf{Description} \\
-    \hline
-    camera\_id & VARCHAR(50) & PK & Identifiant unique \\
-    camera\_name & VARCHAR(255) & NOT NULL & Nom descriptif \\
-    latitude & DECIMAL(10,8) & NOT NULL & Coord GPS latitude \\
-    longitude & DECIMAL(11,8) & NOT NULL & Coord GPS longitude \\
-    location\_zone & VARCHAR(100) & & Zone administrative \\
-    camera\_type & VARCHAR(50) & & Type (fixed, ptz) \\
-    created\_date & TIMESTAMP & & Date activation \\
-    is\_active & BOOLEAN & DEFAULT true & Statut \\
-    \hline
-    \end{tabular}
-    }
-    \caption{Dimension Camera}
-\end{table}
+    \begin{tikzpicture}[scale=0.9]
+        % DIM_CAMERA
+        \draw [thick, fill=cyan!10] (0, 4) rectangle (2.5, 6);
+        \node [font=\bfseries, anchor=north] at (1.25, 6.1) {DIM\_CAMERA};
+        \node [font=\tiny, anchor=center] at (1.25, 5) {
+            \begin{tabular}{l}
+            PK camera\_id\\
+            name, latitude\\
+            longitude, type
+            \end{tabular}
+        };
+        
+        % DIM_TIME
+        \draw [thick, fill=cyan!10] (3.5, 4) rectangle (6, 6);
+        \node [font=\bfseries, anchor=north] at (4.75, 6.1) {DIM\_TIME};
+        \node [font=\tiny, anchor=center] at (4.75, 5) {
+            \begin{tabular}{l}
+            PK time\_id\\
+            timestamp, hour\\
+            day, month, year
+            \end{tabular}
+        };
+        
+        % FACT_DETECTIONS (centre)
+        \draw [thick, fill=orange!15] (3, 1.5) rectangle (5.5, 3.5);
+        \node [font=\bfseries, anchor=north] at (4.25, 3.6) {FACT\_DETECTIONS};
+        \node [font=\tiny, anchor=center] at (4.25, 2.3) {
+            \begin{tabular}{l}
+            PK detection\_id\\
+            FK camera\_id\\
+            FK time\_id\\
+            confidence, area
+            \end{tabular}
+        };
+        
+        % DIM_LOCATION
+        \draw [thick, fill=cyan!10] (0, -0.5) rectangle (2.5, 1.5);
+        \node [font=\bfseries, anchor=north] at (1.25, 1.6) {DIM\_LOCATION};
+        \node [font=\tiny, anchor=center] at (1.25, 0.5) {
+            \begin{tabular}{l}
+            PK location\_id\\
+            zone, district\\
+            speed\_limit
+            \end{tabular}
+        };
+        
+        % DIM_VEHICLE_CLASS
+        \draw [thick, fill=cyan!10] (6.5, 1.5) rectangle (9, 3.5);
+        \node [font=\bfseries, anchor=north] at (7.75, 3.6) {DIM\_VEHICLE};
+        \node [font=\tiny, anchor=center] at (7.75, 2.3) {
+            \begin{tabular}{l}
+            PK vehicle\_id\\
+            class\_name\\
+            emission\_level
+            \end{tabular}
+        };
+        
+        % Relations (cardinalités)
+        \draw [->] (1.25, 4) -- (4, 3.5) node [midway, above, font=\tiny] {N:1};
+        \draw [->] (4.75, 4) -- (4.5, 3.5) node [midway, above, font=\tiny] {N:1};
+        \draw [->] (1.25, 1.5) -- (3.5, 2.5) node [midway, below, font=\tiny] {N:1};
+        \draw [->] (7.75, 1.5) -- (5, 2.5) node [midway, below, font=\tiny] {N:1};
+    \end{tikzpicture}
+    \caption{Entity-Relationship Diagram (ERD) - Normalisation 3NF}
+    \label{fig:erd-circuli}
+\end{figure}
 
-\begin{table}[H]
-    \centering
-    \resizebox{\textwidth}{!}{
-    \begin{tabular}{|p{2cm}|p{2.5cm}|p{2.5cm}|p{2.5cm}|}
-    \hline
-    \multicolumn{4}{|c|}{\textbf{DIM\_TIME}} \\
-    \hline
-    \textbf{Colonne} & \textbf{Type} & \textbf{Contrainte} & \textbf{Description} \\
-    \hline
-    time\_id & INT & PK & Clé de substitution \\
-    timestamp & TIMESTAMP & UNIQUE & Timestamp exact \\
-    date\_key & DATE & & Date (YYYY-MM-DD) \\
-    hour & INT & & Heure (0-23) \\
-    minute & INT & & Minute (0-59) \\
-    day\_of\_week & INT & & Jour semaine (1-7) \\
-    week\_of\_year & INT & & Semaine année \\
-    month & INT & & Mois (1-12) \\
-    quarter & INT & & Trimestre (1-4) \\
-    year & INT & & Année \\
-    is\_peak\_hour & BOOLEAN & & Heure de pointe \\
-    \hline
-    \end{tabular}
-    }
-    \caption{Dimension Time}
-\end{table}
+\subsubsection{Description des tables}
 
-\begin{table}[H]
-    \centering
-    \resizebox{\textwidth}{!}{
-    \begin{tabular}{|p{2cm}|p{2.5cm}|p{2.5cm}|p{2.5cm}|}
-    \hline
-    \multicolumn{4}{|c|}{\textbf{DIM\_LOCATION}} \\
-    \hline
-    \textbf{Colonne} & \textbf{Type} & \textbf{Contrainte} & \textbf{Description} \\
-    \hline
-    location\_id & INT & PK & Clé de substitution \\
-    zone\_name & VARCHAR(100) & NOT NULL & Nom zone \\
-    district & VARCHAR(100) & & District/Circonscription \\
-    region & VARCHAR(100) & & Région administrative \\
-    area\_type & VARCHAR(50) & & Type (highway, urban, residential) \\
-    speed\_limit & INT & & Limite vitesse (km/h) \\
-    \hline
-    \end{tabular}
-    }
-    \caption{Dimension Location}
-\end{table}
+\textbf{Table de Faits : FACT\_DETECTIONS}
+\begin{itemize}
+    \item \textbf{Granularité} : 1 ligne par objet détecté
+    \item \textbf{Clé primaire} : detection\_id (BIGINT auto-increment)
+    \item \textbf{Clés étrangères} : camera\_id, time\_id, location\_id, vehicle\_class\_id
+    \item \textbf{Mesures} : confidence (0-1), area\_pixels, x\_center, y\_center, bbox\_width, bbox\_height
+\end{itemize}
 
-\begin{table}[H]
-    \centering
-    \resizebox{\textwidth}{!}{
-    \begin{tabular}{|p{2cm}|p{2.5cm}|p{2.5cm}|p{2.5cm}|}
-    \hline
-    \multicolumn{4}{|c|}{\textbf{DIM\_VEHICLE\_CLASS}} \\
-    \hline
-    \textbf{Colonne} & \textbf{Type} & \textbf{Contrainte} & \textbf{Description} \\
-    \hline
-    vehicle\_class\_id & INT & PK & Clé de substitution \\
-    class\_name & VARCHAR(50) & UNIQUE & car, bus, truck, motorcycle \\
-    class\_category & VARCHAR(50) & & light, medium, heavy \\
-    avg\_length\_m & DECIMAL(5,2) & & Longueur moyenne (m) \\
-    avg\_width\_m & DECIMAL(5,2) & & Largeur moyenne (m) \\
-    emission\_level & VARCHAR(20) & & Euro 0 à Euro 6 \\
-    \hline
-    \end{tabular}
-    }
-    \caption{Dimension Vehicle Class}
-\end{table}
+\textbf{Dimensions}
+\begin{itemize}
+    \item \textbf{dim\_camera} : Localisation GPS, type caméra, zone administrative
+    \item \textbf{dim\_time} : Timestamp complet, heure de pointe (is\_peak\_hour boolean)
+    \item \textbf{dim\_location} : Zone géographique, limites de vitesse, type d'aire
+    \item \textbf{dim\_vehicle\_class} : Classe d'objet (car, bus, truck), niveau d'émission
+\end{itemize}
 
-\subsubsection{Table de Faits}
-
-\begin{table}[H]
-    \centering
-    \resizebox{\textwidth}{!}{
-    \begin{tabular}{|p{2cm}|p{2.5cm}|p{2.5cm}|p{2.5cm}|}
-    \hline
-    \multicolumn{4}{|c|}{\textbf{FACT\_DETECTIONS}} \\
-    \hline
-    \textbf{Colonne} & \textbf{Type} & \textbf{Contrainte} & \textbf{Description} \\
-    \hline
-    detection\_id & BIGINT & PK & Clé primaire \\
-    camera\_id & VARCHAR(50) & FK & Ref dim\_camera \\
-    time\_id & INT & FK & Ref dim\_time \\
-    location\_id & INT & FK & Ref dim\_location \\
-    vehicle\_class\_id & INT & FK & Ref dim\_vehicle\_class \\
-    confidence & DECIMAL(3,2) & & Score confiance (0-1) \\
-    area\_pixels & INT & & Taille boîte détection \\
-    x\_center & INT & & Coord X du centroïde \\
-    y\_center & INT & & Coord Y du centroïde \\
-    bbox\_width & INT & & Largeur boîte (pixels) \\
-    bbox\_height & INT & & Hauteur boîte (pixels) \\
-    is\_parked & BOOLEAN & & Véhicule stationné \\
-    speed\_estimated\_kmh & DECIMAL(6,2) & & Vitesse estimée \\
-    created\_at & TIMESTAMP & & Timestamp création \\
-    \hline
-    \end{tabular}
-    }
-    \caption{Fact Table Detections}
-\end{table}
-
-\subsubsection{Tables d'agrégation (Aggregate Tables)}
-
-\begin{table}[H]
-    \centering
-    \resizebox{\textwidth}{!}{
-    \begin{tabular}{|p{2cm}|p{2.5cm}|p{2.5cm}|p{2.5cm}|}
-    \hline
-    \multicolumn{4}{|c|}{\textbf{AGG\_DETECTIONS\_HOURLY}} \\
-    \hline
-    \textbf{Colonne} & \textbf{Type} & \textbf{Contrainte} & \textbf{Description} \\
-    \hline
-    agg\_id & BIGINT & PK & Clé primaire \\
-    date\_key & DATE & & Clé date \\
-    hour & INT & & Heure \\
-    camera\_id & VARCHAR(50) & FK & Caméra \\
-    vehicle\_class & VARCHAR(50) & & Classe véhicule \\
-    total\_count & INT & & Nombre total détections \\
-    avg\_confidence & DECIMAL(4,3) & & Confiance moyenne \\
-    max\_confidence & DECIMAL(4,3) & & Confiance max \\
-    \hline
-    \end{tabular}
-    }
-    \caption{Table d'agrégation horaire}
-\end{table}
-
-\subsubsection{Exemple de requête analytique Star Schema}
+\subsubsection{Exemple de requête analytique SQL}
 
 \begin{verbatim}
--- Requête : Volumétrie de trafic par heure et classe de véhicule
+-- Volumétrie horaire par classe de véhicule et caméra
 SELECT 
     dt.date_key,
     dt.hour,
     dvc.class_name,
-    COUNT(*) as total_vehicles,
+    COUNT(*) as total_detections,
     AVG(fd.confidence) as avg_confidence,
-    AVG(fd.area_pixels) as avg_vehicle_size
+    AVG(fd.area_pixels) as avg_size
 FROM fact_detections fd
     JOIN dim_time dt ON fd.time_id = dt.time_id
     JOIN dim_vehicle_class dvc ON fd.vehicle_class_id = dvc.vehicle_class_id
@@ -569,72 +403,8 @@ FROM fact_detections fd
 WHERE dt.date_key = CURRENT_DATE
     AND dc.location_zone = 'Avenue Bourguiba'
 GROUP BY dt.date_key, dt.hour, dvc.class_name
-ORDER BY dt.hour ASC
+ORDER BY dt.hour ASC;
 \end{verbatim}
 
-\subsection{Diagramme Entity-Relationship (ERD) - Notation Chen}
-
-Le diagramme suivant présente les relations entre entités PostgreSQL en notation Chen étendue :
-
-\begin{figure}[H]
-    \centering
-    \fbox{\begin{minipage}{0.95\textwidth}
-    \textbf{DIAGRAMME ENTITY-RELATIONSHIP (ERD)}
-    
-    \vspace{0.3cm}
-    
-    \begin{verbatim}
-    ┌─────────────────┐
-    │  DIM_CAMERA     │
-    ├─────────────────┤
-    │ PK camera_id    │────┐
-    │    name         │    │
-    │    latitude     │    │
-    │    longitude    │    │
-    │    created_date │    │
-    └─────────────────┘    │
-                           │ FK
-    ┌─────────────────┐    │
-    │ DIM_TIME        │    │     ┌──────────────────┐
-    ├─────────────────┤    │     │ FACT_DETECTIONS  │
-    │ PK time_id      │────┼────→├──────────────────┤
-    │    timestamp    │    │     │ PK detection_id  │
-    │    date_key     │    │     │    confidence    │
-    │    hour         │    │     │    area_pixels   │
-    │    is_peak_hour │    │     │    x_center      │
-    └─────────────────┘    │     │    y_center      │
-                           │     │    is_parked     │
-    ┌─────────────────┐    │     └──────────────────┘
-    │ DIM_LOCATION    │    │            ▲
-    ├─────────────────┤    │            │ FK
-    │ PK location_id  │────┼────────────┘
-    │    zone_name    │    │
-    │    district     │    │
-    │    area_type    │    │
-    └─────────────────┘    │
-                           │
-    ┌──────────────────┐   │
-    │DIM_VEHICLE_CLASS │   │
-    ├──────────────────┤   │
-    │PK vehicle_class_ │───┘
-    │  id              │
-    │  class_name      │
-    │  category        │
-    │  emission_level  │
-    └──────────────────┘
-    
-    Relation : Many-to-One (normalisation 3NF)
-    - 1 camera → N détections
-    - 1 time → N détections
-    - 1 location → N détections
-    - 1 vehicle_class → N détections
-    \end{verbatim}
-    
-    \end{minipage}}
-    \caption{Diagramme Entity-Relationship (ERD) PostgreSQL}
-    \label{fig:erd-circuli}
-\end{figure}
-
 \section{Conclusion}
-Le prototype technologique final de CIRCU·LI mis en œuvre respecte rigoureusement les préceptes d'agilité, de modularité logicielle et d'optimisation mathématique établis en phase de conception. En réussissant l'intégration transparente entre l'ingestion vidéo temps réel, la puissance prédictive de YOLOv8, la sécurité de transfert de FastAPI, la robustesse de stockage de PostgreSQL avec une architecture datamart optimale, et l'excellence visuelle de Grafana, la plateforme démontre sa parfaite opérabilité. Elle transforme avec succès de simples flux vidéo non structurés en une ressource décisionnelle de très haute valeur pour la gouvernance des villes intelligentes de demain.
-
+Le prototype technologique final de CIRCULI mis en œuvre respecte rigoureusement les préceptes d'agilité, de modularité logicielle et d'optimisation mathématique établis en phase de conception. En réussissant l'intégration transparente entre l'ingestion vidéo temps réel, la puissance prédictive de YOLOv8, la sécurité de transfert de FastAPI, la robustesse de stockage de PostgreSQL avec une architecture datamart optimale suivant la méthodologie Kimball, et l'excellence visuelle de Grafana, la plateforme démontre sa parfaite opérabilité. Elle transforme avec succès de simples flux vidéo non structurés en une ressource décisionnelle de très haute valeur pour la gouvernance des villes intelligentes de demain.
