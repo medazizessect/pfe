@@ -1,344 +1,174 @@
-\chapter*{Annexe A : Diagrammes UML du Projet CIRCULI}
-\addcontentsline{toc}{chapter}{Annexe A : Diagrammes UML}
+\section{Description détaillée des acteurs}
 
-\section{Diagramme de Cas d'Utilisation}
+\subsection{1. Agent Municipal (Responsable de la Mobilité)}
 
-\begin{figure}[H]
-    \centering
-    \begin{tikzpicture}[
-        actor/.style={circle, draw, minimum size=1.5cm, thick},
-        usecase/.style={ellipse, draw, minimum width=2.5cm, minimum height=1cm, thick},
-        association/.style={thick},
-        include/.style={->, thick, dashed},
-        scale=1.1
-    ]
-    
-    % Acteurs
-    \node[actor] (agent) at (0, 5) {Agent Municipal};
-    \node[actor] (citoyen) at (0, 2) {Citoyen};
-    \node[actor] (admin) at (0, -1) {Administrateur};
-    
-    % Système CIRCULI
-    \draw[thick, rounded corners=0.5cm] (3, -2) rectangle (9, 6.5);
-    \node at (9.2, 6.2) {\textbf{CIRCULI}};
-    
-    % Cas d'utilisation
-    \node[usecase] (visualiser) at (6, 5.5) {Visualiser trafic\\en temps réel};
-    \node[usecase] (generer) at (6, 3.8) {Générer rapport\\hebdomadaire};
-    \node[usecase] (consulter) at (6, 2.2) {Consulter indicateurs\\KPI};
-    \node[usecase] (telecharger) at (6, 0.8) {Télécharger données};
-    \node[usecase] (configurer) at (6, -0.8) {Configurer caméras\\et ROI};
-    \node[usecase] (gerer) at (6, -1.8) {Gérer utilisateurs\\et accès};
-    
-    % Associations acteur-cas
-    \draw[association] (agent) -- (visualiser);
-    \draw[association] (agent) -- (generer);
-    \draw[association] (agent) -- (consulter);
-    \draw[association] (citoyen) -- (consulter);
-    \draw[association] (citoyen) -- (telecharger);
-    \draw[association] (admin) -- (configurer);
-    \draw[association] (admin) -- (gerer);
-    
-    \end{tikzpicture}
-    \caption{Diagramme de cas d'utilisation – Interactions utilisateurs avec CIRCULI}
-    \label{fig:use-case}
-\end{figure}
+\subsubsection{Profil}
+L'Agent Municipal est un utilisateur clé du système CIRCULI. Il s'agit généralement d'un technicien ou d'un responsable de la mobilité au sein de la Direction de la Voirie ou du Centre d'Exploitation du Trafic d'une municipalité.
 
-\newpage
-\section{Diagramme de Classe}
+\subsubsection{Responsabilités principales}
+\begin{itemize}
+    \item \textbf{Surveillance en temps réel du trafic} : Consulter les flux vidéo analysés et les indicateurs de congestion sur un ou plusieurs carrefours/artères urbaines.
+    \item \textbf{Identification des anomalies} : Détecter rapidement les embouteillages, les accidents ou les comportements anormaux (véhicules stationnés illégalement, etc.).
+    \item \textbf{Aide à la décision} : Utiliser les données historiques et les tendances pour prendre des décisions de gestion du trafic (modification des sens, activation de plans alternatifs, alertes citoyens).
+    \item \textbf{Génération de rapports} : Créer des rapports hebdomadaires/mensuels sur la performance des corridors urbains, comparaison année/année.
+    \item \textbf{Coordination} : Communiquer avec d'autres services (police, pompiers, équipes d'entretien) en cas d'incident.
+\end{itemize}
 
-\begin{figure}[H]
-    \centering
-    \begin{tikzpicture}[
-        class/.style={rectangle, draw, minimum width=3cm, minimum height=2.5cm, thick},
-        scale=0.95
-    ]
-    
-    % Classe Camera
-    \node[class] (camera) at (1, 8) {
-        \textbf{Camera}\\
-        \line(1,0){2.8}\\
-        - cameraId: string\\
-        - url: string\\
-        - location: (lat, lon)\\
-        - status: enum\\
-        \line(1,0){2.8}\\
-        + connect(): void\\
-        + disconnect(): void\\
-        + getFrame(): Frame
-    };
-    
-    % Classe VideoProcessor
-    \node[class] (processor) at (5, 8) {
-        \textbf{VideoProcessor}\\
-        \line(1,0){2.8}\\
-        - fps: float\\
-        - roi: ROI\\
-        - model: YOLOv8\\
-        \line(1,0){2.8}\\
-        + preprocessFrame(): Tensor\\
-        + detectObjects(): List\\
-        + applyROI(): Frame
-    };
-    
-    % Classe YOLOv8Model
-    \node[class] (yolo) at (9, 8) {
-        \textbf{YOLOv8Model}\\
-        \line(1,0){2.8}\\
-        - weights: path\\
-        - device: string\\
-        - threshold: float\\
-        \line(1,0){2.8}\\
-        + infer(): Detections\\
-        + predict(): np.array
-    };
-    
-    % Classe Detection
-    \node[class] (detection) at (9, 5) {
-        \textbf{Detection}\\
-        \line(1,0){2.8}\\
-        - objectId: int\\
-        - className: string\\
-        - confidence: float\\
-        - bbox: (x,y,w,h)\\
-        \line(1,0){2.8}\\
-        + toJSON(): string
-    };
-    
-    % Classe APIBackend
-    \node[class] (api) at (5, 5) {
-        \textbf{APIBackend}\\
-        \line(1,0){2.8}\\
-        - baseUrl: string\\
-        - token: string\\
-        \line(1,0){2.8}\\
-        + sendDetections(): Response\\
-        + getStatus(): dict
-    };
-    
-    % Classe Database
-    \node[class] (db) at (1, 5) {
-        \textbf{Database}\\
-        \line(1,0){2.8}\\
-        - host: string\\
-        - port: int\\
-        - pool: Connection\\
-        \line(1,0){2.8}\\
-        + insert(): void\\
-        + query(): Result\\
-        + commit(): void
-    };
-    
-    % Classe Metrics
-    \node[class] (metrics) at (5, 2) {
-        \textbf{Metrics}\\
-        \line(1,0){2.8}\\
-        - timestamp: datetime\\
-        - fps: float\\
-        - latency: int\\
-        - vehicleCount: int\\
-        \line(1,0){2.8}\\
-        + record(): void\\
-        + export(): dict
-    };
-    
-    % Classe AlertManager
-    \node[class] (alert) at (1, 2) {
-        \textbf{AlertManager}\\
-        \line(1,0){2.8}\\
-        - thresholds: dict\\
-        - subscribers: List\\
-        \line(1,0){2.8}\\
-        + checkMetrics(): void\\
-        + sendAlert(): void
-    };
-    
-    % Associations
-    \draw[thick, ->] (camera) -- (processor);
-    \draw[thick, ->] (processor) -- (yolo);
-    \draw[thick, ->] (yolo) -- (detection);
-    \draw[thick, ->] (processor) -- (api);
-    \draw[thick, ->] (api) -- (db);
-    \draw[thick, ->] (detection) -- (metrics);
-    \draw[thick, ->] (metrics) -- (alert);
-    
-    \end{tikzpicture}
-    \caption{Diagramme de classe – Architecture logicielle de CIRCULI}
-    \label{fig:class-diag}
-\end{figure}
+\subsubsection{Cas d'utilisation associés}
+\begin{itemize}
+    \item \textbf{Visualiser trafic en temps réel} : Accès à un dashboard dynamique affichant les caméras actives, la volumétrie et les niveaux de saturation par code couleur (vert/orange/rouge).
+    \item \textbf{Générer rapport hebdomadaire} : Export de statistiques agrégées (nombre de véhicules/heure, heures de pointe, évolution comparée).
+    \item \textbf{Consulter indicateurs KPI} : Suivi des performances (FPS du traitement, latence, taux de détection).
+\end{itemize}
 
-\newpage
-\section{Diagramme de Séquence – Scénario Principal}
+\subsubsection{Besoins spécifiques}
+\begin{itemize}
+    \item Interface claire et intuitive (pas de formation technique poussée).
+    \item Alertes proactives en cas de dégradation du trafic.
+    \item Accès mobile (smartphone/tablette) pour consultation hors du bureau.
+    \item Historique accessible et traçabilité des décisions.
+\end{itemize}
 
-\subsection{Flux global de traitement (de la caméra à la visualisation)}
+\subsubsection{Exemple de scénario}
+\textit{« Lundi matin, l'agent municipal consulte CIRCULI vers 8h30. Le tableau de bord affiche une saturation anormale sur l'Avenue Bourguiba (couleur rouge). En cliquant sur la zone, il voit que le flux vidéo détecte 150 voitures/minute (vs. moyenne 80 en temps normal). Il génère une alerte aux citoyens et contacte le CET pour mettre en place un plan B. À 9h, il observe la normalisation progressive du flux grâce aux déviations routières. »}
 
-\begin{figure}[H]
-    \centering
-    \begin{tikzpicture}[
-        scale=1,
-        actor/.style={rectangle, draw, minimum width=1.8cm, minimum height=0.6cm},
-        object/.style={rectangle, draw, minimum width=1.8cm, minimum height=0.6cm},
-        message/.style={->, thick, black}
-    ]
-    
-    % Acteurs / Objets
-    \node[actor] (camera) at (0, 10) {Camera RTSP};
-    \node[object] (processor) at (2.5, 10) {VideoProcessor};
-    \node[object] (yolo) at (5, 10) {YOLOv8};
-    \node[object] (api) at (7.5, 10) {APIBackend};
-    \node[object] (db) at (10, 10) {Database};
-    
-    % Lignes de vie
-    \draw[dashed] (camera) -- (camera |- -0.5);
-    \draw[dashed] (processor) -- (processor |- -0.5);
-    \draw[dashed] (yolo) -- (yolo |- -0.5);
-    \draw[dashed] (api) -- (api |- -0.5);
-    \draw[dashed] (db) -- (db |- -0.5);
-    
-    % Messages
-    \draw[message] (camera) -- (processor) node[midway, above, font=\small] {1: readFrame()};
-    \draw[message] (processor) -- (processor |- 8.5) node[midway, right, font=\small] {2: applyROI()};
-    \draw[message] (processor) -- (processor |- 7.8) node[midway, right, font=\small] {3: normalize()};
-    \draw[message] (processor) -- (yolo) node[midway, above, font=\small] {4: infer(tensor)};
-    \draw[message] (yolo) -- (processor) node[midway, above, font=\small] {5: detections[]};
-    \draw[message] (processor) -- (api) node[midway, above, font=\small] {6: sendDetections(list)};
-    \draw[message] (api) -- (db) node[midway, above, font=\small] {7: insert(records)};
-    \draw[message] (db) -- (api) node[midway, above, font=\small] {8: ACK};
-    \draw[message] (api) -- (processor) node[midway, above, font=\small] {9: success};
-    
-    \end{tikzpicture}
-    \caption{Diagramme de séquence – Flux de traitement d'une frame vidéo}
-    \label{fig:seq-main}
-\end{figure}
+---
 
-\subsection{Sous-diagramme 1 : Inférence YOLOv8}
+\subsection{2. Citoyen (Utilisateur Grand Public)}
 
-\begin{figure}[H]
-    \centering
-    \begin{tikzpicture}[
-        scale=1,
-        object/.style={rectangle, draw, minimum width=1.8cm, minimum height=0.6cm},
-        message/.style={->, thick, black}
-    ]
-    
-    \node[object] (tensor_prep) at (0, 10) {Tensor};
-    \node[object] (model) at (2.5, 10) {YOLOv8Model};
-    \node[object] (nms) at (5, 10) {NMS Filter};
-    \node[object] (results) at (7.5, 10) {Detections};
-    
-    \draw[dashed] (tensor_prep) -- (tensor_prep |- -0.5);
-    \draw[dashed] (model) -- (model |- -0.5);
-    \draw[dashed] (nms) -- (nms |- -0.5);
-    \draw[dashed] (results) -- (results |- -0.5);
-    
-    \draw[message] (tensor_prep) -- (model) node[midway, above, font=\small] {1: forward(x)};
-    \draw[message] (model) -- (model |- 8.5) node[midway, right, font=\small] {2: grid\_predictions};
-    \draw[message] (model) -- (nms) node[midway, above, font=\small] {3: raw\_boxes};
-    \draw[message] (nms) -- (nms |- 7.2) node[midway, right, font=\small] {4: filter(iou<0.4)};
-    \draw[message] (nms) -- (results) node[midway, above, font=\small] {5: filtered\_list};
-    
-    \node at (3.75, -1.5) {\small \textit{Détail : passage de la prédiction brute au filtrage NMS (confiance + IoU)}};
-    
-    \end{tikzpicture}
-    \caption{Sous-diagramme 1 – Étapes d'inférence du modèle YOLOv8}
-    \label{fig:seq-yolo}
-\end{figure}
+\subsubsection{Profil}
+Le Citoyen est un utilisateur non-expert qui souhaite simplement obtenir des informations sur l'état du trafic afin d'optimiser ses trajets quotidiens. Il accède à CIRCULI via un portail web public ou une application mobile.
 
-\subsection{Sous-diagramme 2 : Gestion des erreurs et résilience}
+\subsubsection{Responsabilités / Attentes}
+\begin{itemize}
+    \item \textbf{Consulter l'état du trafic en temps réel} : Connaître rapidement les zones encombrées avant de partir.
+    \item \textbf{Planifier un trajet} : Obtenir une estimation du temps de parcours selon les conditions actuelles.
+    \item \textbf{Télécharger des données anonymisées} : Accès aux statistiques publiques (pas d'identification de véhicules).
+    \item \textbf{Recevoir des alertes} : Notifications en cas de bouchon majeur ou d'événement (accident, manifestation).
+\end{itemize}
 
-\begin{figure}[H]
-    \centering
-    \begin{tikzpicture}[
-        scale=1,
-        object/.style={rectangle, draw, minimum width=1.8cm, minimum height=0.6cm},
-        message/.style={->, thick, black},
-        error/.style={->, thick, red}
-    ]
-    
-    \node[object] (camera) at (0, 10) {Camera};
-    \node[object] (processor) at (2.5, 10) {Processor};
-    \node[object] (api) at (5, 10) {APIBackend};
-    \node[object] (alert) at (7.5, 10) {AlertManager};
-    
-    \draw[dashed] (camera) -- (camera |- -0.5);
-    \draw[dashed] (processor) -- (processor |- -0.5);
-    \draw[dashed] (api) -- (api |- -0.5);
-    \draw[dashed] (alert) -- (alert |- -0.5);
-    
-    \draw[message] (camera) -- (processor) node[midway, above, font=\small] {1: readFrame()};
-    \draw[error] (processor) -- (processor |- 8.2) node[midway, right, font=\small, color=red] {2: timeout!};
-    \draw[error] (processor) -- (alert) node[midway, above, font=\small, color=red] {3: onError(RTSP\_DOWN)};
-    \draw[message] (alert) -- (alert |- 7.5) node[midway, right, font=\small] {4: log + notify};
-    \draw[message] (processor) -- (processor |- 6.8) node[midway, right, font=\small] {5: retry(backoff=2s)};
-    \draw[message] (camera) -- (processor) node[midway, above, font=\small] {6: readFrame() [RETRY]};
-    \draw[message] (processor) -- (api) node[midway, above, font=\small] {7: sendDetections()};
-    
-    \node at (3.75, -1.5) {\small \textit{Gestion : timeout réseau → log → alerte → retry exponentiel}};
-    
-    \end{tikzpicture}
-    \caption{Sous-diagramme 2 – Flux de gestion des erreurs et résilience}
-    \label{fig:seq-error}
-\end{figure}
+\subsubsection{Cas d'utilisation associés}
+\begin{itemize}
+    \item \textbf{Consulter indicateurs KPI} : Affichage simplifié de la fluidité (barre de progression ou code couleur) sur une carte interactive.
+    \item \textbf{Télécharger données} : Export de fichiers CSV/JSON contenant des statistiques publiques (volumes journaliers par carrefour, heures de pointe, tendances).
+\end{itemize}
 
-\subsection{Sous-diagramme 3 : Cycle de mise à jour des KPI}
+\subsubsection{Besoins spécifiques}
+\begin{itemize}
+    \item Interface hyper-simplifiée (pas de jargon technique).
+    \item Chargement rapide (mobile, 4G/5G).
+    \item Respect strict de la vie privée (pas d'identification de véhicules).
+    \item Accessibilité (compatibilité lecteur d'écran, daltonisme).
+\end{itemize}
 
-\begin{figure}[H]
-    \centering
-    \begin{tikzpicture}[
-        scale=1,
-        object/.style={rectangle, draw, minimum width=1.8cm, minimum height=0.6cm},
-        message/.style={->, thick, black}
-    ]
-    
-    \node[object] (detections) at (0, 10) {Detections};
-    \node[object] (metrics) at (2.5, 10) {Metrics};
-    \node[object] (db) at (5, 10) {Database};
-    \node[object] (grafana) at (7.5, 10) {Grafana};
-    
-    \draw[dashed] (detections) -- (detections |- -0.5);
-    \draw[dashed] (metrics) -- (metrics |- -0.5);
-    \draw[dashed] (db) -- (db |- -0.5);
-    \draw[dashed] (grafana) -- (grafana |- -0.5);
-    
-    \draw[message] (detections) -- (metrics) node[midway, above, font=\small] {1: record(objects=[])};
-    \draw[message] (metrics) -- (metrics |- 8.8) node[midway, right, font=\small] {2: compute FPS};
-    \draw[message] (metrics) -- (metrics |- 8.2) node[midway, right, font=\small] {3: compute latency};
-    \draw[message] (metrics) -- (db) node[midway, above, font=\small] {4: insert\_metrics()};
-    \draw[message] (db) -- (db |- 7.5) node[midway, right, font=\small] {5: persist};
-    \draw[message] (db) -- (grafana) node[midway, above, font=\small, sloped] {6: query (every 10s)};
-    \draw[message] (grafana) -- (grafana |- 6.5) node[midway, right, font=\small] {7: render\_dashboard};
-    
-    \node at (3.75, -1.5) {\small \textit{Mise à jour continue des KPI : collection → calcul → persistence → visualisation}};
-    
-    \end{tikzpicture}
-    \caption{Sous-diagramme 3 – Cycle de mise à jour des indicateurs KPI}
-    \label{fig:seq-kpi}
-\end{figure}
+\subsubsection{Exemple de scénario}
+\textit{« Sarah sort du travail à 17h et ouvre l'appli CIRCULI sur son téléphone. Elle voit que l'Avenue Bourguiba est en rouge (saturation 85 \%). Aussitôt, elle prend la route alternative (Rue de la République) qui affiche vert (saturation 35 \%). Elle gagne 20 minutes par rapport à son trajet habituel. »}
 
-\newpage
-\section{Résumé des interactions}
+---
 
-Le tableau suivant synthétise les principaux appels entre composants :
+\subsection{3. Administrateur Système}
+
+\subsubsection{Profil}
+L'Administrateur Système est un technicien informatique/DevOps responsable de l'infrastructure et du fonctionnement technique de la plateforme CIRCULI. Il possède une expertise en bases de données, conteneurisation (Docker), orchestration (Airflow) et monitoring.
+
+\subsubsection{Responsabilités principales}
+\begin{itemize}
+    \item \textbf{Configuration des caméras et des ROI} : Ajouter/modifier les flux vidéo, définir les régions d'intérêt (zones de comptage).
+    \item \textbf{Gestion des utilisateurs et des accès} : Création de comptes, attribution de rôles (agent municipal, citoyen, admin), révocation d'accès.
+    \item \textbf{Maintenance système} : Mises à jour logicielles, patches de sécurité, gestion des certificats SSL.
+    \item \textbf{Monitoring} : Surveillance continue des métriques (uptime, charge CPU, mémoire, latence du modèle).
+    \item \textbf{Récupération d'incidents} : Gestion des pannes (redémarrage de services, restauration de données, escalade si nécessaire).
+    \item \textbf{Optimisation des performances} : Tuning des hyperparamètres du modèle, allocation des ressources serveur, cache optimisé.
+\end{itemize}
+
+\subsubsection{Cas d'utilisation associés}
+\begin{itemize}
+    \item \textbf{Configurer caméras et ROI} : Interface d'administration permettant de :
+        \begin{itemize}
+            \item Ajouter une nouvelle caméra (URL RTSP, localisation GPS, nom).
+            \item Dessiner une ROI (polygon sur l'écran vidéo).
+            \item Tester la connexion en direct.
+            \item Consulter les logs d'erreur.
+        \end{itemize}
+    \item \textbf{Gérer utilisateurs et accès} : 
+        \begin{itemize}
+            \item Créer/modifier/supprimer des comptes.
+            \item Attribuer des rôles et permissions granulaires.
+            \item Auditer les connexions (qui, quand, depuis où).
+        \end{itemize}
+\end{itemize}
+
+\subsubsection{Besoins spécifiques}
+\begin{itemize}
+    \item Accès complet aux logs système (Grafana, Prometheus, ELK stack).
+    \item Console SSH / API programmable pour tâches automatisées.
+    \item Alertes critiques (seuil de disponibilité, erreurs modèle, crash de service).
+    \item Backup automatisé et stratégie de DR (Disaster Recovery).
+    \item Documentation technique mise à jour.
+\end{itemize}
+
+\subsubsection{Exemple de scénario}
+\textit{« Mercredi matin, l'admin reçoit une alerte : la caméra du carrefour « République/Bourguiba » ne répond plus depuis 2h. Il se connecte au dashboard Grafana, observe que le flux RTSP a été coupé (probablement maintenance réseau municipal). Il contacte l'équipe IT locale, qui redémarre le routeur. Puis, il reconfigure la caméra via le panneau d'admin (test de connexion → OK). Les détections reprennent immédiatement. »}
+
+---
+
+\subsection{4. Acteurs externes (non-humains mais importants)}
+
+\subsubsection{4.1 Système de Gestion du Trafic (TMS – Traffic Management System)}
+
+\textbf{Nature} : Système tiers intégré via API.
+
+\textbf{Interaction} : CIRCULI envoie les détections/KPI vers le TMS qui les intègre dans sa logique de gestion (changement automatique des feux tricolores, affichage sur panneaux de signalisation, etc.).
+
+\textbf{Cas d'utilisation} : Contrôle adaptatif des feux (future intégration).
+
+---
+
+\subsubsection{4.2 Services d'Alerte Citoyens}
+
+\textbf{Nature} : Applications/services push (notifications mobiles, SMS, réseaux sociaux).
+
+\textbf{Interaction} : CIRCULI transmet des alertes structurées (incident, zone affectée, durée estimée) vers ces canaux.
+
+\textbf{Cas d'utilisation} : Notification en cas de bouchon majeur.
+
+---
+
+\subsubsection{4.3 Systèmes de Caméras IP (RTSP/ONVIF)}
+
+\textbf{Nature} : Équipements matériels municipaux existants.
+
+\textbf{Interaction} : CIRCULI consomme les flux vidéo pour les analyser.
+
+\textbf{Cas d'utilisation} : Source de données.
+
+---
+
+\section{Matrice d'interactions acteur-système}
+
+Le tableau ci-dessous récapitule les interactions clés entre chaque acteur et le système CIRCULI :
 
 \begin{table}[H]
     \centering
     \resizebox{\textwidth}{!}{
-    \begin{tabular}{llll}
-        \toprule
-        \textbf{Composant Source} & \textbf{Composant Cible} & \textbf{Opération} & \textbf{Fréquence} \\
-        \midrule
-        Camera & VideoProcessor & readFrame() & Continu (25-30 FPS) \\
-        VideoProcessor & YOLOv8 & infer(tensor) & Continu (9-19 FPS après ROI) \\
-        YOLOv8 & NMS Filter & filter() & Continu \\
-        VideoProcessor & APIBackend & sendDetections() & Chaque détection \\
-        APIBackend & Database & insert() & Batch (1x/min) \\
-        Metrics & Database & insert\_metrics() & Chaque minute \\
-        Database & Grafana & query() & Polling (10s) \\
-        AlertManager & Logger & log() & Sur événement \\
-        \bottomrule
+    \begin{tabular}{|l|l|l|l|}
+        \hline
+        \textbf{Acteur} & \textbf{Cas d'utilisation} & \textbf{Fréquence} & \textbf{Priorité} \\
+        \hline
+        Agent Municipal & Visualiser trafic temps réel & Continu (8h-20h) & CRITIQUE \\
+        & Générer rapports & 1x/semaine & HAUTE \\
+        & Consulter KPI & À la demande & HAUTE \\
+        \hline
+        Citoyen & Consulter KPI & À la demande & HAUTE \\
+        & Télécharger données & 1-2x/mois & MOYENNE \\
+        \hline
+        Administrateur & Configurer caméras & 1-2x/mois & CRITIQUE \\
+        & Gérer utilisateurs & À la demande & MOYENNE \\
+        & Monitoring système & Continu & CRITIQUE \\
+        \hline
     \end{tabular}
     }
-    \caption{Tableau d'interactions entre composants}
-    \label{tbl:interactions}
+    \caption{Matrice d'interactions acteur-système}
+    \label{tbl:acteur-interactions}
 \end{table}
 
