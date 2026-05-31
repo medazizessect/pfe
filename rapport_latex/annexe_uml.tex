@@ -1,174 +1,970 @@
-\section{Description détaillée des acteurs}
+\chapter*{Annexe A : Diagrammes UML Détaillés du Projet CIRCULI}
+\addcontentsline{toc}{chapter}{Annexe A : Diagrammes UML Détaillés}
 
-\subsection{1. Agent Municipal (Responsable de la Mobilité)}
+\section{1. Diagramme de Cas d'Utilisation Global}
 
-\subsubsection{Profil}
-L'Agent Municipal est un utilisateur clé du système CIRCULI. Il s'agit généralement d'un technicien ou d'un responsable de la mobilité au sein de la Direction de la Voirie ou du Centre d'Exploitation du Trafic d'une municipalité.
+\subsection{Vue d'ensemble}
 
-\subsubsection{Responsabilités principales}
-\begin{itemize}
-    \item \textbf{Surveillance en temps réel du trafic} : Consulter les flux vidéo analysés et les indicateurs de congestion sur un ou plusieurs carrefours/artères urbaines.
-    \item \textbf{Identification des anomalies} : Détecter rapidement les embouteillages, les accidents ou les comportements anormaux (véhicules stationnés illégalement, etc.).
-    \item \textbf{Aide à la décision} : Utiliser les données historiques et les tendances pour prendre des décisions de gestion du trafic (modification des sens, activation de plans alternatifs, alertes citoyens).
-    \item \textbf{Génération de rapports} : Créer des rapports hebdomadaires/mensuels sur la performance des corridors urbains, comparaison année/année.
-    \item \textbf{Coordination} : Communiquer avec d'autres services (police, pompiers, équipes d'entretien) en cas d'incident.
-\end{itemize}
+Le système CIRCULI interagit avec trois catégories d'utilisateurs principaux et trois acteurs externes. Le diagramme global montre tous les cas d'utilisation possibles et leurs relations.
 
-\subsubsection{Cas d'utilisation associés}
-\begin{itemize}
-    \item \textbf{Visualiser trafic en temps réel} : Accès à un dashboard dynamique affichant les caméras actives, la volumétrie et les niveaux de saturation par code couleur (vert/orange/rouge).
-    \item \textbf{Générer rapport hebdomadaire} : Export de statistiques agrégées (nombre de véhicules/heure, heures de pointe, évolution comparée).
-    \item \textbf{Consulter indicateurs KPI} : Suivi des performances (FPS du traitement, latence, taux de détection).
-\end{itemize}
-
-\subsubsection{Besoins spécifiques}
-\begin{itemize}
-    \item Interface claire et intuitive (pas de formation technique poussée).
-    \item Alertes proactives en cas de dégradation du trafic.
-    \item Accès mobile (smartphone/tablette) pour consultation hors du bureau.
-    \item Historique accessible et traçabilité des décisions.
-\end{itemize}
-
-\subsubsection{Exemple de scénario}
-\textit{« Lundi matin, l'agent municipal consulte CIRCULI vers 8h30. Le tableau de bord affiche une saturation anormale sur l'Avenue Bourguiba (couleur rouge). En cliquant sur la zone, il voit que le flux vidéo détecte 150 voitures/minute (vs. moyenne 80 en temps normal). Il génère une alerte aux citoyens et contacte le CET pour mettre en place un plan B. À 9h, il observe la normalisation progressive du flux grâce aux déviations routières. »}
-
----
-
-\subsection{2. Citoyen (Utilisateur Grand Public)}
-
-\subsubsection{Profil}
-Le Citoyen est un utilisateur non-expert qui souhaite simplement obtenir des informations sur l'état du trafic afin d'optimiser ses trajets quotidiens. Il accède à CIRCULI via un portail web public ou une application mobile.
-
-\subsubsection{Responsabilités / Attentes}
-\begin{itemize}
-    \item \textbf{Consulter l'état du trafic en temps réel} : Connaître rapidement les zones encombrées avant de partir.
-    \item \textbf{Planifier un trajet} : Obtenir une estimation du temps de parcours selon les conditions actuelles.
-    \item \textbf{Télécharger des données anonymisées} : Accès aux statistiques publiques (pas d'identification de véhicules).
-    \item \textbf{Recevoir des alertes} : Notifications en cas de bouchon majeur ou d'événement (accident, manifestation).
-\end{itemize}
-
-\subsubsection{Cas d'utilisation associés}
-\begin{itemize}
-    \item \textbf{Consulter indicateurs KPI} : Affichage simplifié de la fluidité (barre de progression ou code couleur) sur une carte interactive.
-    \item \textbf{Télécharger données} : Export de fichiers CSV/JSON contenant des statistiques publiques (volumes journaliers par carrefour, heures de pointe, tendances).
-\end{itemize}
-
-\subsubsection{Besoins spécifiques}
-\begin{itemize}
-    \item Interface hyper-simplifiée (pas de jargon technique).
-    \item Chargement rapide (mobile, 4G/5G).
-    \item Respect strict de la vie privée (pas d'identification de véhicules).
-    \item Accessibilité (compatibilité lecteur d'écran, daltonisme).
-\end{itemize}
-
-\subsubsection{Exemple de scénario}
-\textit{« Sarah sort du travail à 17h et ouvre l'appli CIRCULI sur son téléphone. Elle voit que l'Avenue Bourguiba est en rouge (saturation 85 \%). Aussitôt, elle prend la route alternative (Rue de la République) qui affiche vert (saturation 35 \%). Elle gagne 20 minutes par rapport à son trajet habituel. »}
-
----
-
-\subsection{3. Administrateur Système}
-
-\subsubsection{Profil}
-L'Administrateur Système est un technicien informatique/DevOps responsable de l'infrastructure et du fonctionnement technique de la plateforme CIRCULI. Il possède une expertise en bases de données, conteneurisation (Docker), orchestration (Airflow) et monitoring.
-
-\subsubsection{Responsabilités principales}
-\begin{itemize}
-    \item \textbf{Configuration des caméras et des ROI} : Ajouter/modifier les flux vidéo, définir les régions d'intérêt (zones de comptage).
-    \item \textbf{Gestion des utilisateurs et des accès} : Création de comptes, attribution de rôles (agent municipal, citoyen, admin), révocation d'accès.
-    \item \textbf{Maintenance système} : Mises à jour logicielles, patches de sécurité, gestion des certificats SSL.
-    \item \textbf{Monitoring} : Surveillance continue des métriques (uptime, charge CPU, mémoire, latence du modèle).
-    \item \textbf{Récupération d'incidents} : Gestion des pannes (redémarrage de services, restauration de données, escalade si nécessaire).
-    \item \textbf{Optimisation des performances} : Tuning des hyperparamètres du modèle, allocation des ressources serveur, cache optimisé.
-\end{itemize}
-
-\subsubsection{Cas d'utilisation associés}
-\begin{itemize}
-    \item \textbf{Configurer caméras et ROI} : Interface d'administration permettant de :
-        \begin{itemize}
-            \item Ajouter une nouvelle caméra (URL RTSP, localisation GPS, nom).
-            \item Dessiner une ROI (polygon sur l'écran vidéo).
-            \item Tester la connexion en direct.
-            \item Consulter les logs d'erreur.
-        \end{itemize}
-    \item \textbf{Gérer utilisateurs et accès} : 
-        \begin{itemize}
-            \item Créer/modifier/supprimer des comptes.
-            \item Attribuer des rôles et permissions granulaires.
-            \item Auditer les connexions (qui, quand, depuis où).
-        \end{itemize}
-\end{itemize}
-
-\subsubsection{Besoins spécifiques}
-\begin{itemize}
-    \item Accès complet aux logs système (Grafana, Prometheus, ELK stack).
-    \item Console SSH / API programmable pour tâches automatisées.
-    \item Alertes critiques (seuil de disponibilité, erreurs modèle, crash de service).
-    \item Backup automatisé et stratégie de DR (Disaster Recovery).
-    \item Documentation technique mise à jour.
-\end{itemize}
-
-\subsubsection{Exemple de scénario}
-\textit{« Mercredi matin, l'admin reçoit une alerte : la caméra du carrefour « République/Bourguiba » ne répond plus depuis 2h. Il se connecte au dashboard Grafana, observe que le flux RTSP a été coupé (probablement maintenance réseau municipal). Il contacte l'équipe IT locale, qui redémarre le routeur. Puis, il reconfigure la caméra via le panneau d'admin (test de connexion → OK). Les détections reprennent immédiatement. »}
-
----
-
-\subsection{4. Acteurs externes (non-humains mais importants)}
-
-\subsubsection{4.1 Système de Gestion du Trafic (TMS – Traffic Management System)}
-
-\textbf{Nature} : Système tiers intégré via API.
-
-\textbf{Interaction} : CIRCULI envoie les détections/KPI vers le TMS qui les intègre dans sa logique de gestion (changement automatique des feux tricolores, affichage sur panneaux de signalisation, etc.).
-
-\textbf{Cas d'utilisation} : Contrôle adaptatif des feux (future intégration).
-
----
-
-\subsubsection{4.2 Services d'Alerte Citoyens}
-
-\textbf{Nature} : Applications/services push (notifications mobiles, SMS, réseaux sociaux).
-
-\textbf{Interaction} : CIRCULI transmet des alertes structurées (incident, zone affectée, durée estimée) vers ces canaux.
-
-\textbf{Cas d'utilisation} : Notification en cas de bouchon majeur.
-
----
-
-\subsubsection{4.3 Systèmes de Caméras IP (RTSP/ONVIF)}
-
-\textbf{Nature} : Équipements matériels municipaux existants.
-
-\textbf{Interaction} : CIRCULI consomme les flux vidéo pour les analyser.
-
-\textbf{Cas d'utilisation} : Source de données.
-
----
-
-\section{Matrice d'interactions acteur-système}
-
-Le tableau ci-dessous récapitule les interactions clés entre chaque acteur et le système CIRCULI :
-
-\begin{table}[H]
+\begin{figure}[H]
     \centering
-    \resizebox{\textwidth}{!}{
-    \begin{tabular}{|l|l|l|l|}
-        \hline
-        \textbf{Acteur} & \textbf{Cas d'utilisation} & \textbf{Fréquence} & \textbf{Priorité} \\
-        \hline
-        Agent Municipal & Visualiser trafic temps réel & Continu (8h-20h) & CRITIQUE \\
-        & Générer rapports & 1x/semaine & HAUTE \\
-        & Consulter KPI & À la demande & HAUTE \\
-        \hline
-        Citoyen & Consulter KPI & À la demande & HAUTE \\
-        & Télécharger données & 1-2x/mois & MOYENNE \\
-        \hline
-        Administrateur & Configurer caméras & 1-2x/mois & CRITIQUE \\
-        & Gérer utilisateurs & À la demande & MOYENNE \\
-        & Monitoring système & Continu & CRITIQUE \\
-        \hline
+    \fbox{\begin{minipage}{0.95\textwidth}
+    \textbf{DIAGRAMME DE CAS D'UTILISATION GLOBAL}
+    
+    \vspace{0.5cm}
+    
+    \begin{center}
+    \begin{tabular}{|c|c|c|}
+    \hline
+    \multicolumn{3}{|c|}{\textbf{ACTEURS}} \\
+    \hline
+    Agent Municipal & Citoyen & Administrateur Système \\
+    \hline
     \end{tabular}
-    }
-    \caption{Matrice d'interactions acteur-système}
-    \label{tbl:acteur-interactions}
-\end{table}
+    \end{center}
+    
+    \vspace{0.5cm}
+    
+    \begin{center}
+    \begin{tabular}{|l|l|l|}
+    \hline
+    \multicolumn{3}{|c|}{\textbf{CAS D'UTILISATION}} \\
+    \hline
+    \textbf{Système CIRCULI} & & \\
+    \hline
+    1. Visualiser trafic temps réel & $\rightarrow$ & Agent Municipal \\
+    2. Générer rapport hebdomadaire & $\rightarrow$ & Agent Municipal \\
+    3. Consulter indicateurs KPI & $\rightarrow$ & Agent + Citoyen \\
+    4. Télécharger données publiques & $\rightarrow$ & Citoyen \\
+    5. Configurer caméras et ROI & $\rightarrow$ & Admin \\
+    6. Gérer utilisateurs et accès & $\rightarrow$ & Admin \\
+    7. Monitoring système & $\rightarrow$ & Admin (continu) \\
+    \hline
+    \end{tabular}
+    \end{center}
+    
+    \end{minipage}}
+    \caption{Diagramme de Cas d'Utilisation Global}
+    \label{fig:uc-global}
+\end{figure}
+
+---
+
+\subsection{Sous-diagramme 1 : Cas d'Utilisation Agent Municipal}
+
+\begin{figure}[H]
+    \centering
+    \fbox{\begin{minipage}{0.95\textwidth}
+    \textbf{SOUS-DIAGRAMME 1 : CAS D'UTILISATION AGENT MUNICIPAL}
+    
+    \vspace{0.5cm}
+    
+    \textit{Acteur Principal : Responsable de la Mobilité / Technicien du CET}
+    
+    \vspace{0.5cm}
+    
+    \begin{tabular}{|p{3cm}|p{5.5cm}|p{2.5cm}|}
+    \hline
+    \textbf{Cas d'Utilisation} & \textbf{Description} & \textbf{Fréquence} \\
+    \hline
+    \textbf{UC-1 : Visualiser} \textit{trafic temps réel} & 
+    Agent se connecte au dashboard. Consulte les caméras actives, visualise les niveaux de saturation en code couleur (vert/orange/rouge). Clique sur un carrefour pour voir le flux vidéo analysé en direct. Détecte automatiquement les zones en congestion. & 
+    Continu (8h-20h) \\
+    \hline
+    \textbf{UC-2 : Générer} \textit{rapport hebdomadaire} & 
+    Agent accède à la section « Rapports ». Sélectionne une plage de dates et des zones géographiques. Exporte un PDF contenant : statistiques volumétrie, heures de pointe, comparaison année/année, anomalies détectées. & 
+    1x/semaine ou à la demande \\
+    \hline
+    \textbf{UC-3 : Consulter} \textit{KPI techniques} & 
+    Agent accède au dashboard technique. Consulte FPS moyen, latence d'inférence, taux de détection, uptime des caméras, nombre d'objets détectés/heure. & 
+    À la demande (diagnostic) \\
+    \hline
+    \end{tabular}
+    
+    \vspace{0.5cm}
+    
+    \textit{Flux Principal (UC-1 Visualiser trafic) :}
+    \begin{enumerate}
+        \item Agent s'authentifie via OTP.
+        \item Dashboard se charge avec carte interactive.
+        \item Code couleur par zone : \textcolor{green}{vert (flux libre)} / \textcolor{orange}{orange (fluide)} / \textcolor{red}{rouge (saturation)}.
+        \item Agent clique sur une zone → vue du flux vidéo avec boîtes de détection.
+        \item Si anomalie : alerte visuelle + notification possible.
+    \end{enumerate}
+    
+    \end{minipage}}
+    \caption{Sous-diagramme 1 : Cas d'Utilisation Agent Municipal}
+    \label{fig:uc-agent}
+\end{figure}
+
+---
+
+\subsection{Sous-diagramme 2 : Cas d'Utilisation Citoyen}
+
+\begin{figure}[H]
+    \centering
+    \fbox{\begin{minipage}{0.95\textwidth}
+    \textbf{SOUS-DIAGRAMME 2 : CAS D'UTILISATION CITOYEN}
+    
+    \vspace{0.5cm}
+    
+    \textit{Acteur Principal : Utilisateur Grand Public}
+    
+    \vspace{0.5cm}
+    
+    \begin{tabular}{|p{3cm}|p{5.5cm}|p{2.5cm}|}
+    \hline
+    \textbf{Cas d'Utilisation} & \textbf{Description} & \textbf{Fréquence} \\
+    \hline
+    \textbf{UC-3 : Consulter} \textit{indicateurs KPI (vue simplifiée)} & 
+    Citoyen accède au portail public. Consulte une vue simplifiée : barre de saturation par carrefour principal (0-100\%). Affichage en temps réel, pas de détails techniques. & 
+    À la demande (avant trajet) \\
+    \hline
+    \textbf{UC-4 : Télécharger} \textit{données publiques} & 
+    Citoyen accède à l'espace « Données Ouvertes ». Télécharge des fichiers CSV/JSON contenant statistiques publiques anonymisées : volumes/heure, heures de pointe, tendances historiques. Pas d'identification de véhicule. & 
+    1-2x/mois \\
+    \hline
+    \textbf{UC-5 (optionnel) : Recevoir} \textit{alertes trafic} & 
+    Citoyen s'abonne aux notifications. Reçoit SMS/Push en cas de bouchon majeur sur trajets favoris. & 
+    Événementiel \\
+    \hline
+    \end{tabular}
+    
+    \vspace{0.5cm}
+    
+    \textit{Flux Principal (UC-3 Consulter KPI) :}
+    \begin{enumerate}
+        \item Citoyen ouvre l'appli/web public (pas d'authentification requise).
+        \item Carte interactive affichée par défaut.
+        \item Barre de saturation par carrefour : longueur/couleur indique fluidité.
+        \item Citoyen peut zoomer, consulter 5-10 carrefours populaires.
+        \item Option : planifier trajet en fonction de l'état.
+    \end{enumerate}
+    
+    \end{minipage}}
+    \caption{Sous-diagramme 2 : Cas d'Utilisation Citoyen}
+    \label{fig:uc-citizen}
+\end{figure}
+
+---
+
+\subsection{Sous-diagramme 3 : Cas d'Utilisation Administrateur Système}
+
+\begin{figure}[H]
+    \centering
+    \fbox{\begin{minipage}{0.95\textwidth}
+    \textbf{SOUS-DIAGRAMME 3 : CAS D'UTILISATION ADMINISTRATEUR SYSTÈME}
+    
+    \vspace{0.5cm}
+    
+    \textit{Acteur Principal : Administrateur DevOps / Technicien IT}
+    
+    \vspace{0.5cm}
+    
+    \begin{tabular}{|p{3cm}|p{5.5cm}|p{2.5cm}|}
+    \hline
+    \textbf{Cas d'Utilisation} & \textbf{Description} & \textbf{Fréquence} \\
+    \hline
+    \textbf{UC-5 : Configurer} \textit{caméras et ROI} & 
+    Admin accède au panneau d'administration. Ajoute une nouvelle caméra (URL RTSP, GPS, nom). Dessine une ROI (région d'intérêt) en cliquant sur le flux vidéo. Valide la config. Consulte les logs de connexion. & 
+    1-2x/mois (nouvelles caméras) \\
+    \hline
+    \textbf{UC-6 : Gérer} \textit{utilisateurs et accès} & 
+    Admin crée des comptes utilisateurs. Attribue des rôles (Agent, Citoyen, Admin). Configure les permissions granulaires (accès caméra par zone). Réinitialise les mots de passe. Audite les connexions (who, when, from where). & 
+    À la demande \\
+    \hline
+    \textbf{UC-7 : Monitoring} \textit{système 24/7} & 
+    Admin consulte le dashboard de monitoring (Grafana/Prometheus). Suit : uptime, latence, FPS, taux d'erreur, logs système. Reçoit des alertes en cas de dépassement de seuils. & 
+    Continu (alertes) \\
+    \hline
+    \textbf{UC-8 (optionnel) : Tuner} \textit{hyperparamètres IA} & 
+    Admin modifie les seuils de confiance YOLOv8, le ratio NMS IoU, les ROI par caméra. Teste en mode sandbox. Déploie en production. & 
+    1-2x/trimestre \\
+    \hline
+    \end{tabular}
+    
+    \vspace{0.5cm}
+    
+    \textit{Flux Principal (UC-5 Configurer caméra) :}
+    \begin{enumerate}
+        \item Admin se connecte au panneau admin (auth forte : 2FA).
+        \item Menu « Caméras » → Bouton « Ajouter caméra ».
+        \item Formulaire : URL RTSP, GPS, nom descriptif, type (route/carrefour).
+        \item Test de connexion.
+        \item Si OK : affiche le flux vidéo en live.
+        \item Admin dessine la ROI (polygone interactif).
+        \item Validation → Caméra active, détections commencent.
+    \end{enumerate}
+    
+    \end{minipage}}
+    \caption{Sous-diagramme 3 : Cas d'Utilisation Administrateur}
+    \label{fig:uc-admin}
+\end{figure}
+
+---
+
+\newpage
+\section{2. Diagramme de Classe Détaillé}
+
+\subsection{Vue d'ensemble}
+
+L'architecture logicielle de CIRCULI est organisée en \textbf{4 couches} :
+\begin{itemize}
+    \item \textbf{Couche 1 : Acquisition} (Camera, VideoProcessor, ROI)
+    \item \textbf{Couche 2 : Intelligence Artificielle} (YOLOv8Model, NMS, Detection)
+    \item \textbf{Couche 3 : Données} (APIBackend, Database, Metrics)
+    \item \textbf{Couche 4 : Alertes et Monitoring} (AlertManager, Logger)
+\end{itemize}
+
+\begin{figure}[H]
+    \centering
+    \fbox{\begin{minipage}{0.95\textwidth}
+    \textbf{ARCHITECTURE COUCHES - VUE SYNTHÉTIQUE}
+    
+    \vspace{0.3cm}
+    
+    \begin{center}
+    \begin{tabular}{|c|}
+    \hline
+    \textbf{COUCHE 1 : ACQUISITION} \\
+    Camera RTSP / VideoProcessor / ROI \\
+    \hline
+    $\downarrow$ (Flux Frame) \\
+    \hline
+    \textbf{COUCHE 2 : INTELLIGENCE ARTIFICIELLE} \\
+    YOLOv8Model / NMS Filter / Detection Objects \\
+    \hline
+    $\downarrow$ (Détections) \\
+    \hline
+    \textbf{COUCHE 3 : DONNÉES} \\
+    APIBackend / Database (PostgreSQL) / Metrics \\
+    \hline
+    $\downarrow$ (KPI) \\
+    \hline
+    \textbf{COUCHE 4 : ALERTES \& MONITORING} \\
+    AlertManager / Logger / Grafana \\
+    \hline
+    \end{tabular}
+    \end{center}
+    
+    \end{minipage}}
+    \label{fig:class-overview}
+\end{figure}
+
+---
+
+\subsection{Sous-diagramme 1 : Couche Acquisition}
+
+\begin{figure}[H]
+    \centering
+    \fbox{\begin{minipage}{0.95\textwidth}
+    \textbf{SOUS-DIAGRAMME 1 : COUCHE ACQUISITION}
+    
+    \vspace{0.5cm}
+    
+    \begin{tabular}{|p{2.5cm}|p{7cm}|}
+    \hline
+    \multicolumn{2}{|c|}{\textbf{CLASSE : Camera}} \\
+    \hline
+    \multicolumn{2}{|p{9.5cm}|}{
+    \textbf{Attributs :}
+    \begin{itemize}
+        \item cameraId : string (identifiant unique)
+        \item url : string (URL RTSP)
+        \item location : tuple (latitude, longitude)
+        \item status : enum \{ACTIVE, INACTIVE, ERROR\}
+        \item fps\_expected : float (30, 25, etc.)
+        \item connection\_timeout : int (secondes)
+    \end{itemize}
+    
+    \textbf{Méthodes :}
+    \begin{itemize}
+        \item connect() : bool
+        \item disconnect() : void
+        \item getFrame() : numpy.array
+        \item getStatus() : enum
+        \item setROI(roi) : void
+    \end{itemize}
+    } \\
+    \hline
+    \end{tabular}
+    
+    \vspace{0.5cm}
+    
+    \begin{tabular}{|p{2.5cm}|p{7cm}|}
+    \hline
+    \multicolumn{2}{|c|}{\textbf{CLASSE : VideoProcessor}} \\
+    \hline
+    \multicolumn{2}{|p{9.5cm}|}{
+    \textbf{Attributs :}
+    \begin{itemize}
+        \item fps\_actual : float (observé)
+        \item latency\_frame : int (ms)
+        \item roi : ROI object
+        \item camera : Camera object
+        \item frame\_buffer : deque (MAX\_SIZE=10)
+    \end{itemize}
+    
+    \textbf{Méthodes :}
+    \begin{itemize}
+        \item preprocessFrame(frame) : numpy.array
+        \item applyROI(frame) : numpy.array
+        \item normalizeImage(frame) : Tensor
+        \item computeLatency() : int
+        \item getMetrics() : dict
+    \end{itemize}
+    } \\
+    \hline
+    \end{tabular}
+    
+    \vspace{0.5cm}
+    
+    \begin{tabular}{|p{2.5cm}|p{7cm}|}
+    \hline
+    \multicolumn{2}{|c|}{\textbf{CLASSE : ROI (Region Of Interest)}} \\
+    \hline
+    \multicolumn{2}{|p{9.5cm}|}{
+    \textbf{Attributs :}
+    \begin{itemize}
+        \item vertices : list of (x, y) points (polygone)
+        \item camera\_id : string
+        \item enabled : bool
+    \end{itemize}
+    
+    \textbf{Méthodes :}
+    \begin{itemize}
+        \item isPointInside(x, y) : bool
+        \item getMask() : numpy.array (masque binaire)
+        \item applyMask(frame) : numpy.array
+    \end{itemize}
+    } \\
+    \hline
+    \end{tabular}
+    
+    \vspace{0.5cm}
+    
+    \textbf{Relations :}
+    \begin{itemize}
+        \item VideoProcessor \textbf{utilise} 1 Camera
+        \item VideoProcessor \textbf{contient} 1 ROI
+        \item Camera \textbf{envoie} Frame $\rightarrow$ VideoProcessor
+    \end{itemize}
+    
+    \end{minipage}}
+    \caption{Sous-diagramme 1 : Couche Acquisition}
+    \label{fig:class-acquisition}
+\end{figure}
+
+---
+
+\subsection{Sous-diagramme 2 : Couche Intelligence Artificielle}
+
+\begin{figure}[H]
+    \centering
+    \fbox{\begin{minipage}{0.95\textwidth}
+    \textbf{SOUS-DIAGRAMME 2 : COUCHE INTELLIGENCE ARTIFICIELLE}
+    
+    \vspace{0.5cm}
+    
+    \begin{tabular}{|p{2.5cm}|p{7cm}|}
+    \hline
+    \multicolumn{2}{|c|}{\textbf{CLASSE : YOLOv8Model}} \\
+    \hline
+    \multicolumn{2}{|p{9.5cm}|}{
+    \textbf{Attributs :}
+    \begin{itemize}
+        \item model\_path : string (chemin weights)
+        \item device : string \{'cpu', 'gpu'\}
+        \item confidence\_threshold : float (0.45)
+        \item iou\_threshold : float (0.4)
+        \item input\_size : int (640)
+    \end{itemize}
+    
+    \textbf{Méthodes :}
+    \begin{itemize}
+        \item load\_weights() : void
+        \item infer(tensor) : list[Detection]
+        \item predict(image) : RawPredictions
+        \item getLatency() : float (ms)
+        \item warmup() : void
+    \end{itemize}
+    } \\
+    \hline
+    \end{tabular}
+    
+    \vspace{0.5cm}
+    
+    \begin{tabular}{|p{2.5cm}|p{7cm}|}
+    \hline
+    \multicolumn{2}{|c|}{\textbf{CLASSE : NMS (Non-Maximum Suppression)}} \\
+    \hline
+    \multicolumn{2}{|p{9.5cm}|}{
+    \textbf{Attributs :}
+    \begin{itemize}
+        \item iou\_threshold : float (seuil de suppression)
+        \item score\_threshold : float (confidence min)
+    \end{itemize}
+    
+    \textbf{Méthodes :}
+    \begin{itemize}
+        \item apply(raw\_detections) : list[Detection]
+        \item computeIoU(box1, box2) : float
+        \item suppressBox(boxes) : list (indices à conserver)
+    \end{itemize}
+    } \\
+    \hline
+    \end{tabular}
+    
+    \vspace{0.5cm}
+    
+    \begin{tabular}{|p{2.5cm}|p{7cm}|}
+    \hline
+    \multicolumn{2}{|c|}{\textbf{CLASSE : Detection}} \\
+    \hline
+    \multicolumn{2}{|p{9.5cm}|}{
+    \textbf{Attributs :}
+    \begin{itemize}
+        \item object\_id : int (identifiant)
+        \item class\_name : string ('car', 'bus', 'truck')
+        \item confidence : float (0.0-1.0)
+        \item bbox : tuple (x\_min, y\_min, x\_max, y\_max)
+        \item timestamp : datetime
+    \end{itemize}
+    
+    \textbf{Méthodes :}
+    \begin{itemize}
+        \item toJSON() : dict
+        \item toDict() : dict
+        \item getArea() : int (pixels)
+        \item getCentroid() : (x, y)
+    \end{itemize}
+    } \\
+    \hline
+    \end{tabular}
+    
+    \vspace{0.5cm}
+    
+    \textbf{Relations :}
+    \begin{itemize}
+        \item YOLOv8Model \textbf{utilise} NMS Filter
+        \item NMS Filter \textbf{retourne} list[Detection]
+        \item Detection \textbf{contient} un object\_id unique
+    \end{itemize}
+    
+    \end{minipage}}
+    \caption{Sous-diagramme 2 : Couche Intelligence Artificielle}
+    \label{fig:class-ia}
+\end{figure}
+
+---
+
+\subsection{Sous-diagramme 3 : Couche Données}
+
+\begin{figure}[H]
+    \centering
+    \fbox{\begin{minipage}{0.95\textwidth}
+    \textbf{SOUS-DIAGRAMME 3 : COUCHE DONNÉES}
+    
+    \vspace{0.5cm}
+    
+    \begin{tabular}{|p{2.5cm}|p{7cm}|}
+    \hline
+    \multicolumn{2}{|c|}{\textbf{CLASSE : APIBackend}} \\
+    \hline
+    \multicolumn{2}{|p{9.5cm}|}{
+    \textbf{Attributs :}
+    \begin{itemize}
+        \item base\_url : string (http://localhost:8000)
+        \item auth\_token : string (JWT)
+        \item timeout : int (30s)
+        \item retry\_policy : dict
+    \end{itemize}
+    
+    \textbf{Méthodes :}
+    \begin{itemize}
+        \item sendDetections(camera\_id, detections) : Response
+        \item getStatus() : dict
+        \item getHealth() : bool
+        \item authenticate() : void
+        \item handleError(error) : void
+    \end{itemize}
+    } \\
+    \hline
+    \end{tabular}
+    
+    \vspace{0.5cm}
+    
+    \begin{tabular}{|p{2.5cm}|p{7cm}|}
+    \hline
+    \multicolumn{2}{|c|}{\textbf{CLASSE : Database}} \\
+    \hline
+    \multicolumn{2}{|p{9.5cm}|}{
+    \textbf{Attributs :}
+    \begin{itemize}
+        \item host : string (localhost)
+        \item port : int (5432)
+        \item user : string
+        \item password : string
+        \item pool : ConnectionPool (MAX\_CONN=20)
+    \end{itemize}
+    
+    \textbf{Méthodes :}
+    \begin{itemize}
+        \item connect() : Connection
+        \item query(sql, params) : Result
+        \item insert(table, data) : void
+        \item update(table, where, data) : void
+        \item commit() : void
+        \item rollback() : void
+    \end{itemize}
+    } \\
+    \hline
+    \end{tabular}
+    
+    \vspace{0.5cm}
+    
+    \begin{tabular}{|p{2.5cm}|p{7cm}|}
+    \hline
+    \multicolumn{2}{|c|}{\textbf{CLASSE : Metrics}} \\
+    \hline
+    \multicolumn{2}{|p{9.5cm}|}{
+    \textbf{Attributs :}
+    \begin{itemize}
+        \item timestamp : datetime
+        \item camera\_id : string
+        \item fps\_avg : float
+        \item latency\_ms : int
+        \item vehicle\_count : int
+        \item confidence\_avg : float
+    \end{itemize}
+    
+    \textbf{Méthodes :}
+    \begin{itemize}
+        \item record(camera\_id, fps, latency, count) : void
+        \item export() : dict
+        \item aggregate(time\_window) : dict
+        \item persist(db) : void
+    \end{itemize}
+    } \\
+    \hline
+    \end{tabular}
+    
+    \vspace{0.5cm}
+    
+    \textbf{Relations :}
+    \begin{itemize}
+        \item APIBackend \textbf{envoie} Detection objects $\rightarrow$ Database
+        \item Database \textbf{stocke} Metrics
+        \item Metrics \textbf{querié par} Grafana (monitoring)
+    \end{itemize}
+    
+    \end{minipage}}
+    \caption{Sous-diagramme 3 : Couche Données}
+    \label{fig:class-data}
+\end{figure}
+
+---
+
+\subsection{Sous-diagramme 4 : Couche Alertes et Monitoring}
+
+\begin{figure}[H]
+    \centering
+    \fbox{\begin{minipage}{0.95\textwidth}
+    \textbf{SOUS-DIAGRAMME 4 : COUCHE ALERTES \& MONITORING}
+    
+    \vspace{0.5cm}
+    
+    \begin{tabular}{|p{2.5cm}|p{7cm}|}
+    \hline
+    \multicolumn{2}{|c|}{\textbf{CLASSE : AlertManager}} \\
+    \hline
+    \multicolumn{2}{|p{9.5cm}|}{
+    \textbf{Attributs :}
+    \begin{itemize}
+        \item thresholds : dict \{latency\_max, fps\_min, error\_rate\_max\}
+        \item subscribers : list (emails, SMS, webhooks)
+        \item last\_alert\_time : datetime
+        \item alert\_cooldown : int (300s)
+    \end{itemize}
+    
+    \textbf{Méthodes :}
+    \begin{itemize}
+        \item checkMetrics(metrics) : bool
+        \item sendAlert(alert\_type, message) : void
+        \item sendEmail(recipients, subject, body) : void
+        \item sendSMS(phone, message) : void
+        \item sendWebhook(url, payload) : void
+    \end{itemize}
+    } \\
+    \hline
+    \end{tabular}
+    
+    \vspace{0.5cm}
+    
+    \begin{tabular}{|p{2.5cm}|p{7cm}|}
+    \hline
+    \multicolumn{2}{|c|}{\textbf{CLASSE : Logger}} \\
+    \hline
+    \multicolumn{2}{|p{9.5cm}|}{
+    \textbf{Attributs :}
+    \begin{itemize}
+        \item log\_level : enum \{DEBUG, INFO, WARNING, ERROR, CRITICAL\}
+        \item log\_file : string (chemin fichier)
+        \item format : string (JSON ou texte)
+        \item max\_size : int (taille max fichier)
+    \end{itemize}
+    
+    \textbf{Méthodes :}
+    \begin{itemize}
+        \item debug(message) : void
+        \item info(message) : void
+        \item warning(message) : void
+        \item error(message, exception) : void
+        \item critical(message) : void
+        \item flush() : void
+    \end{itemize}
+    } \\
+    \hline
+    \end{tabular}
+    
+    \vspace{0.5cm}
+    
+    \begin{tabular}{|p{2.5cm}|p{7cm}|}
+    \hline
+    \multicolumn{2}{|c|}{\textbf{CLASSE : GrafanaConnector}} \\
+    \hline
+    \multicolumn{2}{|p{9.5cm}|}{
+    \textbf{Attributs :}
+    \begin{itemize}
+        \item grafana\_url : string
+        \item api\_key : string
+        \item datasource\_id : int (PostgreSQL)
+        \item refresh\_interval : int (10s)
+    \end{itemize}
+    
+    \textbf{Méthodes :}
+    \begin{itemize}
+        \item createDashboard(dashboard\_json) : bool
+        \item addPanel(dashboard\_id, panel\_config) : void
+        \item queryMetrics(time\_range) : list[dict]
+        \item renderChart(metric, time\_range) : image
+    \end{itemize}
+    } \\
+    \hline
+    \end{tabular}
+    
+    \vspace{0.5cm}
+    
+    \textbf{Relations :}
+    \begin{itemize}
+        \item AlertManager \textbf{consulte} Metrics
+        \item AlertManager \textbf{utilise} Logger
+        \item Logger \textbf{écrit} dans fichiers logs
+        \item GrafanaConnector \textbf{querye} Database via PostgreSQL
+    \end{itemize}
+    
+    \end{minipage}}
+    \caption{Sous-diagramme 4 : Couche Alertes \& Monitoring}
+    \label{fig:class-alerts}
+\end{figure}
+
+---
+
+\newpage
+\section{3. Diagramme de Séquence Détaillé}
+
+\subsection{Vue d'ensemble}
+
+Les diagrammes de séquence illustrent les **interactions temporelles** entre les composants du système. Quatre scénarios clés sont détaillés ci-dessous.
+
+---
+
+\subsection{Sous-diagramme 1 : Flux complet de traitement d'une frame}
+
+\begin{figure}[H]
+    \centering
+    \fbox{\begin{minipage}{0.95\textwidth}
+    \textbf{SOUS-DIAGRAMME 1 : FLUX COMPLET DE TRAITEMENT D'UNE FRAME}
+    
+    \vspace{0.5cm}
+    
+    \textit{Scénario : Une frame vidéo traverse toute la chaîne CIRCULI, de la caméra à la base de données.}
+    
+    \vspace{0.3cm}
+    
+    \begin{enumerate}
+        \item[\textbf{T0}] \textbf{Camera} : Acquiert une frame vidéo (30 FPS = 1 frame/33ms)
+        \item[\textbf{T0+5ms}] \textbf{VideoProcessor.applyROI()} : Applique le masque ROI
+        \item[\textbf{T0+10ms}] \textbf{VideoProcessor.normalize()} : Redimensionne à 640×640, normalise pixel
+        \item[\textbf{T0+15ms}] \textbf{YOLOv8Model.infer(tensor)} : Passage forward du réseau (19 FPS ≈ 52ms)
+        \item[\textbf{T0+67ms}] \textbf{YOLOv8Model} retourne : liste de boîtes brutes avec scores
+        \item[\textbf{T0+70ms}] \textbf{NMS.apply()} : Filtre les boîtes chevauchantes (IoU > 0.4 → suppression)
+        \item[\textbf{T0+72ms}] \textbf{Detection[]} : Liste finale des objets détectés
+        \item[\textbf{T0+75ms}] \textbf{APIBackend.sendDetections()} : Envoie la liste à l'API via HTTP POST
+        \item[\textbf{T0+105ms}] \textbf{APIBackend.authenticate()} : Valide le token JWT
+        \item[\textbf{T0+110ms}] \textbf{Database.insert()} : Insère les détections dans PostgreSQL
+        \item[\textbf{T0+125ms}] \textbf{Database} : ACK (INSERT OK)
+        \item[\textbf{T0+128ms}] \textbf{APIBackend} : Retourne 200 OK au VideoProcessor
+        \item[\textbf{T0+130ms}] \textbf{Metrics.record()} : Enregistre FPS, latence, count
+        \item[\textbf{T0+135ms}] \textbf{CYCLE TERMINÉ} : Prêt pour la frame suivante
+    \end{enumerate}
+    
+    \vspace{0.3cm}
+    
+    \textbf{Latence totale} : \textbf{135ms} (acceptable pour temps réel, bien sous 1s)
+    
+    \vspace{0.3cm}
+    
+    \begin{center}
+    \textbf{Diagramme Simplifié :}
+    \end{center}
+    
+    \vspace{0.2cm}
+    
+    \begin{verbatim}
+    Camera → VideoProcessor → YOLOv8 → NMS → Detection[] → APIBackend → Database
+      |          |                |        |         |           |          |
+    readFrame  applyROI        infer    filter   toJSON      sendPost    insert
+                normalize      52ms      2ms      1ms         30ms       15ms
+                  10ms                                                        
+                                                      [LATENCY: 135ms]
+    \end{verbatim}
+    
+    \end{minipage}}
+    \caption{Sous-diagramme 1 : Flux complet de traitement}
+    \label{fig:seq-complete}
+\end{figure}
+
+---
+
+\subsection{Sous-diagramme 2 : Détail du module d'inférence YOLOv8}
+
+\begin{figure}[H]
+    \centering
+    \fbox{\begin{minipage}{0.95\textwidth}
+    \textbf{SOUS-DIAGRAMME 2 : DÉTAIL MODULE INFÉRENCE YOLOV8}
+    
+    \vspace{0.5cm}
+    
+    \textit{Scénario : Zoom sur les étapes internes du modèle YOLOv8 + NMS.}
+    
+    \vspace{0.3cm}
+    
+    \begin{enumerate}
+        \item[\textbf{Étape 1}] \textbf{Input Tensor} (640×640×3) : Image normalisée
+        
+        \item[\textbf{Étape 2}] \textbf{Backbone (YOLOv8)} : 
+        \begin{itemize}
+            \item Convolutions progressives (stride=2, 4, 8, 16, 32)
+            \item Extraction de features multiples échelles
+            \item Sortie : 4 cartes de features
+        \end{itemize}
+        
+        \item[\textbf{Étape 3}] \textbf{Neck (FPN)} : 
+        \begin{itemize}
+            \item Fusion multi-échelle des features
+            \item Pyramide de features (80×80, 40×40, 20×20)
+        \end{itemize}
+        
+        \item[\textbf{Étape 4}] \textbf{Head (Détection)} :
+        \begin{itemize}
+            \item Chaque cellule de grille prédit :
+            \begin{itemize}
+                \item $(x, y, w, h)$ : coordonnées boîte
+                \item $p$ : probabilité d'objet
+                \item $(p_1, p_2, \ldots, p_C)$ : scores classe (C=3 : car, bus, truck)
+            \end{itemize}
+            \item Output shape : (Batch, 8400, 85) où 8400 = 80×80 + 40×40 + 20×20
+        \end{itemize}
+        
+        \item[\textbf{Étape 5}] \textbf{Décodage des prédictions} :
+        \begin{itemize}
+            \item Conversion grille → pixels
+            \item Filtrage confiance : conf $>$ 0.45 (élimine 70-80\% des boîtes)
+        \end{itemize}
+        
+        \item[\textbf{Étape 6}] \textbf{NMS (Non-Maximum Suppression)} :
+        \begin{itemize}
+            \item Tri par confiance décroissante
+            \item Pour chaque boîte conservée :
+            \begin{itemize}
+                \item Supprime toutes les boîtes chevauchantes
+                \item $\text{IoU}(box_i, box_j) > 0.4$ → éliminer $box_j$
+            \end{itemize}
+            \item Sortie : liste finale (typi. 5-50 boîtes par frame)
+        \end{itemize}
+        
+        \item[\textbf{Étape 7}] \textbf{Output final} : 
+        \begin{itemize}
+            \item list[Detection] avec (class, conf, bbox, area)
+        \end{itemize}
+    \end{enumerate}
+    
+    \vspace{0.3cm}
+    
+    \textbf{Complexité computationnelle} : ~2.5 GMACs (sur GPU/CPU)
+    \textbf{Temps réel} : 52ms (CPU) / 8ms (GPU)
+    
+    \end{minipage}}
+    \caption{Sous-diagramme 2 : Détail inférence YOLOv8}
+    \label{fig:seq-yolo-detail}
+\end{figure}
+
+---
+
+\subsection{Sous-diagramme 3 : Gestion des erreurs et résilience}
+
+\begin{figure}[H]
+    \centering
+    \fbox{\begin{minipage}{0.95\textwidth}
+    \textbf{SOUS-DIAGRAMME 3 : GESTION DES ERREURS ET RÉSILIENCE}
+    
+    \vspace{0.5cm}
+    
+    \textit{Scénario : Le flux RTSP s'interrompt → gestion automatique.}
+    
+    \vspace{0.3cm}
+    
+    \textbf{Cas 1 : Perte du flux RTSP (timeout)}
+    
+    \begin{enumerate}
+        \item[\textbf{T0}] VideoProcessor attend frame de Camera
+        \item[\textbf{T0+5s}] Timeout (pas de réponse) → Exception
+        \item[\textbf{T0+5.1s}] Logger.error(« RTSP timeout », exception)
+        \item[\textbf{T0+5.2s}] AlertManager.checkMetrics() → détecte anomalie
+        \item[\textbf{T0+5.3s}] AlertManager.sendAlert() : Email + SMS aux admins
+        \item[\textbf{T0+5.5s}] Airflow DAG : Exécute \texttt{retry\_task()} avec backoff exponentiel
+        \item[\textbf{T0+6s}] Retry 1 : Nouvelle tentative de connexion
+        \item[\textbf{T0+6.5s}] Si succès → Continue traitement normal
+        \item[\textbf{T0+12s}] Si échec → Retry 2 (backoff=4s)
+        \item[\textbf{T0+30s}] Si échec → Retry 3 (backoff=8s)
+        \item[\textbf{T0+40s}] Après 3 échecs → Mark camera as ERROR
+        \item[\textbf{T0+45s}] Dashboard affiche la caméra en rouge (INACTIVE)
+    \end{enumerate}
+    
+    \vspace{0.3cm}
+    
+    \textbf{Cas 2 : Erreur de base de données (connection refused)}
+    
+    \begin{enumerate}
+        \item[\textbf{T0+100ms}] Database.insert() échoue (connection\_error)
+        \item[\textbf{T0+100.5ms}] APIBackend reçoit exception
+        \item[\textbf{T0+101ms}] Retry avec exponentiel backoff (1s, 2s, 4s)
+        \item[\textbf{T0+102ms}] Si échec → Cache les détections en mémoire (buffer)
+        \item[\textbf{T0+30s}] Pool de connexion réessaie
+        \item[\textbf{T0+32s}] Si Database revient online → Flush buffer
+        \item[\textbf{T0+35s}] Toutes les détections persistées (ordre chronologique)
+    \end{enumerate}
+    
+    \vspace{0.3cm}
+    
+    \textbf{Cas 3 : Erreur d'inférence (memory overflow)}
+    
+    \begin{enumerate}
+        \item[\textbf{T0}] YOLOv8 reçoit Tensor de taille anormale
+        \item[\textbf{T0+1ms}] Out of Memory → Exception
+        \item[\textbf{T0+2ms}] Logger.critical(« GPU OOM »)
+        \item[\textbf{T0+3ms}] AlertManager envoie alerte CRITIQUE
+        \item[\textbf{T0+5ms}] Fallback : switch device CPU (plus lent mais stable)
+        \item[\textbf{T0+100ms}] Inférence CPU (latence ↑ 52ms)
+        \item[\textbf{T0+105ms}] Admin notifié pour upgrade GPU
+    \end{enumerate}
+    
+    \end{minipage}}
+    \caption{Sous-diagramme 3 : Gestion des erreurs}
+    \label{fig:seq-error-handling}
+\end{figure}
+
+---
+
+\subsection{Sous-diagramme 4 : Cycle d'agrégation des KPI vers Grafana}
+
+\begin{figure}[H]
+    \centering
+    \fbox{\begin{minipage}{0.95\textwidth}
+    \textbf{SOUS-DIAGRAMME 4 : CYCLE D'AGRÉGATION KPI VERS GRAFANA}
+    
+    \vspace{0.5cm}
+    
+    \textit{Scénario : Les métriques brutes deviennent des indicateurs affichables.}
+    
+    \vspace{0.3cm}
+    
+    \begin{enumerate}
+        \item[\textbf{Chaque frame (33ms)}] 
+        \begin{itemize}
+            \item VideoProcessor acquiert temps traitement
+            \item Metrics.record(fps=19, latency=52ms, vehicle\_count=12)
+        \end{itemize}
+        
+        \item[\textbf{Chaque minute}] 
+        \begin{itemize}
+            \item Metrics.aggregate(time\_window=60s)
+            \item Calcul : avg(fps), avg(latency), sum(vehicle\_count), etc.
+            \item Résultat exemple : fps\_avg=18.5, latency\_avg=54ms, total\_vehicles=1200
+            \item Insert dans table \texttt{metrics\_1min}
+        \end{itemize}
+        
+        \item[\textbf{Toutes les 10s}] 
+        \begin{itemize}
+            \item Grafana polling : SELECT * FROM metrics\_1min WHERE timestamp $\geq$ NOW()-30min
+            \item Reçoit 30 lignes (1 par minute)
+            \item Calcul graphiques en temps réel
+        \end{itemize}
+        
+        \item[\textbf{Dashboard Grafana}] 
+        \begin{itemize}
+            \item Panneau 1 : FPS trend (courbe)
+            \item Panneau 2 : Latence (gauge)
+            \item Panneau 3 : Volumétrie (bar chart)
+            \item Panneau 4 : Uptime (percentage)
+            \item Panneau 5 : Alertes en cours (table)
+        \end{itemize}
+    \end{enumerate}
+    
+    \vspace{0.3cm}
+    
+    \textbf{Flux de données :}
+    
+    \begin{center}
+    \begin{tabular}{|c|c|c|c|c|c|}
+    \hline
+    \textbf{Detection} & \textbf{→} & \textbf{Metrics} & \textbf{→} & \textbf{Database} & \textbf{→} \\
+    \textbf{(instant)} & & \textbf{(1min)} & & \textbf{(persist)} & \\
+    \hline
+    \multicolumn{3}{|c|}{} & \multicolumn{3}{|c|}{} \\
+    \multicolumn{3}{|c|}{} & \multicolumn{3}{|c|}{\textbf{Grafana (polling 10s)}} \\
+    \multicolumn{3}{|c|}{} & \multicolumn{3}{|c|}{\textbf{→ Dashboard rendu}} \\
+    \hline
+    \end{tabular}
+    \end{center}
+    
+    \vspace{0.3cm}
+    
+    \textbf{Latence totale (de la détection au graphique)} : ~70-80 secondes
+    \begin{itemize}
+        \item 1 min d'agrégation
+        \item 1-10s avant prochain polling Grafana
+        \item Temps rendu négligeable
+    \end{itemize}
+    
+    \end{minipage}}
+    \caption{Sous-diagramme 4 : Cycle agrégation KPI}
+    \label{fig:seq-kpi-cycle}
+\end{figure}
+
+---
+
+\section{Synthèse}
+
+Les diagrammes UML présentés modélisent complètement l'architecture CIRCULI :
+
+\begin{itemize}
+    \item \textbf{Cas d'utilisation} : 6 cas couvrant tous les besoins utilisateur
+    \item \textbf{Classes} : 12 classes réparties en 4 couches (Acquisition, IA, Données, Alertes)
+    \item \textbf{Séquences} : 4 flux illustrant les interactions normales et de gestion d'erreur
+\end{itemize}
+
+Cette architecture garantit \textbf{modulabilité}, \textbf{résilience} et \textbf{observabilité} du système.
 
