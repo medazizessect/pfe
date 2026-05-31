@@ -15,6 +15,9 @@
 \usepackage{booktabs}
 \usepackage{amsmath, amsfonts, amssymb}
 \usepackage{ulem}
+\usepackage{xcolor}
+\usepackage{longtable}
+\usepackage{array}
 
 % Optional but useful for nicer tables/links
 \usepackage{longtable}
@@ -71,7 +74,11 @@
 \chapter*{Introduction Générale}
 \addcontentsline{toc}{chapter}{Introduction Générale}
 
-% TODO: À enrichir avec le contenu du PDF + votre contexte (CIRCULI, enjeux, objectifs, démarche).
+Les villes font aujourd'hui face à des défis majeurs liés à la croissance urbaine, à la mobilité, à la gestion des ressources et à la qualité de vie des citoyens. L'augmentation du trafic automobile, les embouteillages chroniques et la congestion urbaine constituent des enjeux prioritaires pour les collectivités territoriales.
+
+C'est dans cette optique que s'inscrit le projet CIRCULI, une plateforme intelligente dédiée à l'analyse, à la visualisation et à l'exploitation des données urbaines pour une meilleure gestion de la mobilité.
+
+Ce rapport présente les différentes étapes de conception et de réalisation du projet CIRCULI, de l'étude préliminaire à l'implémentation technique complète.
 
 \clearpage
 
@@ -85,18 +92,71 @@
 \input{chapitre5}
 
 % ==========================================
+% ANNEXE UML
+% ==========================================
+\appendix
+\input{annexe_uml}
+
+% ==========================================
 % CONCLUSION GÉNÉRALE
 % ==========================================
 \chapter*{Conclusion Générale et Perspectives}
 \addcontentsline{toc}{chapter}{Conclusion Générale et Perspectives}
 
-% TODO: Résumé, bilan, limites, perspectives.
+Le présent projet de fin d'études a été l'occasion de concevoir, d'architecturer et de développer \textbf{CIRCULI}, une plateforme logicielle innovante dédiée à la gestion intelligente des données urbaines et de la mobilité.
+
+Tout au long de ce rapport, nous avons abordé les multiples facettes inhérentes à la création d'un tel système. L'étude initiale nous a permis de comprendre les enjeux métiers, l'analyse comparative a validé nos choix technologiques, et la réalisation a démontré la faisabilité du prototype.
+
+La conception architecturale, basée sur des principes de modularité et de résilience, a donné naissance à une infrastructure robuste combinant l'ingestion vidéo agnostique, le traitement IA performant (YOLOv8), et l'orchestration fiable (Airflow, Docker).
+
+L'hybridation des méthodes agiles (Scrum et Extreme Programming) a été le fil conducteur de ce succès, permettant de s'adapter aux imprévus techniques tout en maintenant un standard de qualité élevé.
+
+\section*{Perspectives d'évolution}
+
+Bien que le prototype CIRCULI ait atteint ses objectifs initiaux, plusieurs axes d'amélioration peuvent être envisagés :
+
+\begin{itemize}
+    \item \textbf{Analyse prédictive du trafic} : Intégrer des réseaux de neurones récurrents (LSTMs) pour analyser l'historique des données et prédire les embouteillages futurs.
+    \item \textbf{Tracking multi-caméras} : Implémenter des algorithmes de tracking (DeepSORT) pour suivre les flux de véhicules à l'échelle d'un quartier.
+    \item \textbf{Contrôle adaptatif de la signalisation} : Connecter l'API de CIRCULI directement aux systèmes de feux tricolores intelligents.
+    \item \textbf{Détection d'anomalies} : Entraîner le système à repérer automatiquement les accidents et comportements dangereux.
+\end{itemize}
+
+Ce projet a permis d'acquérir une double compétence précieuse, alliant l'ingénierie de la donnée (Data Science, MLOps) à la gestion de projet et au développement logiciel backend.
 
 % ==========================================
-% WEBOGRAPHIE / BIBLIO
+% BIBLIOGRAPHIE
 % ==========================================
-% Si vous préférez une Webographie séparée, créez un fichier webographie.tex.
-% Pour l'instant, on garde votre bibliographie existante.
-\input{bibliographie}
+\addcontentsline{toc}{chapter}{Bibliographie}
+\begin{thebibliography}{99}
+
+\bibitem{yolov8_ultralytics}
+Jocher, G., Chaurasia, A., et Qiu, J. (2023). \textit{Ultralytics YOLOv8}. Code source et documentation officielle. Disponible sur : \url{https://github.com/ultralytics/ultralytics}
+
+\bibitem{fastapi_tiangolo}
+Ramírez, S. (2018). \textit{FastAPI: High performance, easy to learn, fast to code, ready for production}. Documentation officielle. Disponible sur : \url{https://fastapi.tiangolo.com/}
+
+\bibitem{opencv_bradski}
+Bradski, G. (2000). \textit{The OpenCV Library}. Dr. Dobb's Journal of Software Tools. Disponible sur : \url{https://opencv.org/}
+
+\bibitem{apache_airflow}
+Apache Software Foundation. \textit{Apache Airflow: A platform to programmatically author, schedule, and monitor workflows}. Documentation officielle. Disponible sur : \url{https://airflow.apache.org/}
+
+\bibitem{docker_merkel}
+Merkel, D. (2014). \textit{Docker: lightweight linux containers for consistent development and deployment}. Linux Journal, 239(2), 2.
+
+\bibitem{grafana_labs}
+Grafana Labs. \textit{Grafana: The open observability platform}. Documentation officielle. Disponible sur : \url{https://grafana.com/}
+
+\bibitem{scrum_guide}
+Schwaber, K. et Sutherland, J. (2020). \textit{Le Guide Scrum : Les règles du jeu}. Scrum.org.
+
+\bibitem{extreme_programming}
+Beck, K. (1999). \textit{Extreme Programming Explained: Embrace Change}. Addison-Wesley Professional.
+
+\bibitem{smart_city_odd}
+Nations Unies. \textit{Objectif de développement durable 11 : Faire en sorte que les villes et les établissements humains soient ouverts à tous, sûrs, résilients et durables}.
+
+\end{thebibliography}
 
 \end{document}
